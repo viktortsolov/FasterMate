@@ -54,7 +54,6 @@ E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\FasterMate.RazorAssemblyIn
 E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\FasterMate.RazorAssemblyInfo.cs
 E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\staticwebassets.build.json
 E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\staticwebassets.development.json
-E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\scopedcss\bundle\FasterMate.styles.css
 E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\scopedcss\projectbundle\FasterMate.bundle.scp.css
 E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\FasterMate.csproj.CopyComplete
@@ -62,3 +61,8 @@ E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\FasterMate.dll
 E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\ref\FasterMate.dll
 E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\FasterMate.pdb
 E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\FasterMate.genruntimeconfig.cache
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.Core.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.Infrastructure.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.Core.pdb
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.Infrastructure.pdb
+E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutOld.cshtml.rz.scp.css

@@ -764,6 +764,29 @@
             "rid": "win"
           }
         }
+      },
+      "FasterMate.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FasterMate.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FasterMate.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FasterMate.Core.dll": {}
+        }
+      },
+      "FasterMate.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/FasterMate.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FasterMate.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -2253,10 +2276,21 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "FasterMate.Core/1.0.0": {
+      "type": "project",
+      "path": "../FasterMate.Core/FasterMate.Core.csproj",
+      "msbuildProject": "../FasterMate.Core/FasterMate.Core.csproj"
+    },
+    "FasterMate.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../FasterMate.Infrastructure/FasterMate.Infrastructure.csproj",
+      "msbuildProject": "../FasterMate.Infrastructure/FasterMate.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "FasterMate.Core >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.0",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.0",
@@ -2295,7 +2329,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Programming\\FasterMate\\FasterMate.Core\\FasterMate.Core.csproj": {
+              "projectPath": "E:\\Programming\\FasterMate\\FasterMate.Core\\FasterMate.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

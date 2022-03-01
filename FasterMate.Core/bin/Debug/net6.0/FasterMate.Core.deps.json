@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FasterMate.Core/1.0.0": {
+        "dependencies": {
+          "FasterMate.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "FasterMate.Core.dll": {}
+        }
+      },
+      "FasterMate.Infrastructure/1.0.0": {
+        "runtime": {
+          "FasterMate.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FasterMate.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FasterMate.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,4 +1,5 @@
-﻿using FasterMate.Models;
+﻿using FasterMate.Core.Constants;
+using FasterMate.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -9,6 +10,8 @@ namespace FasterMate.Controllers
 
         public IActionResult Index()
         {
+            ViewData[MessageConstant.SuccessMessage] = "Success! :)";
+
             return View();
         }
 

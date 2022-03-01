@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "FasterMate/1.0.0": {
         "dependencies": {
+          "FasterMate.Core": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.AspNetCore.Identity.UI": "6.0.0",
@@ -493,6 +494,19 @@
             "fileVersion": "4.700.19.56404"
           }
         }
+      },
+      "FasterMate.Core/1.0.0": {
+        "dependencies": {
+          "FasterMate.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "FasterMate.Core.dll": {}
+        }
+      },
+      "FasterMate.Infrastructure/1.0.0": {
+        "runtime": {
+          "FasterMate.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -865,6 +879,16 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "FasterMate.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FasterMate.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
