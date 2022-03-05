@@ -1,3 +1,4 @@
+using FasterMate.Core.Constants;
 using FasterMate.Data;
 using FasterMate.ModelBinders;
 using Microsoft.AspNetCore.Identity;
@@ -27,6 +28,8 @@ builder
     .AddMvcOptions(options =>
     {
         options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+        options.ModelBinderProviders.Insert(1, new DoubleModelBinderProvider());
+        options.ModelBinderProviders.Insert(2, new DateTimeModelBinderProvider(FormatingConstant.NormalDateFormat));
     });
 
 var app = builder.Build();
