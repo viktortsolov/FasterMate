@@ -1,4 +1,5 @@
 using FasterMate.Data;
+using FasterMate.ModelBinders;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,9 +22,12 @@ builder
     })
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-
 builder
-    .Services.AddControllersWithViews();
+    .Services.AddControllersWithViews()
+    .AddMvcOptions(options =>
+    {
+        options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+    });
 
 var app = builder.Build();
 

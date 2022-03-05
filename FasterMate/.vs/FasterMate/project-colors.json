@@ -5,7 +5,17 @@
       "ProjectGuid": "df081c2d-2717-4e1c-8d5b-1b4ad0b18d75",
       "DisplayName": "FasterMate",
       "ColorIndex": 0
+    },
+    "c9c6bc31-140e-4c6e-9605-fdcbfca6b424": {
+      "ProjectGuid": "c9c6bc31-140e-4c6e-9605-fdcbfca6b424",
+      "DisplayName": "FasterMate.Core",
+      "ColorIndex": 1
+    },
+    "019884ab-4648-44d7-ae53-2965a25b9531": {
+      "ProjectGuid": "019884ab-4648-44d7-ae53-2965a25b9531",
+      "DisplayName": "FasterMate.Infrastructure",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }
