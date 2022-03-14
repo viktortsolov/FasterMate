@@ -1,11 +1,11 @@
-﻿using FasterMate.Core.Constants;
-using FasterMate.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-
-namespace FasterMate.Controllers
+﻿namespace FasterMate.Controllers
 {
-    public class HomeController : Controller
+    using FasterMate.Core.Constants;
+    using FasterMate.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Diagnostics;
+
+    public class HomeController : BaseController
     {
 
         public IActionResult Index()
