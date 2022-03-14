@@ -9,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder
     .Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
 builder
     .Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -55,5 +56,5 @@ app.UseHttpsRedirection()
         endpoints.MapDefaultControllerRoute();
         endpoints.MapRazorPages();
     });
-
+app.UseAuthentication();
 app.Run();

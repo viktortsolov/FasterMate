@@ -26,7 +26,7 @@
                     return ValidationResult.Success;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
 
