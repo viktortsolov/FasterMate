@@ -3187,6 +3187,10 @@
       "FasterMate.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.2"
+        },
         "compile": {
           "bin/placeholder/FasterMate.Infrastructure.dll": {}
         },

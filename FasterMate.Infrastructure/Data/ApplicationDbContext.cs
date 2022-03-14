@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace FasterMate.Data
+namespace FasterMate.Infrastrucutre.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
