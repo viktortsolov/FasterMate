@@ -9,3 +9,4 @@ E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.
 E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.dll
 E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\ref\FasterMate.Infrastructure.dll
 E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.pdb
+E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.csproj.AssemblyReference.cache

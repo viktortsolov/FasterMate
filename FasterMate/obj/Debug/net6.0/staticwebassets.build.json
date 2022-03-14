@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XS6SnzhpfuEkR87yIhhZFguCPNUexwIRJM4doBoTaAk=",
+  "Hash": "/rN4ybbY0joV1IvSywKXm5m5XmlyCRdVb2E2Qg1C/MA=",
   "Source": "FasterMate",
   "BasePath": "_content/FasterMate",
   "Mode": "Default",
@@ -1834,6 +1834,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\default-150x150.png"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\FasterMate-Logo.png",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/FasterMate-Logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\FasterMate-Logo.png"
     },
     {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\icons.png",
