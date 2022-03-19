@@ -1,4 +1,4 @@
-namespace FasterMate.Models
+namespace FasterMate.ViewModels
 {
     public class ErrorViewModel
     {

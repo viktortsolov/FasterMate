@@ -1,8 +1,11 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using FasterMate.Core.Constants;
+using FasterMate.Core.Contracts;
+using FasterMate.Core.Services;
+using FasterMate.Infrastructure.Common;
+using FasterMate.Infrastructure.Data;
 using FasterMate.Infrastrucutre.Data;
 using FasterMate.ModelBinders;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +17,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder
-    .Services.AddDefaultIdentity<IdentityUser>(options =>
+    .Services
+    .AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+builder
+    .Services
+    .AddTransient<IProfileService, ProfileService>()
+    .AddTransient<ICountryService, CountryService>();
+
+builder
+    .Services.AddDefaultIdentity<ApplicationUser>(options =>
     {
         options.Password.RequireDigit = false;
         options.Password.RequireLowercase = false;

@@ -274,3 +274,5 @@ E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.Extensions.Cachi
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.ViewModels.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.ViewModels.pdb

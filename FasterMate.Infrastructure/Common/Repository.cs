@@ -1,9 +1,11 @@
 ﻿namespace FasterMate.Infrastructure.Common
 {
-    using FasterMate.Infrastrucutre.Data;
-    using Microsoft.EntityFrameworkCore;
     using System.Linq;
     using System.Threading.Tasks;
+
+    using FasterMate.Infrastrucutre.Data;
+
+    using Microsoft.EntityFrameworkCore;
 
     public class Repository<T> : IRepository<T>
         where T : class

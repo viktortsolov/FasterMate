@@ -1,7 +1,7 @@
 ﻿namespace FasterMate.Controllers
 {
     using FasterMate.Core.Constants;
-    using FasterMate.Models;
+    using FasterMate.ViewModels;
     using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
 

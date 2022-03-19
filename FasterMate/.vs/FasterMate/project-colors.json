@@ -20,7 +20,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "806d20f0-d66a-4a64-821b-7abc8f7dccb4": {
+      "ProjectGuid": "806d20f0-d66a-4a64-821b-7abc8f7dccb4",
+      "DisplayName": "ClassLibrary1",
+      "ColorIndex": 3
+    },
+    "ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6": {
+      "ProjectGuid": "ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6",
+      "DisplayName": "FasterMate.ViewModels",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }

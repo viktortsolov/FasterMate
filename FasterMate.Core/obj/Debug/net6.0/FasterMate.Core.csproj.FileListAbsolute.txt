@@ -13,3 +13,5 @@ E:\Programming\FasterMate\FasterMate.Core\obj\Debug\net6.0\FasterMate.Core.cspro
 E:\Programming\FasterMate\FasterMate.Core\obj\Debug\net6.0\FasterMate.Core.dll
 E:\Programming\FasterMate\FasterMate.Core\obj\Debug\net6.0\ref\FasterMate.Core.dll
 E:\Programming\FasterMate\FasterMate.Core\obj\Debug\net6.0\FasterMate.Core.pdb
+E:\Programming\FasterMate\FasterMate.Core\bin\Debug\net6.0\FasterMate.ViewModels.dll
+E:\Programming\FasterMate\FasterMate.Core\bin\Debug\net6.0\FasterMate.ViewModels.pdb

@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FasterMate.Core\FasterMate.Core.csproj" />
+    <ProjectReference Include="..\FasterMate.ViewModels\FasterMate.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3175,7 +3175,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "FasterMate.Infrastructure": "1.0.0"
+          "FasterMate.Infrastructure": "1.0.0",
+          "FasterMate.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/FasterMate.Core.dll": {}
@@ -3196,6 +3197,16 @@
         },
         "runtime": {
           "bin/placeholder/FasterMate.Infrastructure.dll": {}
+        }
+      },
+      "FasterMate.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/FasterMate.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FasterMate.ViewModels.dll": {}
         }
       }
     }
@@ -9883,11 +9894,17 @@
       "type": "project",
       "path": "../FasterMate.Infrastructure/FasterMate.Infrastructure.csproj",
       "msbuildProject": "../FasterMate.Infrastructure/FasterMate.Infrastructure.csproj"
+    },
+    "FasterMate.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../FasterMate.ViewModels/FasterMate.ViewModels.csproj",
+      "msbuildProject": "../FasterMate.ViewModels/FasterMate.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "FasterMate.Core >= 1.0.0",
+      "FasterMate.ViewModels >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.2",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.2",
@@ -9930,6 +9947,9 @@
           "projectReferences": {
             "E:\\Programming\\FasterMate\\FasterMate.Core\\FasterMate.Core.csproj": {
               "projectPath": "E:\\Programming\\FasterMate\\FasterMate.Core\\FasterMate.Core.csproj"
+            },
+            "E:\\Programming\\FasterMate\\FasterMate.ViewModels\\FasterMate.ViewModels.csproj": {
+              "projectPath": "E:\\Programming\\FasterMate\\FasterMate.ViewModels\\FasterMate.ViewModels.csproj"
             }
           }
         }

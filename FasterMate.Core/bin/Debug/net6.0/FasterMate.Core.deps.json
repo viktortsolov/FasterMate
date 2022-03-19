@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "FasterMate.Core/1.0.0": {
         "dependencies": {
-          "FasterMate.Infrastructure": "1.0.0"
+          "FasterMate.Infrastructure": "1.0.0",
+          "FasterMate.ViewModels": "1.0.0"
         },
         "runtime": {
           "FasterMate.Core.dll": {}
@@ -521,6 +522,11 @@
         "runtime": {
           "FasterMate.Infrastructure.dll": {}
         }
+      },
+      "FasterMate.ViewModels/1.0.0": {
+        "runtime": {
+          "FasterMate.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -846,6 +852,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "FasterMate.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FasterMate.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

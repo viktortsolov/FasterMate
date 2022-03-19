@@ -34,7 +34,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Countries");
+                    b.ToTable("Countries", (string)null);
                 });
 
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Image", b =>
@@ -49,7 +49,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Images");
+                    b.ToTable("Images", (string)null);
                 });
 
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Profile", b =>
@@ -90,7 +90,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.HasIndex("ImageId");
 
-                    b.ToTable("Profiles");
+                    b.ToTable("Profiles", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
