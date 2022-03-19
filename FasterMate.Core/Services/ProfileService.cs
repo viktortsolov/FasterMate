@@ -1,15 +1,14 @@
 ﻿namespace FasterMate.Core.Services
 {
-    using FasterMate.Core.Constants;
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using FasterMate.Core.Contracts;
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
     using FasterMate.Infrastructure.Data.Enums;
     using FasterMate.ViewModels.Profile;
-    using System;
-    using System.Globalization;
-    using System.Linq;
-    using System.Threading.Tasks;
 
     public class ProfileService : IProfileService
     {
@@ -40,8 +39,7 @@
 
             var profile = new Profile()
             {
-                //TODO: BirthDate is default. Fix it!
-                BirthDate = input.BirthDate,
+                BirthDate = DateTime.Parse(input.BirthDate),
                 FirstName = input.FirstName,
                 LastName = input.LastName,
                 Gender = gender,

@@ -28,7 +28,7 @@
         [DataType(DataType.Date)]
         [Display(Name = "Birth date")]
         //[DateValidation(1900)]
-        public DateTime BirthDate { get; set; }
+        public string BirthDate { get; set; }
 
         [Required]
         [Display(Name = "Gender")]
