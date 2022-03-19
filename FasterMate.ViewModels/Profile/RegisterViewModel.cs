@@ -1,6 +1,5 @@
 ﻿namespace FasterMate.ViewModels.Profile
 {
-    using FasterMate.ViewModels.ValidationAttributes;
     using System.ComponentModel.DataAnnotations;
 
     public class RegisterViewModel
@@ -28,7 +27,7 @@
         [Required]
         [DataType(DataType.Date)]
         [Display(Name = "Birth date")]
-        [DateValidation(1900)]
+        //[DateValidation(1900)]
         public DateTime BirthDate { get; set; }
 
         [Required]
@@ -38,8 +37,6 @@
         [Required]
         [Display(Name = "Country")]
         public Guid CountryId { get; set; }
-
-        public IEnumerable<KeyValuePair<int, string>> CountriesItems { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]

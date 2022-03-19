@@ -34,7 +34,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Countries", (string)null);
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Image", b =>
@@ -49,7 +49,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Images", (string)null);
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Profile", b =>
@@ -65,7 +65,8 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("CountryId")
+                    b.Property<Guid?>("CountryId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("FirstName")
@@ -76,7 +77,8 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("ImageId")
+                    b.Property<Guid?>("ImageId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LastName")
@@ -90,7 +92,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.HasIndex("ImageId");
 
-                    b.ToTable("Profiles", (string)null);
+                    b.ToTable("Profiles");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

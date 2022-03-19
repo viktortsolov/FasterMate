@@ -85,7 +85,7 @@ namespace FasterMate.Areas.Identity.Pages.Account
 
                 try
                 {
-                    profileId = await _profileService.CreateAsync(this.Input);
+                    profileId = await _profileService.CreateAsync(Input);
                 }
                 catch (ArgumentException AE)
                 {

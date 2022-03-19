@@ -30,12 +30,12 @@
 
         public string Bio { get; set; }
 
-        public Guid ImageId { get; set; }
+        public Guid? ImageId { get; set; }
 
         [ForeignKey(nameof(ImageId))]
         public virtual Image Image { get; set; }
 
-        public Guid CountryId { get; set; }
+        public Guid? CountryId { get; set; }
 
         [ForeignKey(nameof(CountryId))]
         public virtual Country Country { get; set; }

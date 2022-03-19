@@ -4,6 +4,8 @@
 @{
     ViewData["Title"] = "Register";
     Layout = null;
+
+    var countries = this.Model.CountriesList.Select(x => new SelectListItem(x.Value, x.Key.ToString()));
 }
 
 <!DOCTYPE html>
@@ -29,11 +31,31 @@
                 <p class="login-box-msg">Register</p>
 
                 <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-floating">
+                        <label asp-for="Input.Username"></label>
+                        <input asp-for="Input.Username" class="form-control" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="Input.Username" class="text-danger"></span>
+                    </div>
                     <div class="form-floating">
                         <label asp-for="Input.Email"></label>
                         <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                         <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating">
+                        <label asp-for="Input.FirstName"></label>
+                        <input asp-for="Input.FirstName" class="form-control" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating">
+                        <label asp-for="Input.LastName"></label>
+                        <input asp-for="Input.LastName" class="form-control" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.BirthDate"></label>
+                        <input asp-for="Input.BirthDate" class="form-control" />
+                        <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
                     </div>
                     <div class="form-floating">
                         <label asp-for="Input.Password"></label>
@@ -44,6 +66,21 @@
                         <label asp-for="Input.ConfirmPassword"></label>
                         <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating">
+                        <p class="mb-1">Gender</p>
+                        @foreach (var gender in Model.Genders)
+                        {
+                            <label for="@gender" class="mr-3">
+                                <input type="radio" asp-for="Input.Gender" id="@gender" value="@gender" />
+                                <span>@gender</span>
+                            </label>
+                        }
+                    </div>
+                    <div class="form-floating">
+                        <label asp-for="Input.CountryId"></label>
+                        <select asp-for="Input.CountryId" class="form-control" asp-items="countries"></select>
+                        <span asp-validation-for="Input.CountryId" class="text-danger"></span>
                     </div>
                     <div class="row" style="margin-top: 5px">
                         <div class="col-4">

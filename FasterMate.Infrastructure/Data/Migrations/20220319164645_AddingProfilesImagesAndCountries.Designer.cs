@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FasterMate.Infrastrucutre.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220318190834_ProfilesImagesCountries")]
-    partial class ProfilesImagesCountries
+    [Migration("20220319164645_AddingProfilesImagesAndCountries")]
+    partial class AddingProfilesImagesAndCountries
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,7 +67,8 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("CountryId")
+                    b.Property<Guid?>("CountryId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("FirstName")
@@ -78,7 +79,8 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("ImageId")
+                    b.Property<Guid?>("ImageId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LastName")

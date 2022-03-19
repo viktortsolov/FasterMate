@@ -3,6 +3,7 @@ using FasterMate.Core.Contracts;
 using FasterMate.Core.Services;
 using FasterMate.Infrastructure.Common;
 using FasterMate.Infrastructure.Data;
+using FasterMate.Infrastructure.Seeding;
 using FasterMate.Infrastrucutre.Data;
 using FasterMate.ModelBinders;
 using Microsoft.EntityFrameworkCore;
@@ -45,6 +46,14 @@ builder
     });
 
 var app = builder.Build();
+
+//Seed data on application startup
+using (var serviceScope = app.Services.CreateScope())
+{
+    var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    dbContext.Database.Migrate();
+    new ApplicationDbContextSeeder().SeedAsync(dbContext, serviceScope.ServiceProvider).GetAwaiter().GetResult();
+}
 
 if (app.Environment.IsDevelopment())
 {

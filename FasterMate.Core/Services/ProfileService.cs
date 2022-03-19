@@ -1,11 +1,13 @@
 ﻿namespace FasterMate.Core.Services
 {
+    using FasterMate.Core.Constants;
     using FasterMate.Core.Contracts;
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
     using FasterMate.Infrastructure.Data.Enums;
     using FasterMate.ViewModels.Profile;
     using System;
+    using System.Globalization;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -14,6 +16,13 @@
         private readonly IRepository<Profile> profileRepo;
         private readonly IRepository<Country> countryRepo;
 
+        public ProfileService(
+            IRepository<Profile> _profileRepo,
+            IRepository<Country> _countryRepo)
+        {
+            this.profileRepo = _profileRepo;
+            this.countryRepo = _countryRepo;
+        }
 
         public async Task<Guid> CreateAsync(RegisterViewModel input)
         {
@@ -24,18 +33,19 @@
 
             var gender = GetGender(input.Gender);
 
-            if (gender == null)
+            if (gender == 0)
             {
                 throw new ArgumentException("The selected gender must be valid!");
             }
 
             var profile = new Profile()
             {
+                //TODO: BirthDate is default. Fix it!
                 BirthDate = input.BirthDate,
                 FirstName = input.FirstName,
                 LastName = input.LastName,
                 Gender = gender,
-                CountryId = input.CountryId,
+                CountryId = input.CountryId
             };
 
             await profileRepo.AddAsync(profile);
