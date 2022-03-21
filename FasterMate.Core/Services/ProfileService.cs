@@ -53,7 +53,7 @@
         }
 
         public Guid GetId(string userId)
-        => profileRepo.AllAsNoTracking()
+         => profileRepo.AllAsNoTracking()
             .Where(x => x.User.Id == userId)
             .Select(x => x.Id)
             .FirstOrDefault();
@@ -65,9 +65,41 @@
 
             return genderValue;
         }
+        
+        public RenderProfileViewModel RenderProfile(Guid id)
+        {
+            //TODO:
+            var profile = profileRepo
+                .AllAsNoTracking();
 
+            var count = profile
+                .Where(x=>x.Id==id);
+
+            Profile countA = count.FirstOrDefault();
+
+            //var profileViewModel = new RenderProfileViewModel()
+            //{
+            //    Id = profile.Id,
+            //    FirstName = profile.FirstName,
+            //    LastName = profile.LastName,
+            //    Gender = profile.Gender.ToString(),
+            //    Birthdate = profile.BirthDate,
+            //    Bio = profile.Bio,
+            //    Country = profile.Country.Name,
+            //    FollowersCount = 0,
+            //    FollowingCount = 0,
+            //    Posts = null
+            //};
+
+            return null;
+        }
 
         private bool CountryValidation(Guid id)
             => countryRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id) == null;
+
+        public T GetById<T>(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
