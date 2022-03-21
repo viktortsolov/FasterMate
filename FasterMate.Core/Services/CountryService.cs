@@ -16,7 +16,7 @@
             this.repo = _repo;
         }
 
-        public IEnumerable<KeyValuePair<Guid, string>> GetAllAsKvp()
+        public IEnumerable<KeyValuePair<string, string>> GetAllAsKvp()
         => this.repo
             .AllAsNoTracking()
             .Select(x => new
@@ -25,6 +25,6 @@
                 x.Name
             })
             .OrderBy(x => x.Name)
-            .Select(x => new KeyValuePair<Guid, string>(x.Id, x.Name));
+            .Select(x => new KeyValuePair<string, string>(x.Id, x.Name));
     }
 }

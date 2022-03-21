@@ -5,7 +5,7 @@
     using Microsoft.EntityFrameworkCore;
     using System.Linq;
 
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -21,6 +21,14 @@
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<ApplicationUser>()
+                .Property(p => p.ProfileId)
+                .IsRequired(true);
+
+            builder.Entity<Profile>()
+                .Property(p => p.ImageId)
+                .IsRequired(false);
 
             var entityTypes = builder
                 .Model

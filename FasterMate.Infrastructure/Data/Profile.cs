@@ -8,11 +8,12 @@
     {
         public Profile()
         {
-            Id = Guid.NewGuid();
+            Id = Guid.NewGuid().ToString();
         }
 
         [Key]
-        public Guid Id { get; set; }
+        [MaxLength(36)]
+        public string Id { get; set; }
 
         [Required]
         [MaxLength(64)]
@@ -26,19 +27,22 @@
         public Gender Gender { get; set; }
 
         [Required]
+        [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
 
-        public string Bio { get; set; }
+        public string? Bio { get; set; }
 
-        public Guid? ImageId { get; set; }
 
-        [ForeignKey(nameof(ImageId))]
+        [ForeignKey(nameof(Image))]
+        public string? ImageId { get; set; }
         public virtual Image Image { get; set; }
 
-        public Guid? CountryId { get; set; }
 
-        [ForeignKey(nameof(CountryId))]
+        [Required]
+        [ForeignKey(nameof(Country))]
+        public string? CountryId { get; set; }
         public virtual Country Country { get; set; }
+
 
         public virtual ApplicationUser User { get; set; }
     }

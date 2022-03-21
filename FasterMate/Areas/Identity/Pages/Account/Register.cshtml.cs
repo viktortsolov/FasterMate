@@ -53,7 +53,7 @@ namespace FasterMate.Areas.Identity.Pages.Account
         [BindProperty]
         public RegisterViewModel Input { get; set; }
 
-        public IEnumerable<KeyValuePair<Guid, string>> CountriesList { get; set; }
+        public IEnumerable<KeyValuePair<string, string>> CountriesList { get; set; }
 
         public IEnumerable<string> Genders { get; set; } = new[]
         {
@@ -80,7 +80,7 @@ namespace FasterMate.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var profileId = Guid.Empty;
+                var profileId = string.Empty;
                 var exceptionMessage = string.Empty;
 
                 try

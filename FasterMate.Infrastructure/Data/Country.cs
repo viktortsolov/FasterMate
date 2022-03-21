@@ -6,13 +6,15 @@
     {
         public Country()
         {
-            Id = Guid.NewGuid();
+            Id = Guid.NewGuid().ToString();
         }
 
         [Key]
-        public Guid Id { get; set; }
+        [MaxLength(36)]
+        public string Id { get; set; }
 
         [Required]
+        [MaxLength(64)]
         public string Name { get; set; }
     }
 }

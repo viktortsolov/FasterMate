@@ -7,7 +7,7 @@
             Posts = new List<string>();
         }
 
-        public Guid Id { get; set; }
+        public string Id { get; set; }
 
         public string FirstName { get; set; }
 

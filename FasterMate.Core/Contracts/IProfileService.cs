@@ -1,15 +1,16 @@
 ﻿namespace FasterMate.Core.Contracts
 {
+    using FasterMate.Infrastructure.Data;
     using FasterMate.ViewModels.Profile;
 
     public interface IProfileService
     {
-        Guid GetId(string userId);
+        string GetId(string userId);
 
-        T GetById<T>(int id);
+        T GetById<T>(string id);
 
-        Task<Guid> CreateAsync(RegisterViewModel input);
+        Task<string> CreateAsync(RegisterViewModel input);
 
-        RenderProfileViewModel RenderProfile(Guid id);
+        RenderProfileViewModel RenderProfile(string id);
     }
 }

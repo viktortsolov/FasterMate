@@ -1,8 +1,11 @@
-﻿using FasterMate.Core.Contracts;
-using Microsoft.AspNetCore.Mvc;
-
-namespace FasterMate.Controllers
+﻿namespace FasterMate.Controllers
 {
+    using FasterMate.Core.Constants;
+    using FasterMate.Core.Contracts;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+
     public class ProfileController : Controller
     {
         private readonly IProfileService profileService;
@@ -13,7 +16,7 @@ namespace FasterMate.Controllers
             profileService = _profileService;
         }
 
-        public IActionResult UserProfile(Guid id)
+        public IActionResult UserProfile(string id)
         {
             var viewModel = profileService.RenderProfile(id);
 
@@ -26,5 +29,6 @@ namespace FasterMate.Controllers
 
             return View(viewModel);
         }
+
     }
 }

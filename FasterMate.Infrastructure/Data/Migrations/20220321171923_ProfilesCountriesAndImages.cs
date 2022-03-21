@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FasterMate.Infrastrucutre.Data.Migrations
 {
-    public partial class AddingProfilesImagesAndCountries : Migration
+    public partial class ProfilesCountriesAndImages : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,27 +37,22 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                 name: "CreatedOn",
                 table: "AspNetUsers",
                 type: "datetime2",
-                nullable: true);
+                nullable: false,
+                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<string>(
-                name: "Discriminator",
-                table: "AspNetUsers",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AddColumn<Guid>(
                 name: "ProfileId",
                 table: "AspNetUsers",
-                type: "uniqueidentifier",
-                nullable: true);
+                type: "nvarchar(36)",
+                nullable: false,
+                defaultValue: "");
 
             migrationBuilder.CreateTable(
                 name: "Countries",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<string>(type: "nvarchar(36)", maxLength: 36, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,7 +63,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                 name: "Images",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(36)", maxLength: 36, nullable: false),
                     Extension = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -80,14 +75,14 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                 name: "Profiles",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(36)", maxLength: 36, nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Bio = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CountryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    ImageId = table.Column<string>(type: "nvarchar(36)", nullable: true),
+                    CountryId = table.Column<string>(type: "nvarchar(36)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,16 +97,14 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                         name: "FK_Profiles_Images_ImageId",
                         column: x => x.ImageId,
                         principalTable: "Images",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUsers_ProfileId",
                 table: "AspNetUsers",
                 column: "ProfileId",
-                unique: true,
-                filter: "[ProfileId] IS NOT NULL");
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Profiles_CountryId",
@@ -225,10 +218,6 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
             migrationBuilder.DropColumn(
                 name: "CreatedOn",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "Discriminator",
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(

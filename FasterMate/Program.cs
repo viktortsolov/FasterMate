@@ -6,6 +6,7 @@ using FasterMate.Infrastructure.Data;
 using FasterMate.Infrastructure.Seeding;
 using FasterMate.Infrastrucutre.Data;
 using FasterMate.ModelBinders;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,6 +35,7 @@ builder
         options.Password.RequireNonAlphanumeric = false;
         options.Password.RequireUppercase = false;
     })
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder

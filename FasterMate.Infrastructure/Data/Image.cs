@@ -6,11 +6,12 @@
     {
         public Image()
         {
-            Id = Guid.NewGuid();
+            Id = Guid.NewGuid().ToString();
         }
 
         [Key]
-        public Guid Id { get; set; }
+        [MaxLength(36)]
+        public string Id { get; set; }
 
         [Required]
         public string Extension { get; set; }
