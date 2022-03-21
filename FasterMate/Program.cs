@@ -1,7 +1,5 @@
 using FasterMate.Core.Constants;
-using FasterMate.Core.Contracts;
-using FasterMate.Core.Services;
-using FasterMate.Infrastructure.Common;
+using FasterMate.Extensions;
 using FasterMate.Infrastructure.Data;
 using FasterMate.Infrastructure.Seeding;
 using FasterMate.Infrastrucutre.Data;
@@ -11,32 +9,23 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
-
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
-builder
-    .Services
-    .AddScoped(typeof(IRepository<>), typeof(Repository<>));
-
-builder
-    .Services
-    .AddTransient<IProfileService, ProfileService>()
-    .AddTransient<ICountryService, CountryService>();
-
-builder
-    .Services.AddDefaultIdentity<ApplicationUser>(options =>
-    {
-        options.Password.RequireDigit = false;
-        options.Password.RequireLowercase = false;
-        options.Password.RequireNonAlphanumeric = false;
-        options.Password.RequireUppercase = false;
-    })
+builder.Services.AddApplicationDbContexts(builder.Configuration);
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+})
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+//builder.Services.AddAuthentication()
+//    .AddFacebook(opt =>
+//    {
+//        opt.AppId = builder.Configuration.GetValue<string>("Facebook:AppId");
+//        opt.AppSecret = builder.Configuration.GetValue<string>("Facebook:AppSecret");
+//    });
 
 builder
     .Services.AddControllersWithViews()
@@ -46,6 +35,8 @@ builder
         options.ModelBinderProviders.Insert(1, new DoubleModelBinderProvider());
         options.ModelBinderProviders.Insert(2, new DateTimeModelBinderProvider(FormatingConstant.NormalDateFormat));
     });
+
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
@@ -78,5 +69,5 @@ app.UseHttpsRedirection()
         endpoints.MapDefaultControllerRoute();
         endpoints.MapRazorPages();
     });
-app.UseAuthentication();
+
 app.Run();
