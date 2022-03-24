@@ -16,21 +16,16 @@
     {
         private readonly IRepository<Profile> profileRepo;
         private readonly IRepository<Country> countryRepo;
-        private readonly IRepository<Image> imgRepo;
 
         private readonly IImageService imageService;
-
-        private readonly IWebHostEnvironment webHost;
 
         public ProfileService(
             IRepository<Profile> _profileRepo,
             IRepository<Country> _countryRepo,
-            IRepository<Image> _imgRepo,
             IImageService _imageService)
         {
             profileRepo = _profileRepo;
             countryRepo = _countryRepo;
-            imgRepo = _imgRepo;
 
             imageService = _imageService;
         }
@@ -64,15 +59,22 @@
             return profile.Id;
         }
 
+        public string GetId(string userId)
+            => profileRepo
+                .AllAsNoTracking()
+                .Where(x => x.User.Id == userId)
+                .Select(x => x.Id)
+                .FirstOrDefault();
+
         public Profile GetById(string id)
             => profileRepo
                 .AllAsNoTracking()
                 .FirstOrDefault(x => x.Id == id);
 
         public Profile GetByUserId(string id)
-        => profileRepo
-             .AllAsNoTracking()
-             .FirstOrDefault(x => x.User.Id == id);
+            => profileRepo
+                 .AllAsNoTracking()
+                 .FirstOrDefault(x => x.User.Id == id);
 
         public EditProfileViewModel GetEditViewModel(Profile profile)
         {
@@ -87,17 +89,9 @@
             return editProfileViewModel;
         }
 
-        public string GetId(string userId)
-            => profileRepo
-            .AllAsNoTracking()
-            .Where(x => x.User.Id == userId)
-            .Select(x => x.Id)
-            .FirstOrDefault();
-
         public RenderProfileViewModel RenderProfile(string id)
         {
-            var profile =
-                profileRepo
+            var profile = profileRepo
                 .AllAsNoTracking()
                 .Include(x => x.Country)
                 .Include(x => x.Image)
@@ -126,7 +120,9 @@
 
         public async Task UpdateAsync(string id, EditProfileViewModel input, string path)
         {
-            var profile = profileRepo.All().FirstOrDefault(x => x.User.Id == id);
+            var profile = profileRepo
+                .All()
+                .FirstOrDefault(x => x.User.Id == id);
 
             if (profile != null)
             {

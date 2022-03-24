@@ -1,7 +1,6 @@
 ﻿namespace FasterMate.Core.Contracts
 {
     using FasterMate.ViewModels.User;
-    using System.Web.Mvc;
 
     public interface IUserService
     {

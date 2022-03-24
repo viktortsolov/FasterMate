@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using System.Web.Mvc;
+
     using FasterMate.Core.Contracts;
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
@@ -58,7 +58,7 @@
             bool result = false;
 
             var user = await profileRepo
-                .AllAsNoTracking()
+                .All()
                 .FirstOrDefaultAsync(x => x.User.Id == model.Id);
 
             if (user != null)
@@ -67,7 +67,7 @@
                 user.LastName = model.LastName;
 
                 profileRepo.Update(user);
-                profileRepo.SaveChangesAsync();
+                await profileRepo.SaveChangesAsync();
                 result = true;
             }
 

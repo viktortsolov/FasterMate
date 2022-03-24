@@ -15,26 +15,26 @@
             imgRepo = _imgRepo;
         }
 
-        public async Task<string> CreateAsync(IFormFile image, string path)
+        public async Task<string> CreateAsync(IFormFile img, string path)
         {
             Directory.CreateDirectory($"{path}\\");
-            var extension = Path.GetExtension(image.FileName).TrimStart('.');
+            var extension = Path.GetExtension(img.FileName).TrimStart('.');
 
-            var imageObj = new Image
+            var imgObj = new Image
             {
                 Extension = extension,
             };
 
-            await this.imgRepo.AddAsync(imageObj);
-            await this.imgRepo.SaveChangesAsync();
+            await imgRepo.AddAsync(imgObj);
+            await imgRepo.SaveChangesAsync();
 
-            var physicalPath = $"{path}\\{imageObj.Id}.{extension}";
+            var physicalPath = $"{path}\\{imgObj.Id}.{extension}";
             using (Stream fileStream = new FileStream(physicalPath, FileMode.Create))
             {
-                await image.CopyToAsync(fileStream);
+                await img.CopyToAsync(fileStream);
             }
 
-            return imageObj.Id;
+            return imgObj.Id;
         }
     }
 }

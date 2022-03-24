@@ -38,7 +38,6 @@
         public string? CountryId { get; set; }
         public virtual Country? Country { get; set; }
 
-
         public virtual ApplicationUser User { get; set; }
     }
 }

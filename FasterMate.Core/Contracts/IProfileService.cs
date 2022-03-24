@@ -11,13 +11,12 @@
 
         string GetId(string userId);
 
-        Task<string> CreateAsync(RegisterViewModel input);
+        EditProfileViewModel GetEditViewModel(Profile profile);
 
         RenderProfileViewModel RenderProfile(string id);
 
-        EditProfileViewModel GetEditViewModel(Profile profile);
-
         Task UpdateAsync(string id, EditProfileViewModel input, string path);
 
+        Task<string> CreateAsync(RegisterViewModel input);
     }
 }

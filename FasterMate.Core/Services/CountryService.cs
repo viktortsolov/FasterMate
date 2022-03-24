@@ -13,17 +13,13 @@
         public CountryService(
             IRepository<Country> _repo)
         {
-            this.repo = _repo;
+            repo = _repo;
         }
 
         public IEnumerable<KeyValuePair<string, string>> GetAllAsKvp()
-        => this.repo
+        => repo
             .AllAsNoTracking()
-            .Select(x => new
-            {
-                x.Id,
-                x.Name
-            })
+            .Select(x => new { x.Id, x.Name })
             .OrderBy(x => x.Name)
             .Select(x => new KeyValuePair<string, string>(x.Id, x.Name));
     }
