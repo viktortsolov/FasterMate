@@ -11,9 +11,7 @@
     {
 
         public IActionResult Index()
-        {
-            ViewData[MessageConstant.SuccessMessage] = "Success! :)";
-
+        { 
             return View();
         }
 

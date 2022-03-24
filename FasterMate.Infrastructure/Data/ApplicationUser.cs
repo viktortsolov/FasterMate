@@ -18,8 +18,8 @@
 
         [Required]
         [ForeignKey(nameof(Profile))]
-        public string ProfileId { get; set; }
+        public string? ProfileId { get; set; }
         [Required]
-        public virtual Profile Profile { get; set; }
+        public virtual Profile? Profile { get; set; }
     }
 }
