@@ -98,8 +98,6 @@
                 .Where(x => x.User.ProfileId == id)
                 .FirstOrDefault();
 
-            var imgExtension = profile.Image.Extension;
-            var imgId = profile.Image.Id;
 
             var profileViewModel = new RenderProfileViewModel()
             {
@@ -107,13 +105,20 @@
                 FirstName = profile.FirstName,
                 LastName = profile.LastName,
                 Gender = profile.Gender.ToString(),
-                ImagePath = $"{imgId}.{imgExtension}",
                 Birthdate = profile.BirthDate,
                 Bio = profile.Bio,
                 Country = profile.Country.Name,
                 FollowersCount = 0,
                 FollowingCount = 0
             };
+
+            if (profile.Image != null)
+            {
+                var imgId = profile.Image.Id;
+                var imgExtension = profile.Image.Extension;
+
+                profileViewModel.ImagePath = $"{imgId}.{imgExtension}";
+            }
 
             return profileViewModel;
         }
