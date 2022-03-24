@@ -72,5 +72,10 @@
 
             return this.RedirectToAction(nameof(UserProfile), new { input.Id });
         }
+
+        public IActionResult Search()
+        {
+            return View(null);
+        }
     }
 }

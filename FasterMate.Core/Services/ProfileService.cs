@@ -16,16 +16,21 @@
     {
         private readonly IRepository<Profile> profileRepo;
         private readonly IRepository<Country> countryRepo;
+        private readonly IRepository<Image> imgRepo;
 
         private readonly IImageService imageService;
+
+        private readonly IWebHostEnvironment webHost;
 
         public ProfileService(
             IRepository<Profile> _profileRepo,
             IRepository<Country> _countryRepo,
+            IRepository<Image> _imgRepo,
             IImageService _imageService)
         {
             profileRepo = _profileRepo;
             countryRepo = _countryRepo;
+            imgRepo = _imgRepo;
 
             imageService = _imageService;
         }
@@ -95,9 +100,12 @@
                 profileRepo
                 .AllAsNoTracking()
                 .Include(x => x.Country)
+                .Include(x => x.Image)
                 .Where(x => x.User.ProfileId == id)
                 .FirstOrDefault();
 
+            var imgExtension = profile.Image.Extension;
+            var imgId = profile.Image.Id;
 
             var profileViewModel = new RenderProfileViewModel()
             {
@@ -105,6 +113,7 @@
                 FirstName = profile.FirstName,
                 LastName = profile.LastName,
                 Gender = profile.Gender.ToString(),
+                ImagePath = $"{imgId}.{imgExtension}",
                 Birthdate = profile.BirthDate,
                 Bio = profile.Bio,
                 Country = profile.Country.Name,

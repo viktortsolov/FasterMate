@@ -17,7 +17,7 @@
 
         public async Task<string> CreateAsync(IFormFile image, string path)
         {
-            Directory.CreateDirectory($"{path}/");
+            Directory.CreateDirectory($"{path}\\");
             var extension = Path.GetExtension(image.FileName).TrimStart('.');
 
             var imageObj = new Image
@@ -28,7 +28,7 @@
             await this.imgRepo.AddAsync(imageObj);
             await this.imgRepo.SaveChangesAsync();
 
-            var physicalPath = $"{path}/{imageObj.Id}.{extension}";
+            var physicalPath = $"{path}\\{imageObj.Id}.{extension}";
             using (Stream fileStream = new FileStream(physicalPath, FileMode.Create))
             {
                 await image.CopyToAsync(fileStream);
