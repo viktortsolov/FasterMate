@@ -1,12 +1,14 @@
 ﻿namespace FasterMate.Core.Services
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     using FasterMate.Core.Contracts;
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
-    using FasterMate.ViewModels.Profile;
+    using FasterMate.ViewModels.User;
+
     using Microsoft.EntityFrameworkCore;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     public class UserService : IUserService
     {
@@ -21,12 +23,13 @@
         {
             return await repo
                     .All()
-                    .Include(x => x.ProfileId)
+                    .Include(x => x.Profile)
                     .Select(x => new UserListViewModel()
                     {
                         Id = x.Id,
                         Email = x.Email,
-                        Name = $"{x.Profile.FirstName} {x.Profile.LastName}"
+                        Name = $"{x.Profile.FirstName} {x.Profile.LastName}",
+                        Username = x.UserName
                     })
                     .ToListAsync();
         }

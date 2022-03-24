@@ -1,4 +1,4 @@
-﻿namespace FasterMate.ViewModels.Profile
+﻿namespace FasterMate.ViewModels.User
 {
     public class UserListViewModel
     {

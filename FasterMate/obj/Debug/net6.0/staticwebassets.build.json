@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NUC3jMJlIHBYfH1X/ATiAdnX03LhDUWiCo68cn6q4xg=",
+  "Hash": "6vqG/1tIgflmt2m61HPyzBDBwvFGysc1+7W5JMYaYaE=",
   "Source": "FasterMate",
   "BasePath": "_content/FasterMate",
   "Mode": "Default",
@@ -1581,12 +1581,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\common\\default.png",
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\common\\default-female.png",
       "SourceId": "FasterMate",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
       "BasePath": "_content/FasterMate",
-      "RelativePath": "img/common/default.png",
+      "RelativePath": "img/common/default-female.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1595,7 +1595,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\common\\default.png"
+      "OriginalItemSpec": "wwwroot\\img\\common\\default-female.png"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\common\\default-male.png",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/common/default-male.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\common\\default-male.png"
     },
     {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\common\\logo.png",

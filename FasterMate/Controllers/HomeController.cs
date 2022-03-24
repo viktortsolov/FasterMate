@@ -1,9 +1,11 @@
 ﻿namespace FasterMate.Controllers
 {
+    using System.Diagnostics;
+
     using FasterMate.Core.Constants;
     using FasterMate.ViewModels;
+
     using Microsoft.AspNetCore.Mvc;
-    using System.Diagnostics;
 
     public class HomeController : Controller
     {

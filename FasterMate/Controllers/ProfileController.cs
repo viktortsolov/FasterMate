@@ -1,9 +1,7 @@
 ﻿namespace FasterMate.Controllers
 {
-    using FasterMate.Core.Constants;
     using FasterMate.Core.Contracts;
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Identity;
+
     using Microsoft.AspNetCore.Mvc;
 
     public class ProfileController : Controller
@@ -22,7 +20,7 @@
 
             if (viewModel == null)
             {
-                return this.NotFound();
+                return NotFound();
             }
 
             //TODO: Claims!

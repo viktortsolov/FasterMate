@@ -12,9 +12,18 @@
                 <div class="text-center">
                     @if (Model.ImagePath == null)
                     {
+                        @if(Model.Gender == "Male")
+                        {
                         <img class="profile-user-img img-fluid img-circle"
-                         src="~/img/common/default.png"
+                         src="~/img/common/default-male.png"
                          alt="User profile picture">
+                        }
+                        else
+                        {
+                        <img class="profile-user-img img-fluid img-circle"
+                         src="~/img/common/default-female.png"
+                         alt="User profile picture">
+                        }
                     }
                 </div>
 

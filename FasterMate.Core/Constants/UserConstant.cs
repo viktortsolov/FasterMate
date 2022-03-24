@@ -1,8 +1,10 @@
-﻿namespace FasterMate.Core.Constants
+﻿ namespace FasterMate.Core.Constants
 {
     public static class UserConstant
     {
-        public const string Administrator = "Administrator";
-        public const string Manager = "Administrator, Manager";
+        public static class Roles
+        {
+            public const string Administrator = "Administrator";
+        }
     }
 }

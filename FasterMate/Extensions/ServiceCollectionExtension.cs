@@ -4,6 +4,7 @@
     using FasterMate.Core.Services;
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastrucutre.Data;
+
     using Microsoft.EntityFrameworkCore;
 
     public static class ServiceCollectionExtension
