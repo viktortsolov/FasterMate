@@ -6,14 +6,9 @@
 
     public class Profile
     {
-        public Profile()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
-
         [Key]
         [MaxLength(36)]
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
         [Required]
         [MaxLength(64)]
@@ -35,13 +30,13 @@
 
         [ForeignKey(nameof(Image))]
         public string? ImageId { get; set; }
-        public virtual Image Image { get; set; }
+        public virtual Image? Image { get; set; }
 
 
         [Required]
         [ForeignKey(nameof(Country))]
         public string? CountryId { get; set; }
-        public virtual Country Country { get; set; }
+        public virtual Country? Country { get; set; }
 
 
         public virtual ApplicationUser User { get; set; }

@@ -1,1 +1,36 @@
-﻿
+﻿@model EditProfileViewModel
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-primary card-outline">
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="FirstName"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Bio"></label>
+                    <input asp-for="Bio" class="form-control" />
+                    <span asp-validation-for="Bio" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image"></label>
+                    <input asp-for="Image" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <a asp-action="UserProfile" asp-route-id="@Model.Id">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

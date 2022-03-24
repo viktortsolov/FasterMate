@@ -5,12 +5,19 @@
 
     public interface IProfileService
     {
-        string GetId(string userId);
+        Profile GetById(string id);
 
-        T GetById<T>(string id);
+        Profile GetByUserId(string id);
+
+        string GetId(string userId);
 
         Task<string> CreateAsync(RegisterViewModel input);
 
         RenderProfileViewModel RenderProfile(string id);
+
+        EditProfileViewModel GetEditViewModel(Profile profile);
+
+        Task UpdateAsync(string id, EditProfileViewModel input, string path);
+
     }
 }

@@ -9,6 +9,7 @@
     using FasterMate.Infrastructure.Data;
     using FasterMate.Infrastructure.Data.Enums;
     using FasterMate.ViewModels.Profile;
+
     using Microsoft.EntityFrameworkCore;
 
     public class ProfileService : IProfileService
@@ -16,12 +17,17 @@
         private readonly IRepository<Profile> profileRepo;
         private readonly IRepository<Country> countryRepo;
 
+        private readonly IImageService imageService;
+
         public ProfileService(
             IRepository<Profile> _profileRepo,
-            IRepository<Country> _countryRepo)
+            IRepository<Country> _countryRepo,
+            IImageService _imageService)
         {
-            this.profileRepo = _profileRepo;
-            this.countryRepo = _countryRepo;
+            profileRepo = _profileRepo;
+            countryRepo = _countryRepo;
+
+            imageService = _imageService;
         }
 
         public async Task<string> CreateAsync(RegisterViewModel input)
@@ -52,17 +58,36 @@
 
             return profile.Id;
         }
-        public T GetById<T>(string id)
+
+        public Profile GetById(string id)
+            => profileRepo
+                .AllAsNoTracking()
+                .FirstOrDefault(x => x.Id == id);
+
+        public Profile GetByUserId(string id)
+        => profileRepo
+             .AllAsNoTracking()
+             .FirstOrDefault(x => x.User.Id == id);
+
+        public EditProfileViewModel GetEditViewModel(Profile profile)
         {
-            throw new NotImplementedException();
+            var editProfileViewModel = new EditProfileViewModel()
+            {
+                Id = profile.Id,
+                FirstName = profile.FirstName,
+                LastName = profile.LastName,
+                Bio = profile.Bio
+            };
+
+            return editProfileViewModel;
         }
 
-        public string GetId(string profileId)
-         => profileRepo.AllAsNoTracking()
-            .Where(x => x.User.ProfileId == profileId)
+        public string GetId(string userId)
+            => profileRepo
+            .AllAsNoTracking()
+            .Where(x => x.User.Id == userId)
             .Select(x => x.Id)
             .FirstOrDefault();
-
 
         public RenderProfileViewModel RenderProfile(string id)
         {
@@ -88,6 +113,26 @@
             };
 
             return profileViewModel;
+        }
+
+        public async Task UpdateAsync(string id, EditProfileViewModel input, string path)
+        {
+            var profile = profileRepo.All().FirstOrDefault(x => x.User.Id == id);
+
+            if (profile != null)
+            {
+                profile.FirstName = input.FirstName;
+                profile.LastName = input.LastName;
+                profile.Bio = input.Bio;
+
+                if (input.Image?.Length > 0)
+                {
+                    profile.ImageId = await imageService.CreateAsync(input.Image, path);
+                }
+
+                profileRepo.Update(profile);
+                await profileRepo.SaveChangesAsync();
+            }
         }
 
         private bool CountryValidation(string id)

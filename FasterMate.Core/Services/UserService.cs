@@ -53,7 +53,6 @@
                     .ToListAsync();
         }
 
-        //TODO: Updating user does not work...
         public async Task<bool> UpdateUser(UserEditViewModel model)
         {
             bool result = false;

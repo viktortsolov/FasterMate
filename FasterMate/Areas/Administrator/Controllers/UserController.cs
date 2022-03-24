@@ -54,7 +54,6 @@
             return View(model);
         }
 
-        //TODO: Edit throws error
         [Microsoft.AspNetCore.Mvc.HttpPost]
         public async Task<IActionResult> Edit(string id, UserEditViewModel model)
         {
