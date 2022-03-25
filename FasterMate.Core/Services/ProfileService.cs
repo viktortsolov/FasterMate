@@ -16,16 +16,19 @@
     {
         private readonly IRepository<Profile> profileRepo;
         private readonly IRepository<Country> countryRepo;
+        private readonly IRepository<ProfileFollower> followersRepo;
 
         private readonly IImageService imageService;
 
         public ProfileService(
             IRepository<Profile> _profileRepo,
             IRepository<Country> _countryRepo,
+            IRepository<ProfileFollower> _followersRepo,
             IImageService _imageService)
         {
             profileRepo = _profileRepo;
             countryRepo = _countryRepo;
+            followersRepo = _followersRepo;
 
             imageService = _imageService;
         }
@@ -95,6 +98,8 @@
                 .AllAsNoTracking()
                 .Include(x => x.Country)
                 .Include(x => x.Image)
+                .Include(x => x.Followers)
+                .Include(x => x.Following)
                 .Where(x => x.User.ProfileId == id)
                 .FirstOrDefault();
 
@@ -102,14 +107,15 @@
             var profileViewModel = new RenderProfileViewModel()
             {
                 Id = profile.Id,
+                IsFollowing = profile.Following.Any(x => x.ProfileId == id),
                 FirstName = profile.FirstName,
                 LastName = profile.LastName,
                 Gender = profile.Gender.ToString(),
                 Birthdate = profile.BirthDate,
                 Bio = profile.Bio,
                 Country = profile.Country.Name,
-                FollowersCount = 0,
-                FollowingCount = 0
+                FollowersCount = profile.Followers.Count,
+                FollowingCount = profile.Following.Count
             };
 
             if (profile.Image != null)
@@ -145,6 +151,32 @@
             }
         }
 
+        public async Task FollowProfileAsync(string currentProfileId, string askingProfileId)
+        {
+            if (askingProfileId != currentProfileId)
+            {
+                var followingRelation = followersRepo
+                    .All()
+                    .FirstOrDefault
+                        (x => x.FollowerId == askingProfileId && x.ProfileId == currentProfileId);
+
+                if (followingRelation == null)
+                {
+                    await followersRepo.AddAsync(new ProfileFollower
+                    {
+                        ProfileId = currentProfileId,
+                        FollowerId = askingProfileId,
+                    });
+                }
+                else
+                {
+                    followersRepo.Delete(followingRelation);
+                }
+
+                await followersRepo.SaveChangesAsync();
+            }
+        }
+
         private bool CountryValidation(string id)
             => countryRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id) == null;
 
@@ -154,5 +186,6 @@
 
             return genderValue;
         }
+
     }
 }

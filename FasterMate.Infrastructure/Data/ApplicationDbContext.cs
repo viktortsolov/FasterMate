@@ -18,6 +18,8 @@
 
         public DbSet<Country> Countries { get; set; }
 
+        public DbSet<ProfileFollower> ProfileFollowers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -29,6 +31,17 @@
             builder.Entity<Profile>()
                 .Property(p => p.ImageId)
                 .IsRequired(false);
+
+            builder.Entity<ProfileFollower>()
+                .HasKey(e => new { e.ProfileId, e.FollowerId });
+
+            builder.Entity<Profile>()
+                .HasMany(p => p.Followers)
+                .WithOne(x => x.Follower);
+
+            builder.Entity<Profile>()
+                .HasMany(p => p.Following)
+                .WithOne(x => x.Profile);
 
             var entityTypes = builder
                 .Model

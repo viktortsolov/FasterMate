@@ -27,7 +27,6 @@
         {
             var viewModel = profileService.RenderProfile(id);
 
-
             if (viewModel == null)
             {
                 return NotFound();
@@ -76,6 +75,16 @@
         public IActionResult Search()
         {
             return View(null);
+        }
+
+        public async Task<IActionResult> Follow(string id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            await profileService.FollowProfileAsync(id, profileId);
+
+            return RedirectToAction(nameof(UserProfile), new { id });
         }
     }
 }

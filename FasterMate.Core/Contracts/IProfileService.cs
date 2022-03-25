@@ -18,5 +18,7 @@
         Task UpdateAsync(string id, EditProfileViewModel input, string path);
 
         Task<string> CreateAsync(RegisterViewModel input);
+
+        Task FollowProfileAsync(string currentProfileId, string askingProfileId);
     }
 }

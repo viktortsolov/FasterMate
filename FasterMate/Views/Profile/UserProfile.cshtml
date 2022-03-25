@@ -37,17 +37,28 @@
 
                 <ul class="list-group list-group-unbordered mb-3">
                     <li class="list-group-item">
-                        <b>Followers</b> <a class="float-right">@Model.FollowersCount</a>
+                        <b>Following</b> <a class="float-right">@Model.FollowersCount</a>
                     </li>
                     <li class="list-group-item">
-                        <b>Following</b> <a class="float-right">@Model.FollowingCount</a>
+                        <b>Followers</b> <a class="float-right">@Model.FollowingCount</a>
                     </li>
                 </ul>
 
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                
                 @if (Model.IsOwner)
                 {
                     <a asp-action="Edit" asp-controller="Profile" class="btn btn-primary btn-block"><b>Edit</b></a>
+                }
+                else
+                {
+                    if(!Model.IsFollowing)
+                    {
+                        <a asp-action="Follow" asp-controller="Profile" asp-route-id="@Model.Id" class="btn btn-primary btn-block"><b>Follow</b></a>
+                    }
+                    else
+                    {
+                        <a asp-action="Follow" asp-controller="Profile" asp-route-id="@Model.Id" class="btn btn-primary btn-block"><b>Unfollow</b></a>
+                    }
                 }
             </div>
         </div>

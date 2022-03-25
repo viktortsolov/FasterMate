@@ -39,5 +39,8 @@
         public virtual Country? Country { get; set; }
 
         public virtual ApplicationUser User { get; set; }
+
+        public virtual ICollection<ProfileFollower> Followers { get; set; } = new HashSet<ProfileFollower>();
+        public virtual ICollection<ProfileFollower> Following { get; set; } = new HashSet<ProfileFollower>();
     }
 }
