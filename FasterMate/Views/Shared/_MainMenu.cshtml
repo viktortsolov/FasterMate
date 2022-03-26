@@ -42,6 +42,38 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" asp-controller="Post" asp-action="CreatePost">
+                    <i class="nav-icon fas fa-clipboard"></i>
+                    <p>
+                        Create a Post
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Booking" asp-action="BookAFlight">
+                    <i class="nav-icon fas fa-plane-departure"></i>
+                    <p>
+                        Book a Flight?
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Booking" asp-action="MyFlights">
+                    <i class="nav-icon fas fa-ticket-alt"></i>
+                    <p>
+                        My Flights
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="..." asp-action="...">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>
+                        Chat
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
                     <i class="nav-icon fas fa-sign-out-alt"></i>
                     <p>

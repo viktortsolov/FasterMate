@@ -1,9 +1,11 @@
 ﻿namespace FasterMate.Controllers
 {
+    using System.Security.Claims;
+
     using FasterMate.Core.Contracts;
     using FasterMate.ViewModels.Post;
+
     using Microsoft.AspNetCore.Mvc;
-    using System.Security.Claims;
 
     public class PostController : BaseController
     {
@@ -49,6 +51,25 @@
             await postService.CreateAsync(profileId, input, $"{webHost.WebRootPath}\\img\\posts");
 
             return RedirectToAction("UserProfile", "Profile", new { id = profileId });
+        }
+
+        //TODO: Like a post
+        [HttpPost]
+        public async Task<IActionResult> LikePost(string id)
+        {
+            return RedirectToAction("UserProfile", "Profile", new { id = id });
+        }
+
+        //TODO: Comments
+        public IActionResult Comments()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Comments(string id)
+        {
+            return null;
         }
     }
 }
