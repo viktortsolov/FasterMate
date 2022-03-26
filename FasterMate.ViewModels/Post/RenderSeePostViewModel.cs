@@ -1,8 +1,10 @@
 ﻿namespace FasterMate.ViewModels.Post
 {
-    public class RenderProfilePostsViewModel
+    using FasterMate.ViewModels.Comment;
+
+    public class RenderSeePostViewModel
     {
-        public string Id { get; set;}
+        public string Id { get; set; }
 
         public string Text { get; set; }
 
@@ -15,5 +17,8 @@
         public int LikesCount { get; set; }
 
         public int CommentsCount { get; set; }
+
+        public IEnumerable<RenderCommentViewModel> Comments { get; set; } = new HashSet<RenderCommentViewModel>();
+
     }
 }

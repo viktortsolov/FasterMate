@@ -30,15 +30,15 @@
             userService = _userService;
         }
 
-        public async Task<IActionResult> CreateRole()
-        {
-            //await roleManager.CreateAsync(new IdentityRole()
-            //{
-            //    Name = "Administrator"
-            //});
+        //public async Task<IActionResult> CreateRole()
+        //{
+        //    //await roleManager.CreateAsync(new IdentityRole()
+        //    //{
+        //    //    Name = "Administrator"
+        //    //});
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
         public async Task<IActionResult> ManageUsers()
         {

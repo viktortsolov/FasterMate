@@ -8,6 +8,6 @@
 
         Task DeleteAsync(string id);
 
-        IEnumerable<RenderCommentViewModel> GetAllOfPost();
+        IEnumerable<RenderCommentViewModel> GetAllOfPost(string postId);
     }
 }

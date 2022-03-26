@@ -20,6 +20,10 @@
 
         public DbSet<Post> Posts { get; set; }
 
+        public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<PostLike> PostLikes { get; set; }
+
         public DbSet<ProfileFollower> ProfileFollowers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -44,6 +48,9 @@
             builder.Entity<Profile>()
                 .HasMany(p => p.Following)
                 .WithOne(x => x.Profile);
+
+            builder.Entity<PostLike>()
+               .HasKey(e => new { e.PostId, e.ProfileId });
 
             var entityTypes = builder
                 .Model

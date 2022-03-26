@@ -31,8 +31,8 @@
         public string ProfileId { get; set; }
         public virtual Profile Profile { get; set; }
 
-        //public virtual ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
+        public virtual ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();
 
-        //public virtual ICollection<PostLikes> PostLikes { get; set; } = new HashSet<PostLike>();
+        public virtual ICollection<PostLike> PostLikes { get; set; } = new HashSet<PostLike>();
     }
 }

@@ -122,10 +122,10 @@
                                         </div>
 
                                         <p>
-                                            <a asp-action="LikePost" asp-controller="Post" asp-route-id="@post.Id" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
+                                            <a method="post" asp-action="SeePost" asp-controller="Post" asp-route-id="@post.Id" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like (@post.LikesCount)</a>
                                             <span class="float-right">
-                                                <a asp-action="Comments" asp-controller="Post" asp-route-id="@post.Id" class="link-black text-sm">
-                                                    <i class="far fa-comments mr-1"></i> Comments
+                                                <a asp-action="SeePost" asp-controller="Post" asp-route-id="@post.Id" class="link-black text-sm">
+                                                    <i class="far fa-comments mr-1"></i> Comments (@post.CommentsCount)
                                                 </a>
                                             </span>
                                         </p>

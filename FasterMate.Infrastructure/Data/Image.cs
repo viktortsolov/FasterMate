@@ -4,14 +4,9 @@
 
     public class Image
     {
-        public Image()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
-
         [Key]
         [MaxLength(36)]
-        public string Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
         [Required]
         public string Extension { get; set; }

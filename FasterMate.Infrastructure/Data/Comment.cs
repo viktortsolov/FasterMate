@@ -14,7 +14,7 @@ namespace FasterMate.Infrastructure.Data
         public string Text { get; set; }
 
         [Required]
-        [ForeignKey(nameof(Post))]
+        [ForeignKey(nameof(Profile))]
         [MaxLength(36)]
         public string ProfileId { get; set; }
         public virtual Profile Profile { get; set; }

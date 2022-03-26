@@ -53,23 +53,33 @@
             return RedirectToAction("UserProfile", "Profile", new { id = profileId });
         }
 
-        //TODO: Like a post
-        [HttpPost]
-        public async Task<IActionResult> LikePost(string id)
+        public IActionResult SeePost(string id)
         {
-            return RedirectToAction("UserProfile", "Profile", new { id = id });
+            var post = postService.RenderSinglePost(id);
+
+            return View(post);
+        }
+
+        //TODO: Finish
+        [HttpPost]
+        public async Task LikePost(string postId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            await postService.LikePostAsync(profileId, postId);
         }
 
         //TODO: Comments
-        public IActionResult Comments()
-        {
-            return View();
-        }
+        //public IActionResult Comments()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public async Task<IActionResult> Comments(string id)
-        {
-            return null;
-        }
+        //[HttpPost]
+        //public async Task<IActionResult> Comments(string id)
+        //{
+        //    return null;
+        //}
     }
 }

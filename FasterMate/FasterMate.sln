@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FasterMate.Core", "..\Faste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FasterMate.Infrastructure", "..\FasterMate.Infrastructure\FasterMate.Infrastructure.csproj", "{019884AB-4648-44D7-AE53-2965A25B9531}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterMate.ViewModels", "..\FasterMate.ViewModels\FasterMate.ViewModels.csproj", "{ECD6EF6B-C54D-4B49-8C5A-FF811ED9E6D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FasterMate.ViewModels", "..\FasterMate.ViewModels\FasterMate.ViewModels.csproj", "{ECD6EF6B-C54D-4B49-8C5A-FF811ED9E6D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
