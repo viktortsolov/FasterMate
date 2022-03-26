@@ -1,0 +1,52 @@
+﻿@model CreatePostViewModel
+@{
+    ViewData["Title"] = "Create a post";
+}
+
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Create a post</h3>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <div class="card-body">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Text"></label>
+                        <input asp-for="Text" class="form-control" />
+                        <span asp-validation-for="Text" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Location"></label>
+                        <input asp-for="Location" class="form-control" />
+                        <span asp-validation-for="Location" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Image"></label>
+                        <input asp-for="Image" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                </div>
+                <input type="hidden" asp-for="@Model.ReturnId" />
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+                @if (Model.IsProfile)
+                {
+                    <a asp-controller="Profile" asp-action="UserProfile" asp-route-id="@Model.ReturnId">Cancel</a>
+                }
+                else
+                {
+                    <a asp-controller="Home" asp-action="Index" asp-route-id="@Model.ReturnId">Cancel</a>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -5,7 +5,7 @@
     using Microsoft.AspNetCore.Mvc;
     using System.Security.Claims;
 
-    public class ProfileController : Controller
+    public class ProfileController : BaseController
     {
         private readonly IProfileService profileService;
         private readonly ICountryService countryService;
@@ -32,8 +32,8 @@
                 return NotFound();
             }
 
-            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var profileId = this.profileService.GetId(userId);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
 
             viewModel.IsOwner = profileId == id;
 
@@ -46,7 +46,7 @@
             var user = profileService.GetByUserId(userId);
             var editViewModel = profileService.GetEditViewModel(user);
 
-            return this.View(editViewModel);
+            return View(editViewModel);
         }
 
         [HttpPost]
@@ -54,29 +54,25 @@
         {
             if (!ModelState.IsValid)
             {
-                return this.View(input);
+                return View(input);
             }
 
-            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             try
             {
-                await this.profileService.UpdateAsync(userId, input, $"{this.webHost.WebRootPath}\\img\\users");
+                await profileService.UpdateAsync(userId, input, $"{webHost.WebRootPath}\\img\\users");
             }
             catch (ArgumentException ae)
             {
-                this.ModelState.AddModelError(string.Empty, ae.Message);
-                return this.View(input);
+                ModelState.AddModelError(string.Empty, ae.Message);
+                return View(input);
             }
 
-            return this.RedirectToAction(nameof(UserProfile), new { input.Id });
+            return RedirectToAction(nameof(UserProfile), new { input.Id });
         }
 
-        public IActionResult Search()
-        {
-            return View(null);
-        }
-
+        [HttpPost]
         public async Task<IActionResult> Follow(string id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);

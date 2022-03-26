@@ -27,9 +27,9 @@
 
         public string Country { get; set; }
 
-        public int FollowersCount { get; set; }
-
         public int FollowingCount { get; set; }
+
+        public int FollowersCount { get; set; }
 
         //TODO: Posts
         public IEnumerable<string> Posts { get; set; }

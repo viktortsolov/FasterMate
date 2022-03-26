@@ -16,7 +16,8 @@
             services.AddScoped<IProfileService, ProfileService>()
                     .AddScoped<ICountryService, CountryService>()
                     .AddScoped<IUserService, UserService>()
-                    .AddScoped<IImageService, ImageService>();
+                    .AddScoped<IImageService, ImageService>()
+                    .AddScoped<IPostService, PostService>();
 
             return services;
         }

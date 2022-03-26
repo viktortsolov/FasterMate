@@ -114,8 +114,8 @@
                 Birthdate = profile.BirthDate,
                 Bio = profile.Bio,
                 Country = profile.Country.Name,
-                FollowersCount = profile.Followers.Count,
-                FollowingCount = profile.Following.Count
+                FollowingCount = profile.Followers.Count,
+                FollowersCount = profile.Following.Count
             };
 
             if (profile.Image != null)

@@ -18,6 +18,8 @@
 
         public DbSet<Country> Countries { get; set; }
 
+        public DbSet<Post> Posts { get; set; }
+
         public DbSet<ProfileFollower> ProfileFollowers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
