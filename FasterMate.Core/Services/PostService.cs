@@ -7,6 +7,7 @@
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
     using FasterMate.ViewModels.Post;
+
     using Microsoft.EntityFrameworkCore;
 
     public class PostService : IPostService
@@ -53,9 +54,11 @@
                     Id = x.Id,
                     Text = x.Text,
                     Location = x.Location,
-                    CreatedOn = x.CreatedOn.ToString("MM/dd/yyyy"),
+                    CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy"),
                     ImagePath = $"{x.Image.Id}.{x.Image.Extension}"
                 })
                 .ToList();
+
+
     }
 }
