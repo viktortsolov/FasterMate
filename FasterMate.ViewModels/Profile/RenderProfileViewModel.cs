@@ -1,12 +1,9 @@
 ﻿namespace FasterMate.ViewModels.Profile
 {
+    using FasterMate.ViewModels.Post;
+
     public class RenderProfileViewModel
     {
-        public RenderProfileViewModel()
-        {
-            Posts = new List<string>();
-        }
-
         public string Id { get; set; }
 
         public bool IsOwner { get; set; }
@@ -31,7 +28,6 @@
 
         public int FollowersCount { get; set; }
 
-        //TODO: Posts
-        public IEnumerable<string> Posts { get; set; }
+        public IEnumerable<RenderProfilePostsViewModel> Posts { get; set; } = new HashSet<RenderProfilePostsViewModel>();
     }
 }

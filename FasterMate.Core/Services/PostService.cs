@@ -1,11 +1,13 @@
 ﻿namespace FasterMate.Core.Services
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     using FasterMate.Core.Contracts;
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
     using FasterMate.ViewModels.Post;
+    using Microsoft.EntityFrameworkCore;
 
     public class PostService : IPostService
     {
@@ -39,5 +41,21 @@
             await postRepo.AddAsync(post);
             await postRepo.SaveChangesAsync();
         }
+
+        public IEnumerable<RenderProfilePostsViewModel> RenderPostsForProfile(string id)
+            => postRepo
+                .AllAsNoTracking()
+                .Include(x => x.Image)
+                .Where(x => x.ProfileId == id)
+                .OrderByDescending(x => x.CreatedOn)
+                .Select(x => new RenderProfilePostsViewModel()
+                {
+                    Id = x.Id,
+                    Text = x.Text,
+                    Location = x.Location,
+                    CreatedOn = x.CreatedOn.ToString("MM/dd/yyyy"),
+                    ImagePath = $"{x.Image.Id}.{x.Image.Extension}"
+                })
+                .ToList();
     }
 }

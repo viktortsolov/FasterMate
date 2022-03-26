@@ -18,18 +18,21 @@
         private readonly IRepository<Country> countryRepo;
         private readonly IRepository<ProfileFollower> followersRepo;
 
+        private readonly IPostService postService;
         private readonly IImageService imageService;
 
         public ProfileService(
             IRepository<Profile> _profileRepo,
             IRepository<Country> _countryRepo,
             IRepository<ProfileFollower> _followersRepo,
+            IPostService _postService,
             IImageService _imageService)
         {
             profileRepo = _profileRepo;
             countryRepo = _countryRepo;
             followersRepo = _followersRepo;
 
+            postService = _postService;
             imageService = _imageService;
         }
 
@@ -115,7 +118,8 @@
                 Bio = profile.Bio,
                 Country = profile.Country.Name,
                 FollowingCount = profile.Followers.Count,
-                FollowersCount = profile.Following.Count
+                FollowersCount = profile.Following.Count,
+                Posts = postService.RenderPostsForProfile(id)
             };
 
             if (profile.Image != null)

@@ -5,5 +5,7 @@
     public interface IPostService
     {
         Task CreateAsync(string id, CreatePostViewModel input, string path);
+
+        IEnumerable<RenderProfilePostsViewModel> RenderPostsForProfile(string id);
     }
 }

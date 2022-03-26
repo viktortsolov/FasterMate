@@ -46,7 +46,7 @@
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
 
-            await postService.CreateAsync(profileId, input, $"{webHost.WebRootPath}\\img\\users");
+            await postService.CreateAsync(profileId, input, $"{webHost.WebRootPath}\\img\\posts");
 
             return RedirectToAction("UserProfile", "Profile", new { id = profileId });
         }
