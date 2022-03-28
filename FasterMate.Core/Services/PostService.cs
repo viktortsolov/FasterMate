@@ -136,5 +136,26 @@
 
             return post;
         }
+
+        public IEnumerable<RenderTimelinePostsViewModel> RenderTimelinePosts()
+           => postRepo
+            .AllAsNoTracking()
+            .Include(x => x.Image)
+            .Include(x => x.Profile)
+            .OrderByDescending(x => x.CreatedOn)
+            .Select(r => new RenderTimelinePostsViewModel()
+            {
+                Id = r.Id,
+                Text = r.Text,
+                Location = r.Location,
+                CreatedOn = r.CreatedOn.ToString("dd/MM/yyyy"),
+                ImagePath = $"{r.Image.Id}.{r.Image.Extension}",
+                LikesCount = postLikesRepo.All().Where(x => x.PostId == r.Id).Count(),
+                CommentsCount = commentRepo.All().Where(x => x.PostId == r.Id).Count(),
+                ProfileId = r.ProfileId,
+                ProfileName = $"{r.Profile.FirstName} {r.Profile.LastName}",
+                ProfileImgPath = r.Profile.Image != null ? $"{r.Profile.Image.Id}.{r.Profile.Image.Extension}" : null
+            })
+            .ToList();
     }
 }

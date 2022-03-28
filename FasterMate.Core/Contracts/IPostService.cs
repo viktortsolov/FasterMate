@@ -11,5 +11,7 @@
         Task LikePostAsync(string profileId, string postId);
 
         RenderSeePostViewModel RenderSinglePost(string id);
+
+        IEnumerable<RenderTimelinePostsViewModel> RenderTimelinePosts();
     }
 }

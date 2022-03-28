@@ -1,7 +1,7 @@
 ﻿namespace FasterMate.Controllers
 {
     using System.Diagnostics;
-
+    using FasterMate.Core.Contracts;
     using FasterMate.ViewModels;
 
     using Microsoft.AspNetCore.Authorization;
@@ -9,10 +9,18 @@
 
     public class HomeController : Controller
     {
+        private readonly IPostService postService;
+
+        public HomeController(IPostService _postService)
+        {
+            postService = _postService;
+        }
 
         public IActionResult Index()
         {
-            return View();
+            var model = postService.RenderTimelinePosts();
+
+            return View(model);
         }
 
 

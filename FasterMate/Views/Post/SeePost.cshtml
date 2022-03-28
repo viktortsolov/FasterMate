@@ -38,6 +38,7 @@
                 <img class="img-fluid pad" src="~/img/posts/@Model.ImagePath" alt="Photo">
                 <p>@Model.Text</p>
                 <a method="post" asp-action="LikePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-default btn-sm"><i class="far fa-thumbs-up"></i> Like</a>
+                <a method="post" asp-action="AddComment" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-default btn-sm"><i class="far fa-comment"></i> Comment</a>
                 <span class="float-right text-muted">@Model.LikesCount likes - @Model.CommentsCount comments</span>
             </div>
         </div>
@@ -48,6 +49,7 @@
                 @foreach (var comment in Model.Comments)
                 {
                     <div class="card-comment">
+
                         <img class="img-circle img-sm" src="~/img/common/default-male.png" alt="User Image">
                         <div class="comment-text">
                             <span class="username">
@@ -56,18 +58,9 @@
                             </span>
                             @comment.Text
                         </div>
+
                     </div>
                 }
-            </div>
-
-            <div class="card-footer">
-                <form asp-action="SeePost" method="post">
-                    <img class="img-fluid img-circle img-sm" src="~/img/users/@Model.ProfileImgPath" alt="User Image">
-
-                    <div class="img-push">
-                        <input asp-for="Text" type="text" class="form-control form-control-sm" placeholder="Press enter to post comment" />
-                    </div>
-                </form>
             </div>
         </div>
     </div>

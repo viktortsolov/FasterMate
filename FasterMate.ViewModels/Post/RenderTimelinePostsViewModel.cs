@@ -1,8 +1,8 @@
 ﻿namespace FasterMate.ViewModels.Post
 {
-    public class RenderProfilePostsViewModel
+    public class RenderTimelinePostsViewModel
     {
-        public string? Id { get; set;}
+        public string? Id { get; set; }
 
         public string? Text { get; set; }
 
@@ -15,5 +15,11 @@
         public int LikesCount { get; set; }
 
         public int CommentsCount { get; set; }
+
+        public string? ProfileId { get; set; }
+
+        public string? ProfileName { get; set; }
+
+        public string? ProfileImgPath { get; set; }
     }
 }

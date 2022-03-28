@@ -26,7 +26,7 @@
             {
                 ProfileId = profileId,
                 PostId = input.PostId,
-                Text = input.Text
+                Text = input.Comment
             };
 
             await commentRepo.AddAsync(comment);

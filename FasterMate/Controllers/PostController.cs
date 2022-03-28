@@ -3,6 +3,8 @@
     using System.Security.Claims;
 
     using FasterMate.Core.Contracts;
+    using FasterMate.Infrastructure.Data;
+    using FasterMate.ViewModels.Comment;
     using FasterMate.ViewModels.Post;
 
     using Microsoft.AspNetCore.Mvc;
@@ -73,12 +75,33 @@
             return RedirectToAction("SeePost", "Post", new { id = id });
         }
 
-        //TODO:
-        //[HttpPost]
-        //public async Task<IActionResult> Comment(string text)
-        //{
-        //    var comment = new Comment)
-        //    return null;
-        //}
+        public IActionResult AddComment(string id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            var viewModel = new AddCommentViewModel();
+            viewModel.ReturnId = profileId;
+            viewModel.PostId = id;
+            viewModel.IsProfile = true;
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddComment(AddCommentViewModel input)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(input);
+            }
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            await commentService.AddAsync(profileId, input);
+
+            return RedirectToAction("SeePost", "Post", new { id = input.PostId });
+        }
     }
 }
