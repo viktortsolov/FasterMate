@@ -1,19 +1,28 @@
 ﻿namespace FasterMate.Controllers
 {
     using System.Diagnostics;
-    using FasterMate.Core.Contracts;
-    using FasterMate.ViewModels;
 
+    using FasterMate.Core.Contracts;
+    using FasterMate.Infrastructure.Common;
+    using FasterMate.Infrastructure.Data;
+    using FasterMate.ViewModels;
+    using FasterMate.ViewModels.Profile;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
 
     public class HomeController : Controller
     {
         private readonly IPostService postService;
 
-        public HomeController(IPostService _postService)
+        private readonly IRepository<Profile> profileRepo;
+
+        public HomeController(
+            IPostService _postService,
+            IRepository<Profile> _profileRepo)
         {
             postService = _postService;
+            profileRepo = _profileRepo;
         }
 
         public IActionResult Index()
@@ -24,26 +33,61 @@
         }
 
 
-        //TODO: Search
         [Authorize]
-        public IActionResult Search(string text, string id)
+        public IActionResult Search(string text)
         {
-            //if (text != null && text != string.Empty)
-            //{
-            //    var searchTokens = text.ToLower().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            //TODO: Extract this method in service (profile service or sth.)
+            var models = profileRepo
+                .AllAsNoTracking()
+                .Include(x => x.Image)
+                .Include(x => x.Country)
+                .Select(x => new SearchProfileViewModel()
+                {
+                    ProfileId = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    ImagePath = x.Image != null ? $"{x.Image.Id}.{x.Image.Extension}" : null,
+                    Country = x.Country.Name
+                })
+                .ToList();
 
-            //    var 
+            if (text != null)
+            {
+                models = models.Where(x =>
+                    x.FirstName.Contains(text) ||
+                    x.LastName.Contains(text) ||
+                    x.Country.Contains(text))
+                    .ToList();
+            }
 
-            //    var viewModel = new SearchProfileViewModel()
-            //    {
-
-            //    };
-
-            //    return this.View(viewModel);
-            //}
-
-            return this.RedirectToAction(nameof(Search)/*, IEnumerable<SearchProfileViewModel>*/);
+            return View(models);
         }
+
+        //[HttpPost]
+        //public IActionResult Search(string text)
+        //{
+        //    var models = profileRepo
+        //        .AllAsNoTracking()
+        //        .Include(x => x.Image)
+        //        .Include(x => x.Country)
+        //        .Select(x => new SearchProfileViewModel()
+        //        {
+        //            ProfileId = x.Id,
+        //            FirstName = x.FirstName,
+        //            LastName = x.LastName,
+        //            ImagePath = x.Image != null ? $"${x.Image.Id}.{x.Image.Extension}" : null,
+        //            Country = x.Country.Name
+        //        })
+        //        .ToList();
+
+        //    models = models.Where(x =>
+        //        x.FirstName.Contains(text) ||
+        //        x.LastName.Contains(text) ||
+        //        x.Country.Contains(text))
+        //        .ToList();
+
+        //    return View(models);
+        //}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

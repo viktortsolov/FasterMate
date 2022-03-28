@@ -20,7 +20,5 @@
         [Required]
         [StringLength(100, ErrorMessage = "{0} must be at most {1} characters long.")]
         public string Location { get; set; }
-
-        public bool IsProfile { get; set; }
     }
 }

@@ -16,3 +16,32 @@ html {
 body {
   /*margin-bottom: 60px;*/
 }
+
+a {
+    color: #CC9966;
+}
+
+a:hover{
+    color: #000000;
+}
+
+.card-primary:not(.card-outline) > .card-header {
+    background-color: #CC9966;
+}
+
+.btn-primary {
+    background-color: #CC9966;
+    border-color: #CC9966;
+}
+
+.card-primary.card-outline {
+    border-top: 3px solid #CC9966;
+}
+
+.wrapper {
+    background-color: #EEDFDE;
+}
+
+.content-wrapper {
+    background-color: #EEDFDE;
+}

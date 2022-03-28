@@ -37,7 +37,6 @@
 
             var viewModel = new CreatePostViewModel();
             viewModel.ReturnId = profileId;
-            viewModel.IsProfile = true;
 
             return View(viewModel);
         }
@@ -83,7 +82,6 @@
             var viewModel = new AddCommentViewModel();
             viewModel.ReturnId = profileId;
             viewModel.PostId = id;
-            viewModel.IsProfile = true;
 
             return View(viewModel);
         }

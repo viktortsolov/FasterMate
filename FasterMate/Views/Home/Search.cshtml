@@ -6,9 +6,9 @@
 <h2 class="text-center display-4">Search for profile</h2>
 <div class="row">
     <div class="col-md-8 offset-md-2">
-        <form action="simple-results.html">
+        <form method="get">
             <div class="input-group">
-                <input type="search" class="form-control form-control-lg" placeholder="Type the profile username, e.g. viktortsolov">
+                <input type="search" class="form-control form-control-lg" placeholder="Type the profile username, e.g. viktortsolov" />
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-lg btn-default">
                         <i class="fa fa-search"></i>
@@ -16,17 +16,50 @@
                 </div>
             </div>
         </form>
-        if(Model.Count == 0)
+        @if (Model.Count() == 0)
         {
-            <h3>No users</h3>
+            <h3>No users!</h3>
         }
         else
         {
             @foreach (var profile in Model)
             {
-                <div class="card">
-                    <div class="card-body">
-                        Start creating your amazing application!
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" style="margin-top:20px">
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th>Profile Picture</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Country</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                    @if (profile.ImagePath == null)
+                                                    {
+                                                    <img class="img-circle profile-user-img" src="~/img/common/default-male.png" alt="User Image">
+                                                    }
+                                                    else
+                                                    {
+                                                    <img class="img-circle profile-user-img" src="~/img/users/@profile.ImagePath" alt="User Image">
+                                                    }
+                                            </td>
+                                            <td><h4>@profile.FirstName</h4></td>
+                                            <td><h4>@profile.LastName</h4></td>
+                                            <td><h4>@profile.Country</h4></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             }

@@ -11,7 +11,5 @@
         public string? Comment { get; set; }
 
         public string? ReturnId { get; set; }
-
-        public bool IsProfile { get; set; }
     }
 }

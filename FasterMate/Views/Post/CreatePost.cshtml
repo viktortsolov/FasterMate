@@ -34,14 +34,6 @@
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Create</button>
                 </div>
-                @if (Model.IsProfile)
-                {
-                    <a asp-controller="Profile" asp-action="UserProfile" asp-route-id="@Model.ReturnId">Cancel</a>
-                }
-                else
-                {
-                    <a asp-controller="Home" asp-action="Index" asp-route-id="@Model.ReturnId">Cancel</a>
-                }
             </form>
         </div>
     </div>
