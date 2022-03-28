@@ -86,15 +86,15 @@
                 .Include(x => x.Image)
                 .Where(x => x.ProfileId == id)
                 .OrderByDescending(x => x.CreatedOn)
-                .Select(x => new RenderProfilePostsViewModel()
+                .Select(r => new RenderProfilePostsViewModel()
                 {
-                    Id = x.Id,
-                    Text = x.Text,
-                    Location = x.Location,
-                    CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy"),
-                    ImagePath = $"{x.Image.Id}.{x.Image.Extension}",
-                    LikesCount = postLikesRepo.All().Where(x => x.PostId == id).Count(),
-                    CommentsCount = commentRepo.All().Where(x => x.PostId == id).Count()
+                    Id = r.Id,
+                    Text = r.Text,
+                    Location = r.Location,
+                    CreatedOn = r.CreatedOn.ToString("dd/MM/yyyy"),
+                    ImagePath = $"{r.Image.Id}.{r.Image.Extension}",
+                    LikesCount = postLikesRepo.All().Where(x => x.PostId == r.Id).Count(),
+                    CommentsCount = commentRepo.All().Where(x => x.PostId == r.Id).Count()
                 })
                 .ToList();
 
