@@ -11,16 +11,19 @@
     {
         private readonly IProfileService profileService;
         private readonly IPostService postService;
+        private readonly ICommentService commentService;
 
         private readonly IWebHostEnvironment webHost;
 
         public PostController(
             IProfileService _profileService,
             IPostService _postService,
+            ICommentService _commentService,
             IWebHostEnvironment _webHost)
         {
             profileService = _profileService;
             postService = _postService;
+            commentService = _commentService;
 
             webHost = _webHost;
         }
@@ -60,25 +63,21 @@
             return View(post);
         }
 
-        //TODO: Finish
-        [HttpPost]
-        public async Task LikePost(string postId)
+        public async Task<IActionResult> LikePost(string id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
 
-            await postService.LikePostAsync(profileId, postId);
+            await postService.LikePostAsync(profileId, id);
+
+            return RedirectToAction("SeePost", "Post", new { id = id });
         }
 
-        //TODO: Comments
-        //public IActionResult Comments()
-        //{
-        //    return View();
-        //}
-
+        //TODO:
         //[HttpPost]
-        //public async Task<IActionResult> Comments(string id)
+        //public async Task<IActionResult> Comment(string text)
         //{
+        //    var comment = new Comment)
         //    return null;
         //}
     }

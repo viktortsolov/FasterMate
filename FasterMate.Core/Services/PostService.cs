@@ -19,13 +19,15 @@
         private readonly IRepository<Post> postRepo;
         private readonly IRepository<PostLike> postLikesRepo;
         private readonly IRepository<Comment> commentRepo;
+        private readonly IRepository<Profile> profileRepo;
 
         public PostService(
             IImageService _imgService,
             ICommentService _commentService,
             IRepository<Post> _postRepo,
             IRepository<PostLike> _postLikesRepo,
-            IRepository<Comment> _commentRepo)
+            IRepository<Comment> _commentRepo,
+            IRepository<Profile> _profileRepo)
         {
             imgService = _imgService;
             commentService = _commentService;
@@ -33,6 +35,7 @@
             postRepo = _postRepo;
             postLikesRepo = _postLikesRepo;
             commentRepo = _commentRepo;
+            profileRepo = _profileRepo;
         }
 
         public async Task CreateAsync(string id, CreatePostViewModel input, string path)
@@ -100,10 +103,14 @@
             var post = postRepo
                 .AllAsNoTracking()
                 .Include(x => x.Image)
+                .Include(x => x.Profile)
                 .Where(x => x.Id == id)
                 .Select(x => new RenderSeePostViewModel()
                 {
                     Id = x.Id,
+                    ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
+                    ProfileImgPath = x.Profile.Image != null ? $"{x.Profile.Image.Id}.{x.Profile.Image.Extension}" : null,
+                    ProfileId = x.ProfileId,
                     Text = x.Text,
                     ImagePath = $"{x.ImageId}.{x.Image.Extension}",
                     CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy"),
@@ -111,16 +118,19 @@
                     CommentsCount = commentRepo.All().Where(x => x.PostId == id).Count(),
                     Comments = commentRepo
                         .All()
+                        .Include(x => x.Profile)
                         .Where(x => x.PostId == id)
                         .Select(x => new RenderCommentViewModel()
                         {
                             CommentId = x.Id,
                             PostId = x.PostId,
                             ProfileId = x.ProfileId,
+                            ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
                             Text = x.Text,
                             CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy")
-                        }).ToList()
-                        //commentService.GetAllOfPost(id), IDK why this is not working...
+                        }).ToList(),
+                    //commentService.GetAllOfPost(id), IDK why this is not working...
+                    Location = x.Location
                 })
                 .FirstOrDefault();
 

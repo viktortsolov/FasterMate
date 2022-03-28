@@ -46,18 +46,19 @@
                 await commentRepo.SaveChangesAsync();
             }
         }
-
-        //public IEnumerable<RenderCommentViewModel> GetAllOfPost(string id)
-        //    => commentRepo
-        //                .All()
-        //                .Where(x => x.PostId == id)
-        //                .Select(x => new RenderCommentViewModel()
-        //                {
-        //                    CommentId = x.Id,
-        //                    PostId = x.PostId,
-        //                    ProfileId = x.ProfileId,
-        //                    Text = x.Text,
-        //                    CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy")
-        //                }).ToList();
+        
+        //TODO: Try to fix it
+        public IEnumerable<RenderCommentViewModel> GetAllOfPost(string id)
+            => commentRepo
+                        .All()
+                        .Where(x => x.PostId == id)
+                        .Select(x => new RenderCommentViewModel()
+                        {
+                            CommentId = x.Id,
+                            PostId = x.PostId,
+                            ProfileId = x.ProfileId,
+                            Text = x.Text,
+                            CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy")
+                        }).ToList();
     }
 }

@@ -42,5 +42,7 @@
 
         public virtual ICollection<ProfileFollower> Followers { get; set; } = new HashSet<ProfileFollower>();
         public virtual ICollection<ProfileFollower> Following { get; set; } = new HashSet<ProfileFollower>();
+
+        public virtual ICollection<Post> Posts { get; set; } = new HashSet<Post>();
     }
 }
