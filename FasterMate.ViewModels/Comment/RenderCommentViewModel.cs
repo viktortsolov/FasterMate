@@ -10,6 +10,8 @@
 
         public string ProfileId { get; set; }
 
+        public RenderProfilePostInfo Profile { get; set; }
+
         public string PostId { get; set; }
     }
 }

@@ -120,6 +120,7 @@
                             Text = x.Text,
                             CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy")
                         }).ToList()
+                        //commentService.GetAllOfPost(id), IDK why this is not working...
                 })
                 .FirstOrDefault();
 
