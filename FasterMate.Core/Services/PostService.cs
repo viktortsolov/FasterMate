@@ -91,7 +91,7 @@
                     Id = r.Id,
                     Text = r.Text,
                     Location = r.Location,
-                    CreatedOn = r.CreatedOn.ToString("dd/MM/yyyy"),
+                    CreatedOn = r.CreatedOn.ToString("HH:mm, dd/MM/yyyy"),
                     ImagePath = $"{r.Image.Id}.{r.Image.Extension}",
                     LikesCount = postLikesRepo.All().Where(x => x.PostId == r.Id).Count(),
                     CommentsCount = commentRepo.All().Where(x => x.PostId == r.Id).Count()
@@ -115,13 +115,14 @@
                     IsLikedByVisitor = postLikesRepo.All().Any(x => x.PostId == id && x.ProfileId == profileId),
                     Text = x.Text,
                     ImagePath = $"{x.ImageId}.{x.Image.Extension}",
-                    CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy"),
+                    CreatedOn = x.CreatedOn.ToString("HH:mm, dd/MM/yyyy"),
                     LikesCount = postLikesRepo.All().Where(x => x.PostId == id).Count(),
                     CommentsCount = commentRepo.All().Where(x => x.PostId == id).Count(),
                     Comments = commentRepo
                         .All()
                         .Include(x => x.Profile)
                         .Where(x => x.PostId == id)
+                        .OrderByDescending(x=>x.CreatedOn)
                         .Select(x => new RenderCommentViewModel()
                         {
                             CommentId = x.Id,
@@ -129,8 +130,9 @@
                             ProfileId = x.ProfileId,
                             ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
                             Text = x.Text,
-                            CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy")
-                        }).ToList(),
+                            CreatedOn = x.CreatedOn.ToString("HH:mm, dd/MM/yyyy")
+                        })
+                        .ToList(),
                     //commentService.GetAllOfPost(id), IDK why this is not working...
                     Location = x.Location
                 })

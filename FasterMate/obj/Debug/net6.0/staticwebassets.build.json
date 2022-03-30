@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "H4fghPoL+O3RqVNcOdv5mestCqbCDwgFeEzO2ilcrgk=",
+  "Hash": "223sLj3z5Ahnq+VRukHA4bZUakW/0odihn4nO0w+9G4=",
   "Source": "FasterMate",
   "BasePath": "_content/FasterMate",
   "Mode": "Default",
@@ -1632,6 +1632,23 @@
       "OriginalItemSpec": "wwwroot\\img\\common\\logo.png"
     },
     {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\2a244f2f-6432-456e-b076-547ad3c6b7ab.jpg",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/posts/2a244f2f-6432-456e-b076-547ad3c6b7ab.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\posts\\2a244f2f-6432-456e-b076-547ad3c6b7ab.jpg"
+    },
+    {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\883d00ec-8419-4183-ba12-fb1be3303405.jpg",
       "SourceId": "FasterMate",
       "SourceType": "Discovered",
@@ -1647,6 +1664,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\posts\\883d00ec-8419-4183-ba12-fb1be3303405.jpg"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\a557fc07-2c20-4f29-913f-6291003c4c64.jpg",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/posts/a557fc07-2c20-4f29-913f-6291003c4c64.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\posts\\a557fc07-2c20-4f29-913f-6291003c4c64.jpg"
     },
     {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\a982ec0c-1466-4116-aceb-4b2d2927f85f.jpg",

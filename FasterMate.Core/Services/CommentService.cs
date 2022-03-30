@@ -1,12 +1,12 @@
 ﻿namespace FasterMate.Core.Services
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     using FasterMate.Core.Contracts;
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
     using FasterMate.ViewModels.Comment;
-    using Microsoft.EntityFrameworkCore;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     public class CommentService : ICommentService
     {
