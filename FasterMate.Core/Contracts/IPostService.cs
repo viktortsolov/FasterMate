@@ -10,8 +10,10 @@
 
         Task LikePostAsync(string profileId, string postId);
 
-        RenderSeePostViewModel RenderSinglePost(string id);
+        RenderSeePostViewModel RenderSinglePost(string id, string profileId);
 
         IEnumerable<RenderTimelinePostsViewModel> RenderTimelinePosts();
+
+        Task DeletePost(string profileId, string id);
     }
 }

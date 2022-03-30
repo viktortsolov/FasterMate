@@ -71,8 +71,7 @@
 
             return RedirectToAction(nameof(UserProfile), new { input.Id });
         }
-
-        [HttpPost]
+        
         public async Task<IActionResult> Follow(string id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);

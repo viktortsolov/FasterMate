@@ -6,7 +6,7 @@
     {
         Task AddAsync(string profileId, AddCommentViewModel input);
 
-        Task DeleteAsync(string id);
+        Task<string> DeleteAsync(string id);
 
         IEnumerable<RenderCommentViewModel> GetAllOfPost(string postId);
     }

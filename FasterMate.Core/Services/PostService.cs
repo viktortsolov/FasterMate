@@ -98,7 +98,7 @@
                 })
                 .ToList();
 
-        public RenderSeePostViewModel RenderSinglePost(string id)
+        public RenderSeePostViewModel RenderSinglePost(string id, string profileId)
         {
             var post = postRepo
                 .AllAsNoTracking()
@@ -111,6 +111,8 @@
                     ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
                     ProfileImgPath = x.Profile.Image != null ? $"{x.Profile.Image.Id}.{x.Profile.Image.Extension}" : null,
                     ProfileId = x.ProfileId,
+                    IsOwner = x.ProfileId == profileId ? true : false,
+                    IsLikedByVisitor = postLikesRepo.All().Any(x => x.PostId == id && x.ProfileId == profileId),
                     Text = x.Text,
                     ImagePath = $"{x.ImageId}.{x.Image.Extension}",
                     CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy"),
@@ -157,5 +159,40 @@
                 ProfileImgPath = r.Profile.Image != null ? $"{r.Profile.Image.Id}.{r.Profile.Image.Extension}" : null
             })
             .ToList();
+
+        public async Task DeletePost(string profileId, string id)
+        {
+            var post = postRepo
+                .All()
+                .Where(x => x.Id == id && x.ProfileId == profileId)
+                .FirstOrDefault();
+
+            if (post != null)
+            {
+                postRepo.Delete(post);
+
+                //TODO: Extract them in service
+                var comments = commentRepo
+                    .All()
+                    .Where(x => x.PostId == id)
+                    .ToList();
+
+                foreach (var comment in comments)
+                {
+                    commentRepo.Delete(comment);
+                }
+
+                var postLikes = postLikesRepo
+                    .All()
+                    .Where(x => x.PostId == id);
+
+                foreach (var postLike in postLikes)
+                {
+                    postLikesRepo.Delete(postLike);
+                }
+
+                await postRepo.SaveChangesAsync();
+            }
+        }
     }
 }

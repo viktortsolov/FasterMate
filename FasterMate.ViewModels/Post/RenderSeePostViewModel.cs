@@ -1,13 +1,16 @@
 ﻿namespace FasterMate.ViewModels.Post
 {
     using FasterMate.ViewModels.Comment;
-    using FasterMate.ViewModels.Profile;
 
     public class RenderSeePostViewModel
     {
         public string? Id { get; set; }
 
         public string? ProfileId { get; set; }
+
+        public bool IsOwner { get; set; }
+
+        public bool IsLikedByVisitor { get; set; }
 
         public string? ProfileName { get; set; }
 

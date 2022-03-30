@@ -31,14 +31,24 @@
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
-
             </div>
 
             <div class="card-body">
                 <img class="img-fluid pad" src="~/img/posts/@Model.ImagePath" alt="Photo">
                 <p>@Model.Text</p>
-                <a method="post" asp-action="LikePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-default btn-sm"><i class="far fa-thumbs-up"></i> Like</a>
-                <a method="post" asp-action="AddComment" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-default btn-sm"><i class="far fa-comment"></i> Comment</a>
+                @if(Model.IsLikedByVisitor)
+                {
+                    <a asp-action="LikePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-secondary btn-sm"><i class="far fa-thumbs-down"></i> Dislike</a>
+                }
+                else
+                {
+                    <a asp-action="LikePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-secondary btn-sm"><i class="far fa-thumbs-up"></i> Like</a>
+                }
+                <a asp-action="AddComment" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-success btn-sm"><i class="far fa-comment"></i> Comment</a>
+                @if (Model.IsOwner)
+                {
+                    <a asp-action="DeletePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete Post</a>
+                }
                 <span class="float-right text-muted">@Model.LikesCount likes - @Model.CommentsCount comments</span>
             </div>
         </div>
@@ -57,6 +67,13 @@
                                 <span class="text-muted float-right">@comment.CreatedOn</span>
                             </span>
                             @comment.Text
+
+                            @if (Model.IsOwner)
+                            {
+                                <span class="float-right">
+                                    <a asp-action="DeleteComment" asp-controller="Post" asp-route-id="@comment.CommentId" type="button" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                </span>
+                            }
                         </div>
 
                     </div>

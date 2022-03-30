@@ -33,18 +33,22 @@
             await commentRepo.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(string id)
+        public async Task<string> DeleteAsync(string id)
         {
             var comment = commentRepo
                 .All()
                 .Where(x => x.Id == id)
                 .FirstOrDefault();
 
+            var postId = comment.PostId;
+
             if (comment != null)
             {
                 commentRepo.Delete(comment);
                 await commentRepo.SaveChangesAsync();
             }
+
+            return postId;
         }
         
         //TODO: Try to fix it

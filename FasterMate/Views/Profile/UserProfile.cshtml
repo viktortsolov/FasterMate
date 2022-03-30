@@ -122,13 +122,21 @@
                                         </div>
 
                                         <p>
-                                            <a method="post" asp-action="SeePost" asp-controller="Post" asp-route-id="@post.Id" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like (@post.LikesCount)</a>
+                                            <a method="post" asp-action="SeePost" asp-controller="Post" asp-route-id="@post.Id" class="link-black text-sm">
+                                                <i class="far fa-thumbs-up mr-1"></i> Like (@post.LikesCount)
+                                            </a>
                                             <span class="float-right">
                                                 <a asp-action="SeePost" asp-controller="Post" asp-route-id="@post.Id" class="link-black text-sm">
                                                     <i class="far fa-comments mr-1"></i> Comments (@post.CommentsCount)
                                                 </a>
                                             </span>
                                         </p>
+                                        @if (Model.IsOwner)
+                                        {
+                                            <div class="col-sm-2">
+                                                <a asp-action="DeletePost" asp-controller="Post" asp-route-id="@post.Id" type="button" class="btn btn-block btn-danger btn-sm">Delete post</a>
+                                            </div>
+                                        }
                                     </div>
                                 }
                             }

@@ -59,7 +59,9 @@
 
         public IActionResult SeePost(string id)
         {
-            var post = postService.RenderSinglePost(id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+            var post = postService.RenderSinglePost(id, profileId);
 
             return View(post);
         }
@@ -100,6 +102,26 @@
             await commentService.AddAsync(profileId, input);
 
             return RedirectToAction("SeePost", "Post", new { id = input.PostId });
+        }
+
+        public async Task<IActionResult> DeletePost(string id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            await postService.DeletePost(profileId, id);
+
+            return RedirectToAction("UserProfile", "Profile", new { id = profileId });
+        }
+
+        public async Task<IActionResult> DeleteComment(string id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            var postId = await commentService.DeleteAsync(id);
+
+            return RedirectToAction("SeePost", "Post", new { id = postId });
         }
     }
 }

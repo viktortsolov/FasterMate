@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "36ySzVYYYaySM0pePxw5GFT7HbVCs1MmiDebZJNmdp0=",
+  "Hash": "H4fghPoL+O3RqVNcOdv5mestCqbCDwgFeEzO2ilcrgk=",
   "Source": "FasterMate",
   "BasePath": "_content/FasterMate",
   "Mode": "Default",
@@ -1683,6 +1683,40 @@
       "OriginalItemSpec": "wwwroot\\img\\posts\\bfd23bd4-bb35-464d-92e9-fdf1ee8e1469.jpg"
     },
     {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\c4120a0b-d4fc-418a-8a99-7035ce9732ca.jpg",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/posts/c4120a0b-d4fc-418a-8a99-7035ce9732ca.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\posts\\c4120a0b-d4fc-418a-8a99-7035ce9732ca.jpg"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\cf71f28b-c142-4611-ab90-f6cafe0a0341.jpg",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/posts/cf71f28b-c142-4611-ab90-f6cafe0a0341.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\posts\\cf71f28b-c142-4611-ab90-f6cafe0a0341.jpg"
+    },
+    {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\users\\5df8552a-d9b5-4be6-9524-8580cda3f5fe.jpg",
       "SourceId": "FasterMate",
       "SourceType": "Discovered",
@@ -1732,6 +1766,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\users\\a6806a28-f250-4579-8a22-8e2f3a5435ec.jpg"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\users\\f6098e43-4491-4143-839c-3b5ed5ed1f00.png",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/users/f6098e43-4491-4143-839c-3b5ed5ed1f00.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\users\\f6098e43-4491-4143-839c-3b5ed5ed1f00.png"
     },
     {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\users\\ff82a4a6-00e2-4bf1-a3b8-e309f2974d13.jpg",
