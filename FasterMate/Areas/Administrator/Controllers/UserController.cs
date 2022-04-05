@@ -1,7 +1,5 @@
 ﻿namespace FasterMate.Areas.Administrator.Controllers
 {
-    using System.Web.Mvc;
-
     using FasterMate.Core.Constants;
     using FasterMate.Core.Contracts;
     using FasterMate.Infrastructure.Data;
@@ -9,6 +7,7 @@
 
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
 
     public class UserController : BaseController
     {
@@ -30,15 +29,15 @@
             userService = _userService;
         }
 
-        //public async Task<IActionResult> CreateRole()
-        //{
-        //    //await roleManager.CreateAsync(new IdentityRole()
-        //    //{
-        //    //    Name = "Administrator"
-        //    //});
+        public async Task<IActionResult> CreateRole()
+        {
+            await roleManager.CreateAsync(new IdentityRole()
+            {
+                Name = "Moderator"
+            });
 
-        //    return Ok();
-        //}
+            return Ok();
+        }
 
         public async Task<IActionResult> ManageUsers()
         {
@@ -54,10 +53,10 @@
             return View(model);
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
-        public async Task<IActionResult> Edit(string id, UserEditViewModel model)
+        [HttpPost]
+        public async Task<IActionResult> Edit(UserEditViewModel model)
         {
-            if (!ModelState.IsValid || id != model.Id)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
@@ -74,21 +73,39 @@
             return View(model);
         }
 
-        //TODO: Finish the roles
         public async Task<IActionResult> Roles(string id)
         {
-            var user = await userManager.GetUserAsync(User);
+            var user = await userService.GetUserById(id);
+            var model = new UserRolesViewModel()
+            {
+                UserId = user.Id,
+                Name = $"{user.Profile.FirstName} {user.Profile.LastName}"
+            };
 
             ViewBag.RoleItems = roleManager.Roles
                 .ToList()
-                .Select(r => new SelectListItem()
+                .Select(x => new SelectListItem()
                 {
-                    Text = r.Name,
-                    Value = r.Id,
-                    Selected = userManager.IsInRoleAsync(user, r.Name).Result
-                });
+                    Text = x.Name,
+                    Value = x.Name,
+                    Selected = userManager.IsInRoleAsync(user, x.Name).Result
+                }).ToList();
 
-            return Ok();
+            return View(model);
+        }
+
+
+        //TODO: Fix the roles updating!
+        [HttpPost]
+        public async Task<IActionResult> Roles(UserRolesViewModel model)
+        {
+            var user = await userService.GetOnlyUserById(model.UserId);
+            var userRoles = await userManager.GetRolesAsync(user);
+
+            await userManager.RemoveFromRolesAsync(user, userRoles);
+            await userManager.AddToRolesAsync(user, model.RoleNames);
+
+            return RedirectToAction(nameof(ManageUsers));
         }
     }
 }

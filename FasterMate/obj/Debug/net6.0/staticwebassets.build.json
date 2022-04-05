@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "223sLj3z5Ahnq+VRukHA4bZUakW/0odihn4nO0w+9G4=",
+  "Hash": "MMaj6Ie5Ai06DhwJ17lVYJN7JJb39Y8hr/S1MMIgQ7I=",
   "Source": "FasterMate",
   "BasePath": "_content/FasterMate",
   "Mode": "Default",
@@ -1664,6 +1664,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\posts\\883d00ec-8419-4183-ba12-fb1be3303405.jpg"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\8aebc7c1-7a20-4723-a753-5db997a350a6.jpg",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/posts/8aebc7c1-7a20-4723-a753-5db997a350a6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\posts\\8aebc7c1-7a20-4723-a753-5db997a350a6.jpg"
     },
     {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\a557fc07-2c20-4f29-913f-6291003c4c64.jpg",

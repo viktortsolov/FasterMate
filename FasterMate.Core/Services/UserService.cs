@@ -16,12 +16,23 @@
         private readonly IRepository<Profile> profileRepo;
 
         public UserService(
-            IRepository<ApplicationUser> _repo, 
+            IRepository<ApplicationUser> _repo,
             IRepository<Profile> _profileRepo)
         {
             repo = _repo;
             profileRepo = _profileRepo;
         }
+
+        public async Task<ApplicationUser?> GetOnlyUserById(string id)
+        =>  repo
+            .AllAsNoTracking()
+            .FirstOrDefault(x => x.Id == id);
+
+        public async Task<ApplicationUser?> GetUserById(string id)
+            => repo
+                .AllAsNoTracking()
+                .Include(x => x.Profile)
+                .FirstOrDefault(x => x.Id == id);
 
         public async Task<UserEditViewModel> GetUserForEdit(string id)
         {
@@ -41,7 +52,7 @@
         public async Task<IEnumerable<UserListViewModel>> GetUsers()
         {
             return await repo
-                    .All()
+                    .AllAsNoTracking()
                     .Include(x => x.Profile)
                     .Select(x => new UserListViewModel()
                     {
@@ -58,7 +69,7 @@
             bool result = false;
 
             var user = await profileRepo
-                .All()
+                .AllAsNoTracking()
                 .FirstOrDefaultAsync(x => x.User.Id == model.Id);
 
             if (user != null)

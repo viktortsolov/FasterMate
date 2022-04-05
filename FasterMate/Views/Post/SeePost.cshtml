@@ -35,7 +35,7 @@
 
             <div class="card-body">
                 <p>@Model.Text</p>
-                <img class="img-fluid pad" src="~/img/posts/@Model.ImagePath" alt="Photo" style="margin-bottom:25px">
+                <img class="img-fluid pad mb-3" src="~/img/posts/@Model.ImagePath" alt="Photo">
                 @if (Model.IsLikedByVisitor)
                 {
                     <a asp-action="LikePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-secondary btn-sm"><i class="far fa-thumbs-down"></i> Dislike</a>
@@ -55,10 +55,13 @@
     </div>
     <div class="col-md-6">
         <div class="card card-widget">
+            <div class="card-header">
+               <h4 class="text-xl-center"><b>Comments</b></h4>
+            </div>
             <div class="card-footer card-comments">
                 @if (Model.Comments.Count() == 0)
                 {
-                    <h1>No comments yet</h1>
+                    <h5 class="text-xl-center">No comments yet</h5>
                 }
                 else
                 {
