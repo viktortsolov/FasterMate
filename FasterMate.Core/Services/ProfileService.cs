@@ -106,7 +106,6 @@
                 .Where(x => x.User.ProfileId == id)
                 .FirstOrDefault();
 
-
             var profileViewModel = new RenderProfileViewModel()
             {
                 Id = profile.Id,
@@ -184,9 +183,9 @@
         private bool CountryValidation(string id)
             => countryRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id) == null;
 
-        private Gender GetGender(string gender)
+        private static Gender GetGender(string gender)
         {
-            Enum.TryParse<Gender>(gender, out Gender genderValue);
+            _ = Enum.TryParse<Gender>(gender, out Gender genderValue);
 
             return genderValue;
         }

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-FasterMate-FC1FDA7C-0549-49C4-8FFA-EB0A4FC7F773</UserSecretsId>
   </PropertyGroup>

@@ -17,10 +17,10 @@
         public string LastName { get; set; }
 
         [StringLength(250, ErrorMessage = "{0} must be at most {1} characters long.")]
-        public string? Bio { get; set; }
+        public string Bio { get; set; }
 
         [Display(Name = "Profile Picture")]
         [ImageValidation]
-        public IFormFile? Image { get; set; }
+        public IFormFile Image { get; set; }
     }
 }

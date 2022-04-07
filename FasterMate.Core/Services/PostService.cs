@@ -111,7 +111,7 @@
                     ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
                     ProfileImgPath = x.Profile.Image != null ? $"{x.Profile.Image.Id}.{x.Profile.Image.Extension}" : null,
                     ProfileId = x.ProfileId,
-                    IsOwner = x.ProfileId == profileId ? true : false,
+                    IsOwner = x.ProfileId == profileId,
                     IsLikedByVisitor = postLikesRepo.All().Any(x => x.PostId == id && x.ProfileId == profileId),
                     Text = x.Text,
                     ImagePath = $"{x.ImageId}.{x.Image.Extension}",

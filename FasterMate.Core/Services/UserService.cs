@@ -23,16 +23,16 @@
             profileRepo = _profileRepo;
         }
 
-        public async Task<ApplicationUser?> GetOnlyUserById(string id)
-        =>  repo
+        public async Task<ApplicationUser> GetOnlyUserById(string id)
+        => await repo
             .AllAsNoTracking()
-            .FirstOrDefault(x => x.Id == id);
+            .FirstOrDefaultAsync(x => x.Id == id);
 
-        public async Task<ApplicationUser?> GetUserById(string id)
-            => repo
+        public async Task<ApplicationUser> GetUserById(string id)
+            => await repo
                 .AllAsNoTracking()
                 .Include(x => x.Profile)
-                .FirstOrDefault(x => x.Id == id);
+                .FirstOrDefaultAsync(x => x.Id == id);
 
         public async Task<UserEditViewModel> GetUserForEdit(string id)
         {

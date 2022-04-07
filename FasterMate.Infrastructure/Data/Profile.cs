@@ -25,18 +25,18 @@
         [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
 
-        public string? Bio { get; set; }
+        public string Bio { get; set; }
 
 
         [ForeignKey(nameof(Image))]
-        public string? ImageId { get; set; }
-        public virtual Image? Image { get; set; }
+        public string ImageId { get; set; }
+        public virtual Image Image { get; set; }
 
 
         [Required]
         [ForeignKey(nameof(Country))]
-        public string? CountryId { get; set; }
-        public virtual Country? Country { get; set; }
+        public string CountryId { get; set; }
+        public virtual Country Country { get; set; }
 
         public virtual ApplicationUser User { get; set; }
 
