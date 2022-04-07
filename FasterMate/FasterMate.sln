@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FasterMate.Infrastructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FasterMate.ViewModels", "..\FasterMate.ViewModels\FasterMate.ViewModels.csproj", "{ECD6EF6B-C54D-4B49-8C5A-FF811ED9E6D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterMate.Test", "..\FasterMate.Test\FasterMate.Test.csproj", "{B1FF7162-8C3A-4DE8-A10F-BA0F7E37BC50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ECD6EF6B-C54D-4B49-8C5A-FF811ED9E6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD6EF6B-C54D-4B49-8C5A-FF811ED9E6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECD6EF6B-C54D-4B49-8C5A-FF811ED9E6D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1FF7162-8C3A-4DE8-A10F-BA0F7E37BC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1FF7162-8C3A-4DE8-A10F-BA0F7E37BC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1FF7162-8C3A-4DE8-A10F-BA0F7E37BC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1FF7162-8C3A-4DE8-A10F-BA0F7E37BC50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

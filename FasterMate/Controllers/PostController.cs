@@ -35,8 +35,10 @@
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
 
-            var viewModel = new CreatePostViewModel();
-            viewModel.ReturnId = profileId;
+            var viewModel = new CreatePostViewModel
+            {
+                ReturnId = profileId
+            };
 
             return View(viewModel);
         }
@@ -73,7 +75,7 @@
 
             await postService.LikePostAsync(profileId, id);
 
-            return RedirectToAction("SeePost", "Post", new { id = id });
+            return RedirectToAction("SeePost", "Post", new { id });
         }
 
         public IActionResult AddComment(string id)
@@ -81,9 +83,11 @@
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
 
-            var viewModel = new AddCommentViewModel();
-            viewModel.ReturnId = profileId;
-            viewModel.PostId = id;
+            var viewModel = new AddCommentViewModel
+            {
+                ReturnId = profileId,
+                PostId = id
+            };
 
             return View(viewModel);
         }
@@ -116,9 +120,6 @@
 
         public async Task<IActionResult> DeleteComment(string id)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var profileId = profileService.GetId(userId);
-
             var postId = await commentService.DeleteAsync(id);
 
             return RedirectToAction("SeePost", "Post", new { id = postId });
