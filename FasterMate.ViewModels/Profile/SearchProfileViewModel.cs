@@ -13,5 +13,9 @@
         public string Country { get; set; }
 
         public string Text { get; set; }
+
+        public int Followers { get; set; }
+
+        public int Following { get; set; }
     }
 }

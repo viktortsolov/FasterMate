@@ -25,13 +25,12 @@
         [DataType(DataType.DateTime)]
         public DateTime BirthDate { get; set; }
 
+        [MaxLength(256)]
         public string Bio { get; set; }
-
 
         [ForeignKey(nameof(Image))]
         public string ImageId { get; set; }
         public virtual Image Image { get; set; }
-
 
         [Required]
         [ForeignKey(nameof(Country))]
@@ -41,8 +40,11 @@
         public virtual ApplicationUser User { get; set; }
 
         public virtual ICollection<ProfileFollower> Followers { get; set; } = new HashSet<ProfileFollower>();
+
         public virtual ICollection<ProfileFollower> Following { get; set; } = new HashSet<ProfileFollower>();
 
         public virtual ICollection<Post> Posts { get; set; } = new HashSet<Post>();
+        
+        public virtual ICollection<Offer> Offers { get; set; } = new HashSet<Offer>();
     }
 }

@@ -2,6 +2,7 @@
 {
     using FasterMate.Core.Constants;
     using FasterMate.Core.Contracts;
+    using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
     using FasterMate.ViewModels.User;
 
@@ -14,17 +15,22 @@
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<ApplicationUser> userManager;
 
+        private readonly IRepository<ApplicationUser> appUserRepo;
+
         private readonly IUserService userService;
 
 
         public UserController(
             RoleManager<IdentityRole> _roleManager,
             UserManager<ApplicationUser> _userManager,
-            IUserService _userService
+            IUserService _userService,
+            IRepository<ApplicationUser> _appUserRepo
             )
         {
             roleManager = _roleManager;
             userManager = _userManager;
+
+            appUserRepo = _appUserRepo;
 
             userService = _userService;
         }
@@ -94,13 +100,13 @@
             return View(model);
         }
 
-
-        //TODO: Fix the roles updating!
         [HttpPost]
         public async Task<IActionResult> Roles(UserRolesViewModel model)
         {
             var user = await userService.GetOnlyUserById(model.UserId);
             var userRoles = await userManager.GetRolesAsync(user);
+
+            appUserRepo.Update(user);
 
             await userManager.RemoveFromRolesAsync(user, userRoles);
             await userManager.AddToRolesAsync(user, model.RoleNames);

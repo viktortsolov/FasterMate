@@ -1,9 +1,10 @@
-﻿using FasterMate.Infrastrucutre.Data;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-
-namespace FasterMate.Infrastructure.Seeding
+﻿namespace FasterMate.Infrastructure.Seeding
 {
+    using FasterMate.Infrastrucutre.Data;
+
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
+
     public class ApplicationDbContextSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
@@ -29,7 +30,8 @@ namespace FasterMate.Infrastructure.Seeding
             {
                 await seeder.SeedAsync(dbContext, serviceProvider);
                 await dbContext.SaveChangesAsync();
-                logger.LogInformation($"Seeder {seeder.GetType().Name} done.");
+                string message = $"Seeder {seeder.GetType().Name} done.";
+                logger.LogInformation(message);
             }
         }
     }

@@ -7,7 +7,7 @@
         public string PostId { get; set; }
 
         [Required]
-        [StringLength(100, MinimumLength = 1, ErrorMessage = "Comment must be at least {1} characters long and no more than {0} characters.")]
+        [StringLength(256, MinimumLength = 1, ErrorMessage = "Comment must be at least {1} characters long and no more than {0} characters.")]
         public string Comment { get; set; }
 
         public string ReturnId { get; set; }

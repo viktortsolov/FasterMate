@@ -26,6 +26,10 @@
 
         public DbSet<ProfileFollower> ProfileFollowers { get; set; }
 
+        public DbSet<Offer> Offers { get; set; }
+
+        public DbSet<ProfileOffer> ProfileOffers { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -51,6 +55,9 @@
 
             builder.Entity<PostLike>()
                .HasKey(e => new { e.PostId, e.ProfileId });
+
+            builder.Entity<ProfileOffer>()
+                .HasKey(e => new { e.ProfileId, e.OfferId });
 
             var entityTypes = builder
                 .Model

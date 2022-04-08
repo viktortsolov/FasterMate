@@ -122,7 +122,7 @@
                         .All()
                         .Include(x => x.Profile)
                         .Where(x => x.PostId == id)
-                        .OrderByDescending(x=>x.CreatedOn)
+                        .OrderByDescending(x => x.CreatedOn)
                         .Select(x => new RenderCommentViewModel()
                         {
                             CommentId = x.Id,

@@ -34,9 +34,6 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -118,8 +115,8 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.Property<string>("Text")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
@@ -161,6 +158,44 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.ToTable("Images");
                 });
 
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.Offer", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("ArrivalLocation")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<DateTime>("ArrivalTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DepartureLocation")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<DateTime>("DepartureTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsBooked")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal>("PriceOfTicket")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<string>("ProfileId")
+                        .HasColumnType("nvarchar(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("Offers");
+                });
+
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Post", b =>
                 {
                     b.Property<string>("Id")
@@ -177,8 +212,8 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.Property<string>("Location")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProfileId")
                         .IsRequired()
@@ -187,8 +222,8 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.Property<string>("Text")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
@@ -221,7 +256,8 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                         .HasColumnType("nvarchar(36)");
 
                     b.Property<string>("Bio")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
@@ -270,6 +306,21 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.HasIndex("FollowerId");
 
                     b.ToTable("ProfileFollowers");
+                });
+
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.ProfileOffer", b =>
+                {
+                    b.Property<string>("ProfileId")
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("OfferId")
+                        .HasColumnType("nvarchar(36)");
+
+                    b.HasKey("ProfileId", "OfferId");
+
+                    b.HasIndex("OfferId");
+
+                    b.ToTable("ProfileOffers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -439,6 +490,15 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.Offer", b =>
+                {
+                    b.HasOne("FasterMate.Infrastructure.Data.Profile", "Owner")
+                        .WithMany("Offers")
+                        .HasForeignKey("ProfileId");
+
+                    b.Navigation("Owner");
+                });
+
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Post", b =>
                 {
                     b.HasOne("FasterMate.Infrastructure.Data.Image", "Image")
@@ -448,7 +508,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("FasterMate.Infrastructure.Data.Profile", "Profile")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("ProfileId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -509,6 +569,25 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Follower");
+
+                    b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.ProfileOffer", b =>
+                {
+                    b.HasOne("FasterMate.Infrastructure.Data.Offer", "Offer")
+                        .WithMany()
+                        .HasForeignKey("OfferId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("FasterMate.Infrastructure.Data.Profile", "Profile")
+                        .WithMany()
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Offer");
 
                     b.Navigation("Profile");
                 });
@@ -582,8 +661,11 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
 
                     b.Navigation("Following");
 
-                    b.Navigation("User")
-                        .IsRequired();
+                    b.Navigation("Offers");
+
+                    b.Navigation("Posts");
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,6 +14,7 @@
         [Required]
         [ForeignKey(nameof(Profile))]
         public string ProfileId { get; set; }
+
         public virtual Profile Profile { get; set; }
     }
 }

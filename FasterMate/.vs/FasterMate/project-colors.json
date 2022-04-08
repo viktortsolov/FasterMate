@@ -30,7 +30,12 @@
       "ProjectGuid": "ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6",
       "DisplayName": "FasterMate.ViewModels",
       "ColorIndex": 4
+    },
+    "b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50": {
+      "ProjectGuid": "b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50",
+      "DisplayName": "FasterMate.Test",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }

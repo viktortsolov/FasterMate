@@ -8,18 +8,14 @@
     {
         public ApplicationUser()
         {
-            this.Id = Guid.NewGuid().ToString();
-            CreatedOn = DateTime.Now;
+            Id = Guid.NewGuid().ToString();
         }
 
         [Required]
-        public DateTime CreatedOn { get; set; }
-
-
-        [Required]
         [ForeignKey(nameof(Profile))]
-        public string? ProfileId { get; set; }
+        public string ProfileId { get; set; }
+
         [Required]
-        public virtual Profile? Profile { get; set; }
+        public virtual Profile Profile { get; set; }
     }
 }
