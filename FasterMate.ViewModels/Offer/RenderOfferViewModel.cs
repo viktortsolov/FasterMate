@@ -8,12 +8,14 @@
 
         public string ArrivalLocation { get; set; }
 
-        public DateTime DepartureTime { get; set; }
+        public string DepartureTime { get; set; }
 
-        public DateTime ArrivalTime { get; set; }
+        public string ArrivalTime { get; set; }
 
-        public decimal PriceOfTicket { get; set; }
+        public string PriceOfTicket { get; set; }
 
-        public string ProfileId { get; set; }
+        public bool IsBooked { get; set; }
+
+        public string Name { get; set; }
     }
 }

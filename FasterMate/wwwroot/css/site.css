@@ -45,3 +45,7 @@ a:hover{
 .content-wrapper {
     background-color: #EEDFDE;
 }
+
+.bg-primary {
+    background-color: #CC9966 !important;
+}

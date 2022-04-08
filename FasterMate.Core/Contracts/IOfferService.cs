@@ -4,8 +4,10 @@
 
     public interface IOfferService
     {
-        Task<bool> CreateAsync(CreateOfferViewModel input);
+        Task<bool> CreateAsync(CreateOfferViewModel input, string profileId);
 
         IEnumerable<RenderOfferViewModel> RenderOffers();
+
+        Task CreateProfileOfferAsync(string id, string profileId);
     }
 }

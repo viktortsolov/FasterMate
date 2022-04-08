@@ -18,7 +18,8 @@
                     .AddScoped<IUserService, UserService>()
                     .AddScoped<IImageService, ImageService>()
                     .AddScoped<IPostService, PostService>()
-                    .AddScoped<ICommentService, CommentService>();
+                    .AddScoped<ICommentService, CommentService>()
+                    .AddScoped<IOfferService, OfferService>();
 
             return services;
         }

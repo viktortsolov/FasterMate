@@ -18,6 +18,7 @@ namespace FasterMate.Areas.Identity.Pages.Account
         /// </summary>
         public void OnGet()
         {
+            RedirectToAction("/UserProfile");
         }
     }
 }

@@ -15,19 +15,19 @@
         public string ArrivalLocation { get; set; }
 
         [Required]
+        [DataType(DataType.DateTime)]
         [Display(Name = "Departure Time")]
-        public DateTime DepartureTime { get; set; }
+        public string DepartureTime { get; set; }
 
         [Required]
+        [DataType(DataType.DateTime)]
         [Display(Name = "Arrival Time")]
-        public DateTime ArrivalTime { get; set; }
+        public string ArrivalTime { get; set; }
 
         [Required]
         [DataType(DataType.Currency)]
         [Display(Name = "Price of the Ticket")]
         [Range(1, 1000, ErrorMessage = "Price of the Ticket must be between 1$ and 1000$.")]
         public decimal PriceOfTicket { get; set; }
-
-        public string ProfileId { get; set; }
     }
 }
