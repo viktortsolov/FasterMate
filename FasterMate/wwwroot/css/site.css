@@ -1,29 +1,29 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /*margin-bottom: 60px;*/
+    /*margin-bottom: 60px;*/
 }
 
 a {
     color: #CC9966;
 }
 
-a:hover{
-    color: #000000;
-}
+    a:hover {
+        color: #000000;
+    }
 
 .card-primary:not(.card-outline) > .card-header {
     background-color: #CC9966;
@@ -33,6 +33,17 @@ a:hover{
     background-color: #CC9966;
     border-color: #CC9966;
 }
+
+    .btn-primary:hover {
+        background-color: #856341;
+        border-color: #856341;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #856341;
+        border-color: #856341;
+    }
 
 .card-primary.card-outline {
     border-top: 3px solid #CC9966;
@@ -49,3 +60,20 @@ a:hover{
 .bg-primary {
     background-color: #CC9966 !important;
 }
+
+.btn-outline-primary {
+    color: #CC9966;
+    border-color: #CC9966;
+}
+
+    .btn-outline-primary:hover {
+        color: #fff;
+        background-color: #CC9966;
+        border-color: #CC9966;
+    }
+
+    btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show > .btn-outline-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #856341;
+        border-color: #856341;
+    }

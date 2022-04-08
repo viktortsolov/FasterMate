@@ -1,6 +1,7 @@
 ﻿namespace FasterMate.Core.Services
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
     using FasterMate.Infrastructure.Data.Enums;
+    using FasterMate.ViewModels.Home;
     using FasterMate.ViewModels.Profile;
 
     using Microsoft.EntityFrameworkCore;
@@ -180,6 +182,36 @@
             }
         }
 
+        public IEnumerable<ProfileSearchViewModel> SearchProfiles(string[] searchTokens)
+        {
+            var results = new List<ProfileSearchViewModel>();
+
+            foreach (var search in searchTokens)
+            {
+                results.AddRange(profileRepo
+                    .AllAsNoTracking()
+                    .Include(x => x.User)
+                    .Include(x => x.Image)
+                    .Where(x => x.FirstName.ToLower().Contains(search) ||
+                                x.LastName.ToLower().Contains(search) ||
+                                x.User.UserName.ToLower().Contains(search))
+                    .OrderByDescending(x => x.User.UserName)
+                    .Select(x => new ProfileSearchViewModel()
+                    {
+                        Id = x.Id,
+                        FirstName = x.FirstName,
+                        LastName = x.LastName,
+                        Username = x.User.UserName,
+                        ImagePath = x.Image != null ? $"{x.Image.Id}.{x.Image.Extension}" : "",
+                        Followers = x.Followers.Count(),
+                        Following = x.Following.Count()
+                    })
+                    .ToList());
+            }
+
+            return results;
+        }
+
         private bool CountryValidation(string id)
             => countryRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id) == null;
 
@@ -189,6 +221,5 @@
 
             return genderValue;
         }
-
     }
 }

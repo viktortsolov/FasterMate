@@ -1,14 +1,15 @@
-﻿@model IEnumerable<SearchProfileViewModel>
+﻿@model SearchViewModel
 @{
-    ViewData["Title"] = "Search for profile";
+    ViewData["Title"] = "Search Profile";
 }
 
-<h2 class="text-center display-4">Search for profile</h2>
+<h2 class="text-center display-4">Search</h2>
+
 <div class="row">
     <div class="col-md-8 offset-md-2">
-        <form method="get">
+        <form id="searchForm" asp-controller="Home" asp-action="Search" method="get">
             <div class="input-group">
-                <input type="search" class="form-control form-control-lg" placeholder="Type the profile username, e.g. viktortsolov" />
+                <input type="text" class="form-control form-control-lg" name="searchText" placeholder="Type your keywords here">
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-lg btn-default">
                         <i class="fa fa-search"></i>
@@ -16,60 +17,56 @@
                 </div>
             </div>
         </form>
-        <div class="row mt-1">
-            <div class="col-md-3"></div>
-            @if (Model.Count() == 0)
-            {
-                <h3>No users!</h3>
-            }
-            else
-            {
-                @foreach (var profile in Model)
-                {
-                    <div class="col-md-6">
+    </div>
+</div>
 
-                        <div class="card card-widget widget-user shadow">
+@if (@Model.Profiles.Count() == 0)
+{
+    <h2 class="text-center display-5">No matches found...</h2>
+}
+else
+{
+    @foreach (var profile in @Model.Profiles)
+    {
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card card-widget widget-user mt-2">
 
-                            <div class="widget-user-header bg-primary">
-                                <a asp-action="UserProfile" asp-controller="Profile" asp-route-id="@profile.ProfileId" class="widget-user-username">@profile.FirstName @profile.LastName</a>
-                                <h5 class="widget-user-desc">@profile.Country</h5>
-                            </div>
-                            <div class="widget-user-image">
-                                @if (profile.ImagePath == null)
-                                {
-                                    <img class="img-circle elevation-2" src="~/img/common/default-male.png" alt="User Image">
-                                }
-                                else
-                                {
-                                    <img class="img-circle elevation-2" src="~/img/users/@profile.ImagePath" alt="User Image">
-                                }
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col-sm-6 border-right">
-                                        <div class="description-block">
-                                            <h5 class="description-header">@profile.Followers</h5>
-                                            <span class="description-text">FOLLOWERS</span>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="description-block">
-                                            <h5 class="description-header">@profile.Following</h5>
-                                            <span class="description-text">FOLLOWING</span>
-                                        </div>
-                                    </div>
-
+                    <div class="widget-user-header bg-primary">
+                        <a asp-action="UserProfile" asp-controller="Profile" asp-route-id="@profile.Id" class="widget-user-username">@profile.FirstName @profile.LastName</a>
+                        <h5 class="widget-user-desc">&commat;@profile.Username</h5>
+                    </div>
+                    <div class="widget-user-image">
+                        @if (!string.IsNullOrWhiteSpace(profile.ImagePath))
+                        {
+                            <img class="profile-user-img img-fluid img-circle" src="~/img/users/@profile.ImagePath" alt="User profile picture">
+                        }
+                        else
+                        {
+                            <img class="profile-user-img img-fluid img-circle" src="~/img/common/default-male.png" alt="User profile picture">
+                        }
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-sm-6 border-right">
+                                <div class="description-block">
+                                    <h5 class="description-header">@profile.Following</h5>
+                                    <span class="description-text">FOLLOWERS</span>
                                 </div>
-
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="description-block">
+                                    <h5 class="description-header">@profile.Followers</h5>
+                                    <span class="description-text">FOLLOWING</span>
+                                </div>
                             </div>
                         </div>
 
                     </div>
-                }
-            }
-            <div class="col-md-3"></div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
         </div>
-    </div>
-</div>
+    }
+}

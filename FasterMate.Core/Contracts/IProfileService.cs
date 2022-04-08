@@ -1,6 +1,7 @@
 ﻿namespace FasterMate.Core.Contracts
 {
     using FasterMate.Infrastructure.Data;
+    using FasterMate.ViewModels.Home;
     using FasterMate.ViewModels.Profile;
 
     public interface IProfileService
@@ -20,5 +21,7 @@
         Task<string> CreateAsync(RegisterViewModel input);
 
         Task FollowProfileAsync(string currentProfileId, string askingProfileId);
+
+        IEnumerable<ProfileSearchViewModel> SearchProfiles(string[] searchTokens);
     }
 }

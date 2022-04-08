@@ -21,13 +21,18 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="Text"></label>
-                        <textarea asp-for="Text" class="form-control" ></textarea>
+                        <textarea asp-for="Text" class="form-control"></textarea>
                         <span asp-validation-for="Text" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Image"></label>
-                        <input asp-for="Image" />
-                        <span asp-validation-for="Image" class="text-danger"></span>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input asp-for="Image" class="custom-file-input">
+                                <label class="custom-file-label" asp-for="Image">Upload the file...</label>
+                                <span asp-validation-for="Image" class="text-danger"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <input type="hidden" asp-for="@Model.ReturnId" />
@@ -40,5 +45,5 @@
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+<partial name="_ValidationScriptsPartial" />
 }

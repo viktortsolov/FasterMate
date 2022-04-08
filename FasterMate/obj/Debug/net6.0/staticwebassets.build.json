@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9aE2U4hZQgKnZxGFcumtvDysXz0L7kGg4nF8QO56hB8=",
+  "Hash": "lpPCotsBz3+FmAjREBtMbLIBr3jlaOJYT45Z6VLfKfE=",
   "Source": "FasterMate",
   "BasePath": "_content/FasterMate",
   "Mode": "Default",
@@ -1630,6 +1630,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\common\\logo.png"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\84e742eb-0be7-4da5-a565-6812e2b18a9a.jpg",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/posts/84e742eb-0be7-4da5-a565-6812e2b18a9a.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\posts\\84e742eb-0be7-4da5-a565-6812e2b18a9a.jpg"
     },
     {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\ec2ce9f2-8f61-417f-ab17-4bafc6eac1c4.jpg",

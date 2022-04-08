@@ -13,7 +13,6 @@
         private readonly IProfileService profileService;
         private readonly IOfferService offerService;
 
-
         public OfferController(
             IProfileService _profileService,
             IOfferService _offerService)
