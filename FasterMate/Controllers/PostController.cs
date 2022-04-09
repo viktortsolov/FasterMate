@@ -3,7 +3,6 @@
     using System.Security.Claims;
 
     using FasterMate.Core.Contracts;
-    using FasterMate.Infrastructure.Data;
     using FasterMate.ViewModels.Comment;
     using FasterMate.ViewModels.Post;
 

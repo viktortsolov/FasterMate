@@ -24,7 +24,9 @@
                 .CreateLogger(typeof(ApplicationDbContextSeeder));
 
             var seeders = new List<ISeeder>
-            { new CountriesSeeder()};
+            {
+                new CountriesSeeder(), new RolesSeeder()
+            };
 
             foreach (var seeder in seeders)
             {

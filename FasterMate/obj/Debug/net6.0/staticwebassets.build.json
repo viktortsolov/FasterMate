@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lpPCotsBz3+FmAjREBtMbLIBr3jlaOJYT45Z6VLfKfE=",
+  "Hash": "CBJCAWL5KSxqxToij2y4zjuU/tOvtsxC/DFekI6mc0Q=",
   "Source": "FasterMate",
   "BasePath": "_content/FasterMate",
   "Mode": "Default",
@@ -1732,6 +1732,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\users\\b2df4e26-d325-4129-ab7b-183b34ba66ec.jpg"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\users\\e81252ad-97a4-47eb-a5fd-cf80b675b88c.png",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/users/e81252ad-97a4-47eb-a5fd-cf80b675b88c.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\users\\e81252ad-97a4-47eb-a5fd-cf80b675b88c.png"
     },
     {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\js\\.eslintrc.json",

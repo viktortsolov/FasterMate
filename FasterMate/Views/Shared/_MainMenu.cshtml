@@ -25,8 +25,20 @@
         }
         else
         {
+            @if (this.User.IsInRole("Administrator"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="Administrator" asp-controller="Home" asp-action="Index">
+                        <i class="nav-icon fas fa-fingerprint"></i>
+                        <p>
+                            Administrator
+                        </p>
+                    </a>
+                </li>
+            }
+
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Home" asp-action="Index">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
                     <i class="nav-icon fas fa-home"></i>
                     <p>
                         Home
@@ -34,7 +46,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Home" asp-action="Search">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Search">
                     <i class="nav-icon fas fa-search"></i>
                     <p>
                         Search
@@ -42,7 +54,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Post" asp-action="CreatePost">
+                <a class="nav-link" asp-area="" asp-controller="Post" asp-action="CreatePost">
                     <i class="nav-icon fas fa-clipboard"></i>
                     <p>
                         Create a Post
@@ -50,7 +62,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Offer" asp-action="BookAFlight">
+                <a class="nav-link" asp-area="" asp-controller="Offer" asp-action="BookAFlight">
                     <i class="nav-icon fas fa-plane-departure"></i>
                     <p>
                         Book a Flight?
@@ -58,7 +70,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Offer" asp-action="MyFlights">
+                <a class="nav-link" asp-area="" asp-controller="Offer" asp-action="MyFlights">
                     <i class="nav-icon fas fa-ticket-alt"></i>
                     <p>
                         My Flights
@@ -66,7 +78,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="..." asp-action="...">
+                <a class="nav-link" asp-area="" asp-controller="..." asp-action="...">
                     <i class="nav-icon fas fa-users"></i>
                     <p>
                         Chat
