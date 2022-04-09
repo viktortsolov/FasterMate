@@ -23,7 +23,7 @@
 
         public IActionResult BookAFlight()
         {
-            var offers = offerService.RenderOffers();
+            var offers = offerService.GetAllOffers();
 
             return View(offers);
         }

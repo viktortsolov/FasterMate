@@ -62,37 +62,14 @@
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
+
             var post = postService.RenderSinglePost(id, profileId);
 
             return View(post);
         }
 
-        public async Task<IActionResult> LikePost(string id)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var profileId = profileService.GetId(userId);
-
-            await postService.LikePostAsync(profileId, id);
-
-            return RedirectToAction("SeePost", "Post", new { id });
-        }
-
-        public IActionResult AddComment(string id)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var profileId = profileService.GetId(userId);
-
-            var viewModel = new AddCommentViewModel
-            {
-                ReturnId = profileId,
-                PostId = id
-            };
-
-            return View(viewModel);
-        }
-
         [HttpPost]
-        public async Task<IActionResult> AddComment(AddCommentViewModel input)
+        public async Task<IActionResult> SeePost(AddCommentViewModel input)
         {
             if (!ModelState.IsValid)
             {
@@ -104,7 +81,17 @@
 
             await commentService.AddAsync(profileId, input);
 
-            return RedirectToAction("SeePost", "Post", new { id = input.PostId });
+            return RedirectToAction(nameof(SeePost), new { id = input.PostId });
+        }
+
+        public async Task<IActionResult> LikePost(string id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            await postService.LikePostAsync(profileId, id);
+
+            return RedirectToAction(nameof(SeePost), new { id });
         }
 
         public async Task<IActionResult> DeletePost(string id)
@@ -121,7 +108,7 @@
         {
             var postId = await commentService.DeleteAsync(id);
 
-            return RedirectToAction("SeePost", "Post", new { id = postId });
+            return RedirectToAction(nameof(SeePost), new { id = postId });
         }
     }
 }

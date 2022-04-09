@@ -30,5 +30,11 @@
 
         public IEnumerable<RenderCommentViewModel> Comments { get; set; } = new HashSet<RenderCommentViewModel>();
 
+        public AddCommentViewModel Comment { get; set; }
+
+        public string PostId { get; set; }
+
+        public string ReturnId { get; set; }
+
     }
 }

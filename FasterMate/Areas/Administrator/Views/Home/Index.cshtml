@@ -2,12 +2,20 @@
     ViewData["Title"] = "Admin home";
 }
 
-    <div class="jumbotron">
-        <h1 class="display-4 dagner">Admin!</h1>
-        <p class="lead">FasterMate is a web application for travellers. 
-                        It provides features like choosing the correct destination, 
-                        making bookings, and organizing the trip. 
-                        Here you can see posts from other users, 
-                        that have been to the place you want to go! 
-                        You can take advice from them in real-live chat.</p>
+<h2 class="text-center display-4">Administrator panel</h2>
+
+<img class="img-fluid rounded mx-auto d-block"  width="300" height="300" src="~/img/common/admin-panel.png" alt="User Image">
+
+<p class="text-center font-italic">From there you can control different parts of the web application. You can manage the administrators of the application, manage the offers and manage the posts.</p>
+
+<div class="row">
+    <div class="col-md-4 mt-2">
+        <a asp-area="Administrator" asp-action="ManageUsers" asp-controller="User" class="btn btn-block btn-primary btn-lg">Manage user roles, names and etc.</a>
     </div>
+    <div class="col-md-4 mt-2">
+        <a asp-area="Administrator" asp-action="ManageOffers" asp-controller="Offer" class="btn btn-block btn-primary btn-lg">Manage the published offers</a>
+    </div>
+    <div class="col-md-4 mt-2">
+        <a asp-area="Administrator" asp-action="ManagePosts" asp-controller="Post" class="btn btn-block btn-primary btn-lg">Manage the published posts</a>
+    </div>
+</div>

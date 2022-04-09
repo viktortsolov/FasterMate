@@ -38,13 +38,12 @@
                 <img class="img-fluid pad mb-3" src="~/img/posts/@Model.ImagePath" alt="Photo">
                 @if (Model.IsLikedByVisitor)
                 {
-                    <a asp-action="LikePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-secondary btn-sm"><i class="far fa-thumbs-down"></i> Dislike</a>
+                    <a asp-action="LikePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-secondary btn-sm"><i class="far fa-thumbs-down"></i> Unlike</a>
                 }
                 else
                 {
-                    <a asp-action="LikePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-secondary btn-sm"><i class="far fa-thumbs-up"></i> Like</a>
+                    <a asp-action="LikePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-success btn-sm"><i class="far fa-thumbs-up"></i> Like</a>
                 }
-                <a asp-action="AddComment" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-success btn-sm"><i class="far fa-comment"></i> Comment</a>
                 @if (Model.IsOwner)
                 {
                     <a asp-action="DeletePost" asp-controller="Post" asp-route-id="@Model.Id" type="button" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i> Delete Post</a>
@@ -56,7 +55,7 @@
     <div class="col-md-6">
         <div class="card card-widget">
             <div class="card-header">
-               <h4 class="text-xl-center"><b>Comments</b></h4>
+                <h4 class="text-xl-center"><b>Comments</b></h4>
             </div>
             <div class="card-footer card-comments">
                 @if (Model.Comments.Count() == 0)
@@ -88,6 +87,15 @@
                         </div>
                     }
                 }
+                <form method="post">
+                    <div class="img-push mt-2">
+                        <label asp-for="Comment"></label>
+                        <input class="form-control form-control-sm" asp-for="Comment" class="form-control" />
+                        <span asp-validation-for="Comment" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="PostId" value="@Model.Id" />
+                    <input type="hidden" asp-for="ReturnId" value="@Model.ProfileId" />
+                </form>
             </div>
         </div>
     </div>

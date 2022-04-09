@@ -6,8 +6,12 @@
     {
         Task<bool> CreateAsync(CreateOfferViewModel input, string profileId);
 
-        IEnumerable<RenderOfferViewModel> RenderOffers();
+        IEnumerable<RenderOfferViewModel> GetAllOffers();
 
         Task CreateProfileOfferAsync(string id, string profileId);
+
+        IEnumerable<RenderAdministratorOfferViewModel> GetAllOffersForAdministratior();
+
+        Task DeleteAsync(string id);
     }
 }

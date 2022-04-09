@@ -35,16 +35,6 @@
             userService = _userService;
         }
 
-        public async Task<IActionResult> CreateRole()
-        {
-            await roleManager.CreateAsync(new IdentityRole()
-            {
-                Name = "Moderator"
-            });
-
-            return Ok();
-        }
-
         public async Task<IActionResult> ManageUsers()
         {
             var users = await userService.GetUsers();

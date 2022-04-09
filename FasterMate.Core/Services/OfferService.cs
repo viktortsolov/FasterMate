@@ -61,7 +61,32 @@
             await profileOfferRepo.SaveChangesAsync();
         }
 
-        public IEnumerable<RenderOfferViewModel> RenderOffers()
+        public async Task DeleteAsync(string id)
+        {
+            var offer = offerRepo
+                .AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .FirstOrDefault();
+
+            if (offer != null)
+            {
+                if (offer.IsBooked)
+                {
+                    var profileOffer = profileOfferRepo
+                        .AllAsNoTracking()
+                        .Where(x => x.OfferId == id)
+                        .FirstOrDefault();
+
+                    profileOfferRepo.Delete(profileOffer);
+                }
+
+                offerRepo.Delete(offer);
+
+                await offerRepo.SaveChangesAsync();
+            }
+        }
+
+        public IEnumerable<RenderOfferViewModel> GetAllOffers()
             => offerRepo
                     .AllAsNoTracking()
                     .Include(x => x.Owner)
@@ -76,6 +101,24 @@
                         PriceOfTicket = x.PriceOfTicket.ToString("f2"),
                         IsBooked = x.IsBooked,
                         Name = $"{x.Owner.FirstName} {x.Owner.LastName}"
+                    })
+                    .ToList();
+
+        public IEnumerable<RenderAdministratorOfferViewModel> GetAllOffersForAdministratior()
+            => offerRepo
+                    .AllAsNoTracking()
+                    .Include(x => x.Owner)
+                    .OrderByDescending(x => x.DepartureTime)
+                    .Select(x => new RenderAdministratorOfferViewModel()
+                    {
+                        Id = x.Id,
+                        ArrivalLocation = x.ArrivalLocation,
+                        DepartureLocation = x.DepartureLocation,
+                        ArrivalTime = x.ArrivalTime.ToString("dd.MM.yyyy a\\t HH:mm"),
+                        DepartureTime = x.DepartureTime.ToString("dd.MM.yyyy a\\t HH:mm"),
+                        PriceOfTicket = x.PriceOfTicket.ToString("f2"),
+                        Name = $"{x.Owner.FirstName} {x.Owner.LastName}",
+                        ProfileId = x.ProfileId
                     })
                     .ToList();
     }
