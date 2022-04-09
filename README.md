@@ -18,7 +18,7 @@ The web application has the following controllers:
  - AdminLTE Bootstrap Template
  - 
 # 🗃️ Database
-*TODO*
+![FasterMate-DB](https://user-images.githubusercontent.com/75324909/162582399-c69bd803-39eb-4b91-a21c-4e1f001fc985.png)
 
 # 🧪 Unit Tests
 *TODO*
