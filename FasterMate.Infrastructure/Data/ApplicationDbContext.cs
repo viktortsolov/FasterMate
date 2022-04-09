@@ -1,9 +1,11 @@
 ﻿namespace FasterMate.Infrastrucutre.Data
 {
+    using System.Linq;
+
     using FasterMate.Infrastructure.Data;
+    
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
-    using System.Linq;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -29,6 +31,13 @@
         public DbSet<Offer> Offers { get; set; }
 
         public DbSet<ProfileOffer> ProfileOffers { get; set; }
+
+        public DbSet<Group> Groups { get; set; }
+
+        public DbSet<GroupMember> GroupMembers { get; set; }
+
+        public DbSet<Message> Messages { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -59,12 +68,14 @@
             builder.Entity<ProfileOffer>()
                 .HasKey(e => new { e.ProfileId, e.OfferId });
 
+            builder.Entity<GroupMember>()
+                .HasKey(e => new { e.GroupId, e.ProfileId });
+
             var entityTypes = builder
                 .Model
                 .GetEntityTypes()
                 .ToList();
 
-            //Disable cascade delete
             var foreignKeys = entityTypes.
                 SelectMany(e => e.GetForeignKeys().Where(f => f.DeleteBehavior == DeleteBehavior.Cascade));
 

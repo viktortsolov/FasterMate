@@ -1,5 +1,6 @@
 using FasterMate.Core.Constants;
 using FasterMate.Extensions;
+using FasterMate.Hubs;
 using FasterMate.Infrastructure.Data;
 using FasterMate.Infrastructure.Seeding;
 using FasterMate.Infrastrucutre.Data;
@@ -21,13 +22,6 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-//builder.Services.AddAuthentication()
-//    .AddFacebook(opt =>
-//    {
-//        opt.AppId = builder.Configuration.GetValue<string>("Facebook:AppId");
-//        opt.AppSecret = builder.Configuration.GetValue<string>("Facebook:AppSecret");
-//    });
-
 builder
     .Services.AddControllersWithViews()
     .AddMvcOptions(options =>
@@ -37,11 +31,12 @@ builder
         options.ModelBinderProviders.Insert(2, new DateTimeModelBinderProvider(FormatingConstant.NormalDateFormat));
     });
 
+builder.Services.AddSignalR();
+
 builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
-//Seed data on application startup
 using (var serviceScope = app.Services.CreateScope())
 {
     var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
@@ -73,6 +68,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapHub<ChatHub>("/chatHub");
 
 app.MapRazorPages();
 

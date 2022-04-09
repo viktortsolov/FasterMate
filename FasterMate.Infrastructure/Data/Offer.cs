@@ -32,6 +32,6 @@
         public string ProfileId { get; set; }
 
         [ForeignKey(nameof(ProfileId))]
-        public Profile Owner { get; set; }
+        public virtual Profile Owner { get; set; }
     }
 }

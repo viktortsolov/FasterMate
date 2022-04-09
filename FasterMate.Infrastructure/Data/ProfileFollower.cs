@@ -17,6 +17,6 @@
         [MaxLength(36)]
         public string FollowerId { get; set; }
 
-        public virtual Profile? Follower { get; set; }
+        public virtual Profile Follower { get; set; }
     }
 }

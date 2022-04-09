@@ -12,5 +12,9 @@
         public string Extension { get; set; }
 
         public virtual ICollection<Profile> Profiles { get; set; }
+
+        public virtual ICollection<Post> Posts { get; set; }
+
+        public virtual ICollection<Group> Groups { get; set; }
     }
 }

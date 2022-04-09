@@ -143,6 +143,46 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.ToTable("Countries");
                 });
 
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.Group", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("ImageId")
+                        .IsRequired()
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImageId");
+
+                    b.ToTable("Groups");
+                });
+
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.GroupMember", b =>
+                {
+                    b.Property<string>("GroupId")
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("ProfileId")
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.HasKey("GroupId", "ProfileId");
+
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("GroupMembers");
+                });
+
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Image", b =>
                 {
                     b.Property<string>("Id")
@@ -156,6 +196,35 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Images");
+                });
+
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.Message", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("GroupId")
+                        .IsRequired()
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("ProfileId")
+                        .IsRequired()
+                        .HasMaxLength(36)
+                        .HasColumnType("nvarchar(36)");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GroupId");
+
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Offer", b =>
@@ -490,6 +559,55 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.Group", b =>
+                {
+                    b.HasOne("FasterMate.Infrastructure.Data.Image", "Image")
+                        .WithMany("Groups")
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Image");
+                });
+
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.GroupMember", b =>
+                {
+                    b.HasOne("FasterMate.Infrastructure.Data.Group", "Group")
+                        .WithMany("GroupMembers")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("FasterMate.Infrastructure.Data.Profile", "Profile")
+                        .WithMany()
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.Message", b =>
+                {
+                    b.HasOne("FasterMate.Infrastructure.Data.Group", "Group")
+                        .WithMany("Messages")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("FasterMate.Infrastructure.Data.Profile", "Profile")
+                        .WithMany()
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Offer", b =>
                 {
                     b.HasOne("FasterMate.Infrastructure.Data.Profile", "Owner")
@@ -502,7 +620,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Post", b =>
                 {
                     b.HasOne("FasterMate.Infrastructure.Data.Image", "Image")
-                        .WithMany()
+                        .WithMany("Posts")
                         .HasForeignKey("ImageId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -643,8 +761,19 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("FasterMate.Infrastructure.Data.Group", b =>
+                {
+                    b.Navigation("GroupMembers");
+
+                    b.Navigation("Messages");
+                });
+
             modelBuilder.Entity("FasterMate.Infrastructure.Data.Image", b =>
                 {
+                    b.Navigation("Groups");
+
+                    b.Navigation("Posts");
+
                     b.Navigation("Profiles");
                 });
 
