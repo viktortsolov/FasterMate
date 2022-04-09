@@ -25,5 +25,7 @@
         public string GroupId { get; set; }
 
         public virtual Group Group { get; set; }
+
+        public DateTime CreateOn { get; set; } = DateTime.UtcNow;
     }
 }
