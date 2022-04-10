@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "B+XmpOG4pZQGCe0QPck7cpHg4okLGGJFEkAPaUP7T28=",
+  "Hash": "SKie6GkMvVuiCgmH1srCP/qM9b6Z9463fmLil5RiPZU=",
   "Source": "FasterMate",
   "BasePath": "_content/FasterMate",
   "Mode": "Default",
@@ -1647,6 +1647,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\common\\logo.png"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\groups\\0a6795e9-4a5f-44b8-a9cd-233f2768ea6a.png",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/groups/0a6795e9-4a5f-44b8-a9cd-233f2768ea6a.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\groups\\0a6795e9-4a5f-44b8-a9cd-233f2768ea6a.png"
+    },
+    {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\groups\\ae792535-e60e-4819-b93d-1e885d98b15d.png",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/groups/ae792535-e60e-4819-b93d-1e885d98b15d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\groups\\ae792535-e60e-4819-b93d-1e885d98b15d.png"
     },
     {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\posts\\84e742eb-0be7-4da5-a565-6812e2b18a9a.jpg",

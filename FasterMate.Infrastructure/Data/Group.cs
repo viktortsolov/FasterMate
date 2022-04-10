@@ -20,6 +20,12 @@
 
         public virtual Image Image { get; set; }
 
+        [Required]
+        [MaxLength(36)]
+        [ForeignKey(nameof(Profile))]
+        public string ProfileId { get; set; }
+        public Profile Profile { get; set; }
+
         public virtual ICollection<GroupMember> GroupMembers { get; set; } = new HashSet<GroupMember>();
 
         public virtual ICollection<Message> Messages { get; set; } = new HashSet<Message>();
