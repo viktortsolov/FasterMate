@@ -7,7 +7,5 @@
         Task<string> AddMessageAsync(string groupId, string profileId, string text);
 
         MessageViewModel GetMessageById(string id);
-
-        bool IsOwnerOfTheMessage(string messageId, string profileId);
     }
 }

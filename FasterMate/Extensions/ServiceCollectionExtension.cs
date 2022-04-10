@@ -20,7 +20,8 @@
                     .AddScoped<IPostService, PostService>()
                     .AddScoped<ICommentService, CommentService>()
                     .AddScoped<IOfferService, OfferService>()
-                    .AddScoped<IGroupService, GroupService>();
+                    .AddScoped<IGroupService, GroupService>()
+                    .AddScoped<IMessageService, MessageService>();
 
             return services;
         }

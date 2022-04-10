@@ -277,3 +277,6 @@ E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.Extensions.Ident
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.ViewModels.dll
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.ViewModels.pdb
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\libman.json
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\AngleSharp.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\AngleSharp.Css.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\HtmlSanitizer.dll

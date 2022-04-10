@@ -46,10 +46,5 @@
                     CreatedOn = x.CreateOn.ToString("dd/MM/yyyy HH:mm")
                 })
                 .FirstOrDefault();
-
-        public bool IsOwnerOfTheMessage(string messageId, string profileId)
-            => messageRepo
-                .AllAsNoTracking()
-                .Any(x => x.Id == messageId && x.ProfileId == profileId);
     }
 }
