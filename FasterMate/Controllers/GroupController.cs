@@ -41,14 +41,13 @@
             return BadRequest();
         }
 
-        //DONE
         public IActionResult Create()
         {
             var viewModel = new CreateGroupViewModel();
 
             return View(viewModel);
         }
-        //DONE
+
         [HttpPost]
         public async Task<IActionResult> Create(CreateGroupViewModel input)
         {
@@ -64,7 +63,7 @@
 
             return RedirectToAction(nameof(LetsChat), new { id = groupId });
         }
-        //DONE
+
         public IActionResult MyGroups()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -78,7 +77,7 @@
 
             return View(viewModel);
         }
-        //DONE
+
         public IActionResult Members(string id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -88,7 +87,7 @@
 
             return View(viewModel);
         }
-        //DONE
+
         public IActionResult Edit(string id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -105,7 +104,7 @@
 
             return BadRequest();
         }
-        //DONE
+
         [HttpPost]
         public async Task<IActionResult> Edit(EditGroupViewModel input)
         {
@@ -126,8 +125,7 @@
 
             return RedirectToAction(nameof(MyGroups));
         }
-        //DONE
-        [HttpPost]
+
         public async Task<IActionResult> Delete(string id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -156,6 +154,27 @@
             }
 
             return RedirectToAction(nameof(MyGroups));
+        }
+
+        public IActionResult InviteToGroup(string id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            var isOwner = groupService.IsOwnerOfTheGroup(id, profileId);
+
+            if (isOwner)
+            {
+                var viewModel = new FollowersToInviteViewModel()
+                {
+                    Id = id,
+                    //Friends = groupService.FriendsToInvite(id, profileId),
+                };
+
+                return View(viewModel);
+            }
+
+            return BadRequest();
         }
     }
 }

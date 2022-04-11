@@ -3,6 +3,57 @@
     this.ViewData["Title"] = $"{Model.Name}";
 }
 
+<div class="card card-primary card-outline direct-chat direct-chat-primary">
+    <div class="card-header">
+        <h3 class="card-title">@Model.Name</h3>
+    </div>
+
+    <div class="card-body">
+
+        <div class="direct-chat-messages">
+            <div class="direct-chat-msg">
+                <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-left">Alexander Pierce</span>
+                    <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                </div>
+
+                <div class="direct-chat-text">
+                    Is this template really for free? That's unbelievable!
+                </div>
+
+            </div>
+
+
+            <div class="direct-chat-msg right">
+                <div class="direct-chat-infos clearfix">
+                    <span class="direct-chat-name float-right">Sarah Bullock</span>
+                    <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                </div>
+
+                <div class="direct-chat-text">
+                    You better believe it!
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="card-footer">
+        <form action="#" method="post">
+            <div class="input-group">
+                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                <span class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </span>
+            </div>
+        </form>
+    </div>
+
+</div>
+
 <div class="col-md-12">
     <h1 class="mb-3">@ViewData["Title"]</h1>
     <div id="messageBox" class="overflow-auto container messages-window px-0">
@@ -10,16 +61,16 @@
         {
             <div class="@if (message.ProfileId == Model.ProfileId) {
         <text>offset-md-6 text-right</text>
- } col-md-6">
-                <input type="hidden" class="messageId" id="@message.Id" value="@message.Id" />
-                <a class="ml-2" asp-controller="Profile" asp-action="UserProfile" asp-route-id="@message.ProfileId">
-                    <small class="text-muted">From: @message.ProfileName</small>
-                </a>
-                <p class="mb-0 message @if (message.ProfileId == Model.ProfileId) {
+} col-md-6">
+                    <input type="hidden" class="messageId" id="@message.Id" value="@message.Id" />
+                    <a class="ml-2" asp-controller="Profile" asp-action="UserProfile" asp-route-id="@message.ProfileId">
+                        <small class="text-muted">From: @message.ProfileName</small>
+                    </a>
+                    <p class="mb-0 message @if (message.ProfileId == Model.ProfileId) {
             <text>personal-message</text>
  } text-break">@message.Text</p>
-                <small class="text-muted ml-2">Created on: @message.CreatedOn</small>
-            </div>
+                    <small class="text-muted ml-2">@message.CreatedOn</small>
+                </div>
         }
     </div>
     <div>
@@ -38,10 +89,7 @@
 <script>
     "use strict";
 
-    var connection =
-        new signalR.HubConnectionBuilder()
-            .withUrl("/chat")
-            .build();
+    var connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
 
     connection.start().then(function () {
         var groupId = String('@Model.Id');
@@ -54,7 +102,7 @@
 
     connection.on("RecieveMessage",
         function (messageModel) {
-            var currentProfileId = '@Model.ProfileId';
+            var currentProfileId = String('@Model.ProfileId');
 
             var message = `An unexpected Error has occured`;
 
@@ -62,23 +110,23 @@
                 message =
                     `<div class="offset-md-6 text-right col-md-6">
                         <input type="hidden" class="messageId" id="${messageModel.id}" value="${messageModel.id}" />
-                        <a class="ml-2" asp-controller="Profiles" asp-action="ById" asp-route-id="${messageModel.profileId}">
-                            <small class="text-muted">From: ${messageModel.profileFirstName} ${messageModel.profileLastName}</small>
+                        <a class="ml-2" asp-controller="Profile" asp-action="UserProfile" asp-route-id="${messageModel.profileId}">
+                            <small class="text-muted">From: ${messageModel.profileName}</small>
                         </a>
                         <button class="deleteButton btn btn-sm btn-danger mx-2 mb-1">Delete</button>
                         <p class="mb-0 message personal-message text-break">${messageModel.text}</p>
-                        <small class="text-muted ml-2">Created on: ${messageModel.createdOnString}</small>
+                        <small class="text-muted ml-2">${messageModel.createdOn}</small>
                     </div>`;
             }
             else {
                 message =
                     `<div class="col-md-6">
                         <input type="hidden" class="messageId" id="${messageModel.id}" value="${messageModel.id}" />
-                        <a class="ml-2" asp-controller="Profiles" asp-action="ById" asp-route-id="${messageModel.profileId}">
-                            <small class="text-muted">From: ${messageModel.profileFirstName} ${messageModel.profileLastName}</small>
+                        <a class="ml-2" asp-controller="Profile" asp-action="UserProfile" asp-route-id="${messageModel.profileId}">
+                            <small class="text-muted">From: ${messageModel.profileName}</small>
                         </a>
                         <p class="mb-0 message text-break">${messageModel.text}</p>
-                        <small class="text-muted ml-2">Created on: ${messageModel.createdOnString}</small>
+                        <small class="text-muted ml-2">${messageModel.createdOn}</small>
                     </div>`;
             }
 
@@ -88,7 +136,7 @@
 
 
     $("#sendButton").click(function () {
-        var message = escapeHtml($("#message").val());
+        var message = String(document.getElementById("message").value);
         var groupId = String('@Model.Id');
         connection.invoke("Send", groupId, message).catch(function (err) {
             return console.error(err.toString());

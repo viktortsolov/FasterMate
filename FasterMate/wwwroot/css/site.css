@@ -77,3 +77,12 @@ a {
         background-color: #856341;
         border-color: #856341;
     }
+
+.direct-chat-text {
+    margin: 5px 0 0 0;
+}
+
+.right .direct-chat-text {
+    margin-left: 0;
+    margin-right: 0;
+}

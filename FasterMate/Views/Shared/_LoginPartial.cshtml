@@ -14,7 +14,7 @@
             <img src="~/img/common/default-male.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a asp-controller="Profile" asp-action="UserProfile" asp-route-id="@profileId" class="d-block">@User.Identity.Name</a>
+            <a asp-area="" asp-controller="Profile" asp-action="UserProfile" asp-route-id="@profileId" class="d-block">@User.Identity.Name</a>
         </div>
     </div>
 }

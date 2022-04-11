@@ -71,6 +71,11 @@
                     groupMemberRepo.Delete(groupMember);
                 }
 
+                foreach (var message in messageRepo.All().Where(x => x.GroupId == groupId))
+                {
+                    messageRepo.Delete(message);
+                }
+
                 groupRepo.Delete(group);
                 await groupMemberRepo.SaveChangesAsync();
             }
