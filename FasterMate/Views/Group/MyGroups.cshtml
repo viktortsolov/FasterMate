@@ -21,6 +21,7 @@
                             Group Image
                         </th>
                         <th style="width: 40%">
+
                         </th>
                     </tr>
                 </thead>
@@ -38,14 +39,7 @@
                             <td>
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                                        @if (!string.IsNullOrWhiteSpace(group.ImagePath))
-                                        {
-                                            <img src="~/img/groups/@group.ImagePath" alt="Avatar" class="rounded" width="150" height="150">
-                                        }
-                                        else
-                                        {
-                                            <img src="~/img/common/admin-panel.png" alt="Avatar" class="table-avatar">
-                                        }
+                                        <img src="~/img/groups/@group.ImagePath" alt="Avatar" class="rounded" width="150" height="150">
                                     </li>
                                 </ul>
                             </td>
@@ -76,12 +70,14 @@
                                 }
                                 @if (group.IsOwner)
                                 {
-                                    <a class="btn btn-danger" asp-controller="Group" asp-action="Delete" asp-route-id="@group.Id">
-                                        <i class="fas fa-trash">
-                                        </i>
+                                    <form method="post">
+                                        <button class="btn btn-danger mt-1" asp-controller="Group" asp-action="Delete" asp-route-id="@group.Id">
+                                            <i class="fas fa-trash">
+                                            </i>
 
-                                        Delete Group
-                                    </a>
+                                            Delete Group
+                                        </button>
+                                    </form>
                                 }
                             </td>
                         </tr>

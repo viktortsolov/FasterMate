@@ -2,12 +2,8 @@
 {
     public class GroupMemberViewModel
     {
-        public string ProfileId { get; set; }
+        public string Id { get; set; }
 
-        public string Name { get; set; }
-
-        public string ImagePath { get; set; }
-
-        public bool IsOwner { get; set; }
+        public IEnumerable<GroupMemberInfoViewModel> Members { get; set; }
     }
 }

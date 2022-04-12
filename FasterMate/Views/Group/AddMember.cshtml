@@ -1,4 +1,57 @@
-﻿
+﻿@model FollowersToInviteViewModel
 @{
     ViewData["Title"] = "Add Member";
+}
+
+@if (@Model.Followers.Count() == 0)
+{
+    <h2 class="text-center display-5 mt-2">You do not follow anyone!</h2>
+}
+else
+{
+    @foreach (var member in @Model.Followers)
+    {
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card card-widget widget-user mt-2">
+
+                    <div class="widget-user-header bg-primary">
+                        <a asp-action="UserProfile" asp-controller="Profile" asp-route-id="@member.ProfileId" class="widget-user-username">@member.Name</a>
+                        <h5 class="widget-user-desc">&commat;@member.Username</h5>
+                    </div>
+                    <div class="widget-user-image">
+                        @if (!string.IsNullOrWhiteSpace(member.ImagePath))
+                        {
+                            <img class="profile-user-img img-fluid img-circle" src="~/img/users/@member.ImagePath" alt="User profile picture">
+                        }
+                        else
+                        {
+                            <img class="profile-user-img img-fluid img-circle" src="~/img/common/default-male.png" alt="User profile picture">
+                        }
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="description-block">
+                                    @if (member.IsParticipating)
+                                    {
+                                        <h5 class="description-header">Already in the group</h5>
+                                    }
+                                    else
+                                    {
+                                        <form method="post" asp-action="AddMember" asp-route-id="@Model.Id" asp-route-addingId="@member.ProfileId">
+                                            <button class="btn btn-primary">Add To Group</button>
+                                        </form>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    }
 }

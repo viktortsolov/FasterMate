@@ -52,10 +52,10 @@ else
                                                 <span class="username">
                                                     <a asp-action="UserProfile" asp-controller="Profile" asp-route-id="@post.ProfileId">@post.ProfileName</a>
                                                 </span>
-                                                <span class="description">@post.CreatedOn</span>
+                                                <span class="description">@post.CreatedOn in <b>@post.Location</b></span>
                                             </div>
 
-                                            <p class="text">@post.Text</p>
+                                            <p>@post.Text</p>
 
                                             <div class="row mb-3">
                                                 <div class="col-sm-12">

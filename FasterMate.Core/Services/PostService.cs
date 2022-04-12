@@ -152,7 +152,7 @@
                 Id = r.Id,
                 Text = r.Text,
                 Location = r.Location,
-                CreatedOn = r.CreatedOn.ToString("dd/MM/yyyy"),
+                CreatedOn = r.CreatedOn.ToString("hh:mm, dd/MM/yyyy"),
                 ImagePath = $"{r.Image.Id}.{r.Image.Extension}",
                 LikesCount = postLikesRepo.All().Where(x => x.PostId == r.Id).Count(),
                 CommentsCount = commentRepo.All().Where(x => x.PostId == r.Id).Count(),

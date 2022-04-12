@@ -52,6 +52,11 @@
                 throw new ArgumentException("The selected gender must be valid!");
             }
 
+            if (DateTime.Parse(input.BirthDate) < DateTime.Parse("01/01/1900 00:00"))
+            {
+                throw new ArgumentException("Birth Date must be after the year of 1900!");
+            }
+
             var profile = new Profile()
             {
                 BirthDate = DateTime.Parse(input.BirthDate),
@@ -77,6 +82,7 @@
         public Profile GetById(string id)
             => profileRepo
                 .AllAsNoTracking()
+                .Include(x => x.Image)
                 .FirstOrDefault(x => x.Id == id);
 
         public Profile GetByUserId(string id)
@@ -221,5 +227,6 @@
 
             return genderValue;
         }
+
     }
 }

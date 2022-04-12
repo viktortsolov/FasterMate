@@ -16,7 +16,7 @@
         {
             if (value is DateTime dateValue)
             {
-                return DateTime.Compare(dateValue, DateTime.UtcNow) <= 0 && dateValue.Year >= this.minYear;
+                return DateTime.Compare(dateValue, DateTime.Now) <= 0 && dateValue.Year >= this.minYear;
             }
 
             return false;

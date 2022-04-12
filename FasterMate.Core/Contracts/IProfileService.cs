@@ -1,6 +1,7 @@
 ﻿namespace FasterMate.Core.Contracts
 {
     using FasterMate.Infrastructure.Data;
+    using FasterMate.ViewModels.Group;
     using FasterMate.ViewModels.Home;
     using FasterMate.ViewModels.Profile;
 

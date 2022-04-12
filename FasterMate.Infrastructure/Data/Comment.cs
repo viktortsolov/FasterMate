@@ -28,6 +28,6 @@ namespace FasterMate.Infrastructure.Data
         public virtual Post Post { get; set; }
 
         [Required]
-        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedOn { get; set; } = DateTime.Now;
     }
 }

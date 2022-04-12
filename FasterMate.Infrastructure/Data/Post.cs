@@ -18,7 +18,7 @@
         public string Location { get; set; }
 
         [Required]
-        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedOn { get; set; } = DateTime.Now;
 
         [Required]
         [ForeignKey(nameof(Image))]

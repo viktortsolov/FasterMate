@@ -19,7 +19,7 @@
         {
             profileService = _profileService;
             offerService = _offerService;
-        }
+        } 
 
         public IActionResult BookAFlight()
         {
@@ -45,7 +45,19 @@
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
-            
+
+            if (DateTime.Parse(input.DepartureTime) < DateTime.Now)
+            {
+                ViewData[MessageConstant.ErrorMessage] = "Your departure time is invalid!";
+                return View(input);
+            }
+
+            if (DateTime.Parse(input.ArrivalTime) < DateTime.Now)
+            {
+                ViewData[MessageConstant.ErrorMessage] = "Your arrival time is invalid!";
+                return View(input);
+            }
+
             var offer = await offerService.CreateAsync(input, profileId);
             if (offer == false)
             {

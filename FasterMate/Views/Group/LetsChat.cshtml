@@ -2,87 +2,47 @@
 @{
     this.ViewData["Title"] = $"{Model.Name}";
 }
-
-<div class="card card-primary card-outline direct-chat direct-chat-primary">
-    <div class="card-header">
-        <h3 class="card-title">@Model.Name</h3>
-    </div>
-
-    <div class="card-body">
-
-        <div class="direct-chat-messages">
-            <div class="direct-chat-msg">
-                <div class="direct-chat-infos clearfix">
-                    <span class="direct-chat-name float-left">Alexander Pierce</span>
-                    <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                </div>
-
-                <div class="direct-chat-text">
-                    Is this template really for free? That's unbelievable!
-                </div>
-
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="card card-primary card-outline direct-chat direct-chat-primary">
+            <div class="card-header">
+                <h3 class="text-center display-5">@Model.Name</h3>
             </div>
 
+            <div class="card-body">
+                <div class="direct-chat-messages">
+                    @foreach (var message in Model.Messages.OrderBy(x => x.CreatedOn))
+                    {
+                        <div class="@((message.ProfileId == Model.ProfileId) ? "right" : "") direct-chat-msg">
+                            <input type="hidden" class="messageId" id="@message.Id" value="@message.Id" />
 
-            <div class="direct-chat-msg right">
-                <div class="direct-chat-infos clearfix">
-                    <span class="direct-chat-name float-right">Sarah Bullock</span>
-                    <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                            <div class="direct-chat-infos clearfix" style="@((message.ProfileId == Model.ProfileId) ? "margin-left:50%;" : "margin-right:50%;")">
+                                <a class="direct-chat-name float-left" asp-controller="Profile" asp-action="UserProfile" asp-route-id="@message.ProfileId">
+                                    @message.ProfileName
+                                </a>
+                                <span class="direct-chat-timestamp float-right">@message.CreatedOn</span>
+                            </div>
+
+                            <div class="direct-chat-text">
+                                @message.Text
+                            </div>
+                        </div>
+                    }
                 </div>
-
-                <div class="direct-chat-text">
-                    You better believe it!
-                </div>
-
             </div>
 
-        </div>
-
-
-    </div>
-
-    <div class="card-footer">
-        <form action="#" method="post">
-            <div class="input-group">
-                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                <span class="input-group-append">
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </span>
-            </div>
-        </form>
-    </div>
-
-</div>
-
-<div class="col-md-12">
-    <h1 class="mb-3">@ViewData["Title"]</h1>
-    <div id="messageBox" class="overflow-auto container messages-window px-0">
-        @foreach (var message in Model.Messages.OrderBy(x => x.CreatedOn))
-        {
-            <div class="@if (message.ProfileId == Model.ProfileId) {
-        <text>offset-md-6 text-right</text>
-} col-md-6">
-                    <input type="hidden" class="messageId" id="@message.Id" value="@message.Id" />
-                    <a class="ml-2" asp-controller="Profile" asp-action="UserProfile" asp-route-id="@message.ProfileId">
-                        <small class="text-muted">From: @message.ProfileName</small>
-                    </a>
-                    <p class="mb-0 message @if (message.ProfileId == Model.ProfileId) {
-            <text>personal-message</text>
- } text-break">@message.Text</p>
-                    <small class="text-muted ml-2">@message.CreatedOn</small>
+            <div class="card-footer">
+                <div class="input-group">
+                    <input id="message" type="text" class="form-control" placeholder="Message...">
+                    <span class="input-group-append">
+                        <button id="sendButton" class="btn btn-primary">Send</button>
+                    </span>
                 </div>
-        }
-    </div>
-    <div>
-        <div class="input-group mb-3 row mx-0">
-            <input id="message" type="text" class="form-control" placeholder="Message...">
-            <div class="input-group-append">
-                <button class="input-group-text btn btn-dark" id="sendButton">
-                    Send
-                </button>
             </div>
         </div>
     </div>
+    <div class="col-md-1"></div>
 </div>
 
 @section Scripts{
@@ -108,30 +68,45 @@
 
             if (currentProfileId == messageModel.profileId) {
                 message =
-                    `<div class="offset-md-6 text-right col-md-6">
+                    `
+                    <div class="direct-chat-msg right">
                         <input type="hidden" class="messageId" id="${messageModel.id}" value="${messageModel.id}" />
-                        <a class="ml-2" asp-controller="Profile" asp-action="UserProfile" asp-route-id="${messageModel.profileId}">
-                            <small class="text-muted">From: ${messageModel.profileName}</small>
-                        </a>
-                        <button class="deleteButton btn btn-sm btn-danger mx-2 mb-1">Delete</button>
-                        <p class="mb-0 message personal-message text-break">${messageModel.text}</p>
-                        <small class="text-muted ml-2">${messageModel.createdOn}</small>
-                    </div>`;
+
+                            <div class="direct-chat-infos clearfix" style="margin-left:50%;">
+                                <a class="direct-chat-name float-left" asp-controller="Profile" asp-action="UserProfile" asp-route-id="${messageModel.profileId}">
+                                    ${messageModel.profileName}
+                                </a>
+                                <span class="direct-chat-timestamp float-right">${messageModel.createdOn}</span>
+                            </div>
+
+                        <div class="direct-chat-text">
+                            ${messageModel.text}
+                        </div>
+                    </div>
+                    `;
             }
             else {
                 message =
-                    `<div class="col-md-6">
+                    `
+                    <div class="direct-chat-msg">
                         <input type="hidden" class="messageId" id="${messageModel.id}" value="${messageModel.id}" />
-                        <a class="ml-2" asp-controller="Profile" asp-action="UserProfile" asp-route-id="${messageModel.profileId}">
-                            <small class="text-muted">From: ${messageModel.profileName}</small>
-                        </a>
-                        <p class="mb-0 message text-break">${messageModel.text}</p>
-                        <small class="text-muted ml-2">${messageModel.createdOn}</small>
-                    </div>`;
+
+                            <div class="direct-chat-infos clearfix" style="margin-right:50%;">
+                                <a class="direct-chat-name float-left" asp-controller="Profile" asp-action="UserProfile" asp-route-id="${messageModel.profileId}">
+                                    ${messageModel.profileName}
+                                </a>
+                                <span class="direct-chat-timestamp float-right">${messageModel.createdOn}</span>
+                            </div>
+
+                        <div class="direct-chat-text">
+                            ${messageModel.text}
+                        </div>
+                    </div>
+                    `;
             }
 
 
-            $("#messageBox").append(message);
+            $(".direct-chat-messages").append(message);
         });
 
 

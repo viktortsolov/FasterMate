@@ -12,6 +12,7 @@
         [StringLength(64, ErrorMessage = "{0} must be at most {1} characters long.")]
         public string Name { get; set; }
 
+        [Required]
         [ImageValidation]
         [Display(Name = "Group Picture")]
         public IFormFile Image { get; set; }

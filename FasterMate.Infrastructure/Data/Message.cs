@@ -26,6 +26,6 @@
 
         public virtual Group Group { get; set; }
 
-        public DateTime CreateOn { get; set; } = DateTime.UtcNow;
+        public DateTime CreateOn { get; set; } = DateTime.Now;
     }
 }

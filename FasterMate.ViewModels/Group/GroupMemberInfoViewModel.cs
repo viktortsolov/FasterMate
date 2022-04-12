@@ -1,6 +1,6 @@
 ﻿namespace FasterMate.ViewModels.Group
 {
-    public class GroupFollowersViewModel
+    public class GroupMemberInfoViewModel
     {
         public string ProfileId { get; set; }
 
@@ -10,6 +10,6 @@
 
         public string ImagePath { get; set; }
 
-        public bool IsParticipating { get; set; }
+        public bool IsOwner { get; set; }
     }
 }

@@ -46,5 +46,7 @@
         public virtual ICollection<Post> Posts { get; set; } = new HashSet<Post>();
         
         public virtual ICollection<Offer> Offers { get; set; } = new HashSet<Offer>();
+
+        public virtual ICollection<Group> Groups { get; set; } = new HashSet<Group>();
     }
 }

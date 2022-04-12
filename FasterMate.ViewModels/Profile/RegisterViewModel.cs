@@ -27,7 +27,6 @@
         [Required]
         [DataType(DataType.Date)]
         [Display(Name = "Birth date")]
-        //TODO: [DateValidation(1900)]
         public string BirthDate { get; set; }
 
         [Required]

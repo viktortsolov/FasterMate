@@ -1,7 +1,8 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using FasterMate.Core.Contracts
+@using Microsoft.AspNetCore.Identity
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
-@*//@model RenderLoginPartialViewModel*@
+@inject IProfileService profileService
 
 @if (SignInManager.IsSignedIn(User))
 {
@@ -9,9 +10,20 @@
     var user = await UserManager.GetUserAsync(this.User);
     var profileId = user.ProfileId;
 
+    var profile = profileService.GetById(profileId);
+
+    var imgPath = profile.Image != null ? $"{profile.Image.Id}.{profile.Image.Extension}" : string.Empty;
+
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            <img src="~/img/common/default-male.png" class="img-circle elevation-2" alt="User Image">
+            @if (!string.IsNullOrEmpty(imgPath))
+            {
+                <img src="~/img/users/@imgPath" class="img-circle elevation-2" alt="User Image">
+            }
+            else
+            {
+                <img src="~/img/common/default-male.png" class="img-circle elevation-2" alt="User Image">
+            }
         </div>
         <div class="info">
             <a asp-area="" asp-controller="Profile" asp-action="UserProfile" asp-route-id="@profileId" class="d-block">@User.Identity.Name</a>

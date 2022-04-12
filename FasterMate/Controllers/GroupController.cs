@@ -83,7 +83,12 @@
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
 
-            var viewModel = groupService.GetMembers(id, profileId);
+            var viewModel = new GroupMemberViewModel()
+            {
+                Id = id,
+                Members = groupService.GetMembers(id, profileId)
+            };
+
 
             return View(viewModel);
         }
@@ -126,6 +131,7 @@
             return RedirectToAction(nameof(MyGroups));
         }
 
+        [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -141,22 +147,23 @@
             return RedirectToAction(nameof(MyGroups));
         }
 
-        public async Task<IActionResult> Leave(string id)
+        [HttpPost]
+        public async Task<IActionResult> RemoveMember(string id, string removeId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
 
             var isOwner = groupService.IsOwnerOfTheGroup(id, profileId);
 
-            if (!isOwner)
+            if (isOwner)
             {
-                await groupService.LeaveAsync(id, profileId);
+                await groupService.RemoveAsync(id, removeId);
             }
 
-            return RedirectToAction(nameof(MyGroups));
+            return RedirectToAction(nameof(MyGroups), new { id });
         }
 
-        public IActionResult InviteToGroup(string id)
+        public IActionResult AddMember(string id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
@@ -168,10 +175,28 @@
                 var viewModel = new FollowersToInviteViewModel()
                 {
                     Id = id,
-                    //Friends = groupService.FriendsToInvite(id, profileId),
+                    Followers = groupService.GetFollowersOfProfile(profileId, id)
                 };
 
                 return View(viewModel);
+            }
+
+            return BadRequest();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddMember(string id, string addingId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            var isOwner = groupService.IsOwnerOfTheGroup(id, profileId);
+
+            if (isOwner)
+            {
+                await groupService.AddMemberAsync(addingId, id);
+
+                return RedirectToAction(nameof(AddMember), new { id });
             }
 
             return BadRequest();

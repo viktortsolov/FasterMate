@@ -16,7 +16,7 @@
 
         IEnumerable<ProfileGroupsViewModel> GetProfileGroups(string profileId);
 
-        IEnumerable<GroupMemberViewModel> GetMembers(string groupId, string profileId);
+        IEnumerable<GroupMemberInfoViewModel> GetMembers(string groupId, string profileId);
 
         EditGroupViewModel GetGroupForEdit(string groupId);
 
@@ -24,6 +24,10 @@
 
         Task DeleteGroupAsync(string groupId);
 
-        Task LeaveAsync(string groupId, string profileId);
+        Task RemoveAsync(string groupId, string profileId);
+
+        IEnumerable<GroupFollowersViewModel> GetFollowersOfProfile(string profileId, string groupId);
+
+        Task AddMemberAsync(string profileId, string groupId);
     }
 }

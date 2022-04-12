@@ -13,6 +13,8 @@
         private readonly IRepository<GroupMember> groupMemberRepo;
         private readonly IRepository<Group> groupRepo;
         private readonly IRepository<Message> messageRepo;
+        private readonly IRepository<Profile> profileRepo;
+        private readonly IRepository<ProfileFollower> profileFollowerRepo;
 
         private readonly IImageService imgService;
 
@@ -20,13 +22,36 @@
             IRepository<GroupMember> _groupMemberRepo,
             IRepository<Group> _groupRepo,
             IRepository<Message> _messageRepo,
+            IRepository<Profile> _profileRepo,
+            IRepository<ProfileFollower> _profileFollowerRepo,
             IImageService _imgService)
         {
             groupMemberRepo = _groupMemberRepo;
             groupRepo = _groupRepo;
             messageRepo = _messageRepo;
+            profileRepo = _profileRepo;
+            profileFollowerRepo = _profileFollowerRepo;
 
             imgService = _imgService;
+        }
+
+        public async Task AddMemberAsync(string profileId, string groupId)
+        {
+            var isMember = groupMemberRepo
+                .AllAsNoTracking()
+                .Any(x => x.GroupId == groupId && x.ProfileId == profileId);
+
+            if (!isMember)
+            {
+                var groupMember = new GroupMember()
+                {
+                    GroupId = groupId,
+                    ProfileId = profileId
+                };
+
+                await groupMemberRepo.AddAsync(groupMember);
+                await groupMemberRepo.SaveChangesAsync();
+            }
         }
 
         public async Task<string> CreateAsync(string profileId, CreateGroupViewModel input, string path)
@@ -81,6 +106,23 @@
             }
         }
 
+        public IEnumerable<GroupFollowersViewModel> GetFollowersOfProfile(string profileId, string groupId)
+            => profileFollowerRepo
+                    .AllAsNoTracking()
+                    .Include(x => x.Follower)
+                    .Include(x => x.Follower.Image)
+                    .Include(x => x.Follower.User)
+                    .Where(x => x.ProfileId == profileId)
+                    .Select(x => new GroupFollowersViewModel()
+                    {
+                        ProfileId = x.FollowerId,
+                        Name = $"{x.Follower.FirstName} {x.Follower.LastName}",
+                        Username = x.Follower.User.UserName,
+                        ImagePath = x.Follower.Image != null ? $"{x.Follower.Image.Id}.{x.Follower.Image.Extension}" : "",
+                        IsParticipating = groupMemberRepo.AllAsNoTracking().Any(r => r.ProfileId == x.FollowerId)
+                    })
+                    .ToList();
+
         public GroupViewModel GetGroupById(string groupId)
             => groupRepo
                 .AllAsNoTracking()
@@ -92,6 +134,7 @@
                     Messages = messageRepo
                         .AllAsNoTracking()
                         .Include(x => x.Profile)
+                        .OrderByDescending(x => x.CreateOn)
                         .Where(x => x.GroupId == groupId)
                         .Select(x => new MessageViewModel()
                         {
@@ -116,17 +159,19 @@
                 })
                 .FirstOrDefault();
 
-        public IEnumerable<GroupMemberViewModel> GetMembers(string groupId, string profileId)
+        public IEnumerable<GroupMemberInfoViewModel> GetMembers(string groupId, string profileId)
             => groupMemberRepo
                 .AllAsNoTracking()
                 .Include(x => x.Profile)
                 .Include(x => x.Profile.Image)
+                .Include(x => x.Profile.User)
                 .Where(x => x.GroupId == groupId)
-                .Select(x => new GroupMemberViewModel
+                .Select(x => new GroupMemberInfoViewModel
                 {
                     ProfileId = x.ProfileId,
                     Name = $"{x.Profile.FirstName} {x.Profile.LastName}",
-                    ImagePath = x.Profile.Image != null ? $"{x.Profile.Image.Id} {x.Profile.Image.Extension}" : "",
+                    Username = x.Profile.User.UserName,
+                    ImagePath = x.Profile.Image != null ? $"{x.Profile.Image.Id}.{x.Profile.Image.Extension}" : "",
                     IsOwner = x.ProfileId == profileId
                 })
                 .ToList();
@@ -158,7 +203,7 @@
                 .Where(x => x.Id == groupId && x.ProfileId == profileId)
                 .Any();
 
-        public async Task LeaveAsync(string groupId, string profileId)
+        public async Task RemoveAsync(string groupId, string profileId)
         {
             var groupMember = groupMemberRepo
                 .All()
@@ -193,5 +238,7 @@
                 await groupRepo.SaveChangesAsync();
             }
         }
+
+
     }
 }
