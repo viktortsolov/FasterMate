@@ -23,8 +23,8 @@
             context.Database.EnsureCreated();
         }
 
-        public ApplicationDbContext CreateContext() => new ApplicationDbContext(dbContextOpt)
-;
+        public ApplicationDbContext CreateContext() => new ApplicationDbContext(dbContextOpt);
+
         public void Dispose() => connection.Dispose();
     }
 }

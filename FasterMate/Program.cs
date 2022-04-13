@@ -22,6 +22,12 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.Configure<CookiePolicyOptions>(opt =>
+{
+    opt.CheckConsentNeeded = context => true;
+    opt.MinimumSameSitePolicy = SameSiteMode.None;
+});
+
 builder
     .Services.AddControllersWithViews()
     .AddMvcOptions(options =>
@@ -57,6 +63,7 @@ else
 
 app.UseHttpsRedirection()
     .UseStaticFiles()
+    .UseCookiePolicy()
     .UseRouting()
     .UseAuthentication()
     .UseAuthorization();
