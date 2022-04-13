@@ -111,7 +111,7 @@
                 .Include(x => x.Image)
                 .Include(x => x.Followers)
                 .Include(x => x.Following)
-                .Where(x => x.User.ProfileId == id)
+                .Where(x => x.Id == id)
                 .FirstOrDefault();
 
             var profileViewModel = new RenderProfileViewModel()
