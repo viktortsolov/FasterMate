@@ -9,16 +9,18 @@
 
 @if (!SignInManager.IsSignedIn(User))
 {
-    <div class="jumbotron">
-        <h1 class="display-4">Welcome!</h1>
-        <p class="lead">
-            FasterMate is a web application for travellers.
-            It provides features like choosing the correct destination,
-            making bookings, and organizing the trip.
-            Here you can see posts from other users,
-            that have been to the place you want to go!
-            You can take advice from them in real-live chat.
-        </p>
+    <div class="col-md-12 col-lg-12 col-xl-12">
+        <div class="card mb-2">
+            <img class="card-img-top-dark" src="~/img/common/index-background.jpg" alt="Dist Photo 3">
+            <div class="card-img-overlay">
+                <h5 class="card-title text-primary">Card Title</h5>
+                <p class="card-text pb-1 pt-1 text-white">
+                    FasterMate is a web application, which provides social media functionality. <br>
+                    Here you can meet with new people, have a chat and the main purpose of the application - express your impressions from the trips you had in the past. <br>
+                    You can buy plane tickets from other people and add photos to your profile.
+                </p>
+            </div>
+        </div>
     </div>
 }
 else

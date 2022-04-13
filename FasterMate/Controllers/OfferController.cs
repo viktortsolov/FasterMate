@@ -30,7 +30,12 @@
 
         public IActionResult MyFlights()
         {
-            return View();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            var viewModel = offerService.BookedOffersOfProfile(profileId);
+
+            return View(viewModel);
         }
 
         public IActionResult AddAnOffer()
@@ -45,6 +50,11 @@
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
+
+            if (!ModelState.IsValid)
+            {
+                return View(input);
+            }
 
             if (DateTime.Parse(input.DepartureTime) < DateTime.Now)
             {
@@ -62,11 +72,6 @@
             if (offer == false)
             {
                 ViewData[MessageConstant.ErrorMessage] = "Arrival Time cannot be before the Departure Time!";
-                return View(input);
-            }
-
-            if (!ModelState.IsValid)
-            {
                 return View(input);
             }
 

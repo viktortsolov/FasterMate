@@ -13,7 +13,6 @@
             </div>
             <form method="post" enctype="multipart/form-data">
                 <div class="card-body">
-                    <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Location"></label>
                         <input asp-for="Location" class="form-control" />
@@ -30,9 +29,9 @@
                             <div class="custom-file">
                                 <input asp-for="Image" class="custom-file-input">
                                 <label class="custom-file-label" asp-for="Image">Upload the file...</label>
-                                <span asp-validation-for="Image" class="text-danger"></span>
                             </div>
                         </div>
+                        <span asp-validation-for="Image" class="text-danger"></span>
                     </div>
                 </div>
                 <input type="hidden" asp-for="@Model.ReturnId" />

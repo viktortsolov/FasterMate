@@ -13,5 +13,7 @@
         IEnumerable<RenderAdministratorOfferViewModel> GetAllOffersForAdministratior();
 
         Task DeleteAsync(string id);
+
+        IEnumerable<MyOffersViewModel> BookedOffersOfProfile(string id);
     }
 }

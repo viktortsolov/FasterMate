@@ -162,11 +162,63 @@
             })
             .ToList();
 
-        public async Task DeletePost(string profileId, string id)
+        public async Task DeleteAsync(string profileId, string id)
         {
             var post = postRepo
                 .All()
                 .Where(x => x.Id == id && x.ProfileId == profileId)
+                .FirstOrDefault();
+
+            if (post != null)
+            {
+                postRepo.Delete(post);
+
+                //TODO: Extract them in service
+                var comments = commentRepo
+                    .All()
+                    .Where(x => x.PostId == id)
+                    .ToList();
+
+                foreach (var comment in comments)
+                {
+                    commentRepo.Delete(comment);
+                }
+
+                var postLikes = postLikesRepo
+                    .All()
+                    .Where(x => x.PostId == id);
+
+                foreach (var postLike in postLikes)
+                {
+                    postLikesRepo.Delete(postLike);
+                }
+
+                await postRepo.SaveChangesAsync();
+            }
+        }
+
+        public async Task<IEnumerable<PostListViewModel>> PostListAdministratorAsync()
+            => await postRepo
+            .AllAsNoTracking()
+            .Include(x => x.Profile)
+            .Include(x => x.PostLikes)
+            .Include(x => x.Comments)
+            .Select(x => new PostListViewModel()
+            {
+                Id = x.Id,
+                ProfileId = x.ProfileId,
+                CreatedOn = x.CreatedOn.ToString("hh:mm, dd/MM/yyyy"),
+                Name = $"{x.Profile.FirstName} {x.Profile.LastName}",
+                LikesCount = x.PostLikes.Count,
+                CommentsCount = x.Comments.Count
+            })
+            .ToListAsync();
+
+        public async Task DeletePostAdministratorAsync(string id)
+        {
+            var post = postRepo
+                .All()
+                .Where(x => x.Id == id)
                 .FirstOrDefault();
 
             if (post != null)

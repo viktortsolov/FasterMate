@@ -96,6 +96,7 @@
             var user = await userService.GetOnlyUserById(model.UserId);
             var userRoles = await userManager.GetRolesAsync(user);
 
+            //TODO: Exract In Method
             appUserRepo.Update(user);
 
             await userManager.RemoveFromRolesAsync(user, userRoles);

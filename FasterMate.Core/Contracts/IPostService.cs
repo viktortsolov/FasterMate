@@ -14,6 +14,10 @@
 
         IEnumerable<RenderTimelinePostsViewModel> RenderTimelinePosts();
 
-        Task DeletePost(string profileId, string id);
+        Task DeleteAsync(string profileId, string id);
+
+        Task<IEnumerable<PostListViewModel>> PostListAdministratorAsync();
+
+        Task DeletePostAdministratorAsync(string id);
     }
 }

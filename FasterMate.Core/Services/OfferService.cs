@@ -91,6 +91,7 @@
                     .AllAsNoTracking()
                     .Include(x => x.Owner)
                     .OrderByDescending(x => x.DepartureTime)
+                    .Where(x => x.DepartureTime >= DateTime.Now)
                     .Select(x => new RenderOfferViewModel()
                     {
                         Id = x.Id,
@@ -118,6 +119,26 @@
                         DepartureTime = x.DepartureTime.ToString("dd.MM.yyyy a\\t HH:mm"),
                         PriceOfTicket = x.PriceOfTicket.ToString("f2"),
                         Name = $"{x.Owner.FirstName} {x.Owner.LastName}",
+                        ProfileId = x.ProfileId
+                    })
+                    .ToList();
+
+        public IEnumerable<MyOffersViewModel> BookedOffersOfProfile(string id)
+            => profileOfferRepo
+                    .AllAsNoTracking()
+                    .Include(x => x.Offer)
+                    .Include(x => x.Profile)
+                    .OrderByDescending(x => x.Offer.DepartureTime)
+                    .Where(x => x.Offer.DepartureTime >= DateTime.Now)
+                    .Select(x => new MyOffersViewModel()
+                    {
+                        Id = x.Offer.Id,
+                        ArrivalLocation = x.Offer.ArrivalLocation,
+                        DepartureLocation = x.Offer.DepartureLocation,
+                        ArrivalTime = x.Offer.ArrivalTime.ToString("dd.MM.yyyy a\\t HH:mm"),
+                        DepartureTime = x.Offer.DepartureTime.ToString("dd.MM.yyyy a\\t HH:mm"),
+                        PriceOfTicket = x.Offer.PriceOfTicket.ToString("f2"),
+                        Name = $"{x.Profile.FirstName} {x.Profile.LastName}",
                         ProfileId = x.ProfileId
                     })
                     .ToList();

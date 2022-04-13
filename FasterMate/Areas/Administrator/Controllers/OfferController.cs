@@ -1,6 +1,7 @@
 ﻿namespace FasterMate.Areas.Administrator.Controllers
 {
     using FasterMate.Core.Contracts;
+
     using Microsoft.AspNetCore.Mvc;
 
     public class OfferController : BaseController

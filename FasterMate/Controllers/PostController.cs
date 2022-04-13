@@ -99,7 +99,7 @@
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var profileId = profileService.GetId(userId);
 
-            await postService.DeletePost(profileId, id);
+            await postService.DeleteAsync(profileId, id);
 
             return RedirectToAction("UserProfile", "Profile", new { id = profileId });
         }
