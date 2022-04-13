@@ -1,12 +1,13 @@
-namespace FasterMate.Test
+﻿namespace FasterMate.Test
 {
     using NUnit.Framework;
 
-    public class Tests
+    public class ProfileServiceTest
     {
         [SetUp]
         public void Setup()
         {
+
         }
 
         [Test]
