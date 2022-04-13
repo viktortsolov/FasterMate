@@ -2,6 +2,6 @@
 {
     public interface ICountryService
     {
-        IEnumerable<KeyValuePair<string, string>> GetAllAsKvp();
+        ICollection<KeyValuePair<string, string>> GetAllAsKvp();
     }
 }

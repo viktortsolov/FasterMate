@@ -16,11 +16,12 @@
             repo = _repo;
         }
 
-        public IEnumerable<KeyValuePair<string, string>> GetAllAsKvp()
+        public ICollection<KeyValuePair<string, string>> GetAllAsKvp()
         => repo
             .AllAsNoTracking()
             .Select(x => new { x.Id, x.Name })
             .OrderBy(x => x.Name)
-            .Select(x => new KeyValuePair<string, string>(x.Id, x.Name));
+            .Select(x => new KeyValuePair<string, string>(x.Id, x.Name))
+            .ToList();
     }
 }
