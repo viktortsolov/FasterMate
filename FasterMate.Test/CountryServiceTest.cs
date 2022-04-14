@@ -40,7 +40,7 @@
 
             var expected = new List<KeyValuePair<string, string>>();
 
-            expected.Add(new KeyValuePair<string, string>("test1234-test-test-test-test1234test", "test"));
+            expected.Add(new KeyValuePair<string, string>("test", "test"));
             expected.Add(new KeyValuePair<string, string>("0c2fb2cb-8932-4755-b63f-e4664c0526e7", "test2"));
             expected.Add(new KeyValuePair<string, string>("0c2fb2cb-8932-4755-b63f-e4664c0526e7", "test3"));
 
@@ -57,7 +57,7 @@
 
         private async Task SeedDb(IRepository<Country> countryRepo)
         {
-            await countryRepo.AddAsync(new Country() { Id = "test1234-test-test-test-test1234test", Name = "test" });
+            await countryRepo.AddAsync(new Country() { Id = "test", Name = "test" });
             await countryRepo.AddAsync(new Country() { Id = "0c2fb2cb-8932-4755-b63f-e4664c0526e7", Name = "test2" });
             await countryRepo.AddAsync(new Country() { Id = "0c8533b3-92ec-448f-b4bc-8ee5084db978", Name = "test3" });
 

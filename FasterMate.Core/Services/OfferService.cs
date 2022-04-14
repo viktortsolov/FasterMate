@@ -53,7 +53,7 @@
                 ProfileId = profileId
             };
 
-            var offer = offerRepo.AllAsNoTracking().FirstOrDefault(x => x.Id == id);
+            var offer = offerRepo.All().FirstOrDefault(x => x.Id == id);
             offer.IsBooked = true;
             offerRepo.Update(offer);
 
@@ -64,7 +64,7 @@
         public async Task DeleteAsync(string id)
         {
             var offer = offerRepo
-                .AllAsNoTracking()
+                .All()
                 .Where(x => x.Id == id)
                 .FirstOrDefault();
 
@@ -73,7 +73,7 @@
                 if (offer.IsBooked)
                 {
                     var profileOffer = profileOfferRepo
-                        .AllAsNoTracking()
+                        .All()
                         .Where(x => x.OfferId == id)
                         .FirstOrDefault();
 

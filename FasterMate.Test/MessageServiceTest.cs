@@ -48,7 +48,7 @@
             var msgRepo = serviceProvider.GetService<IRepository<Message>>();
             var msgService = serviceProvider.GetService<IMessageService>();
 
-            string groupId = "test1234-test-test-test-test1234test";
+            string groupId = "test";
             string profileId = "6747d8c2-dfc9-40d3-864c-4cb28bff6038";
             string text = "some test text";
 
@@ -63,7 +63,7 @@
         {
             var expected = new MessageViewModel()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 Text = "some test text",
                 ProfileId = "6747d8c2-dfc9-40d3-864c-4cb28bff6038",
                 CreatedOn = DateTime.UtcNow.ToString(),
@@ -72,7 +72,7 @@
 
             var msgService = serviceProvider.GetService<IMessageService>();
 
-            var actual = msgService.GetMessageById("test1234-test-test-test-test1234test");
+            var actual = msgService.GetMessageById("test");
             
             Assert.AreEqual(expected.ProfileId, actual.ProfileId);
         }
@@ -85,10 +85,10 @@
 
         private static async Task SeedDb(IRepository<Profile> profileRepo, IRepository<Country> countryRepo, IRepository<Image> imgRepo, IRepository<Group> groupRepo, IRepository<Message> msgRepo)
         {
-            await countryRepo.AddAsync(new Country() { Id = "test1234-test-test-test-test1234test", Name = "test" });
+            await countryRepo.AddAsync(new Country() { Id = "test", Name = "test" });
             await countryRepo.SaveChangesAsync();
 
-            await imgRepo.AddAsync(new Image() { Id = "test1234-test-test-test-test1234test", Extension = "test" });
+            await imgRepo.AddAsync(new Image() { Id = "test", Extension = "test" });
             await imgRepo.SaveChangesAsync();
 
             await profileRepo.AddAsync(new Profile()
@@ -109,18 +109,18 @@
 
             await groupRepo.AddAsync(new Group()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 Name = "Test Group Name",
-                ImageId = "test1234-test-test-test-test1234test",
+                ImageId = "test",
                 ProfileId = "6747d8c2-dfc9-40d3-864c-4cb28bff6038"
             });
             await groupRepo.SaveChangesAsync();
 
             await msgRepo.AddAsync(new Message()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 Text = "some test text",
-                GroupId = "test1234-test-test-test-test1234test",
+                GroupId = "test",
                 ProfileId = "6747d8c2-dfc9-40d3-864c-4cb28bff6038",
                 CreatedOn = DateTime.UtcNow
             });

@@ -78,8 +78,8 @@
 
         private static async Task SeedDb(IRepository<Comment> commentRepo, IRepository<Post> postRepo, IRepository<Image> imgRepo, IRepository<Profile> profileRepo, IRepository<Country> countryRepo)
         {
-            await countryRepo.AddAsync(new Country() { Id = "test1234-test-test-test-test1234test", Name = "test" });
-            await imgRepo.AddAsync(new Image() { Id = "test1234-test-test-test-test1234test", Extension = "test" });
+            await countryRepo.AddAsync(new Country() { Id = "test", Name = "test" });
+            await imgRepo.AddAsync(new Image() { Id = "test", Extension = "test" });
             await countryRepo.SaveChangesAsync();
             await imgRepo.SaveChangesAsync();
 

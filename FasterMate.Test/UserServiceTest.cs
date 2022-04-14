@@ -41,7 +41,7 @@
             var userService = serviceProvider.GetService<IUserService>();
 
             var expected = "test";
-            var actual = await userService.GetOnlyUserByIdAsync("test1234-test-test-test-test1234test");
+            var actual = await userService.GetOnlyUserByIdAsync("test");
 
             Assert.AreEqual(expected, actual.UserName);
         }
@@ -52,7 +52,7 @@
             var userService = serviceProvider.GetService<IUserService>();
 
             var expected = "test";
-            var actual = await userService.GetUserByIdAsync("test1234-test-test-test-test1234test");
+            var actual = await userService.GetUserByIdAsync("test");
 
             Assert.AreEqual(expected, actual.Profile.FirstName);
         }
@@ -91,7 +91,7 @@
             });
             expected.Add(new UserListViewModel()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 Email = "abv1234@gmail.com",
                 Username = "test",
                 Name = "test test"
@@ -113,7 +113,7 @@
 
             var input = new UserEditViewModel()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 FirstName = "Viktor",
                 LastName = "Tsolov"
             };
@@ -134,14 +134,11 @@
             var countryRepo = serviceProvider.GetService<IRepository<Country>>();
             var imgRepo = serviceProvider.GetService<IRepository<Image>>();
             var profileRepo = serviceProvider.GetService<IRepository<Profile>>();
-            var groupRepo = serviceProvider.GetService<IRepository<Group>>();
-            var profileFollowerRepo = serviceProvider.GetService<IRepository<ProfileFollower>>();
-            var msgRepo = serviceProvider.GetService<IRepository<Message>>();
 
-            await countryRepo.AddAsync(new Country() { Id = "test1234-test-test-test-test1234test", Name = "test" });
+            await countryRepo.AddAsync(new Country() { Id = "test", Name = "test" });
             await countryRepo.SaveChangesAsync();
 
-            await imgRepo.AddAsync(new Image() { Id = "test1234-test-test-test-test1234test", Extension = "test" });
+            await imgRepo.AddAsync(new Image() { Id = "test", Extension = "test" });
             await imgRepo.SaveChangesAsync();
 
             await profileRepo.AddAsync(new Profile()
@@ -163,7 +160,7 @@
 
             await profileRepo.AddAsync(new Profile()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 FirstName = "test",
                 LastName = "test",
                 CountryId = countryRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
@@ -171,39 +168,13 @@
                 Gender = Gender.Male,
                 User = new ApplicationUser()
                 {
-                    Id = "test1234-test-test-test-test1234test",
+                    Id = "test",
                     Email = "abv1234@gmail.com",
                     UserName = "test"
                 },
                 ImageId = imgRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
             });
             await profileRepo.SaveChangesAsync();
-
-            await groupRepo.AddAsync(new Group()
-            {
-                Id = "test1234-test-test-test-test1234test",
-                Name = "Test Group Name",
-                ImageId = "test1234-test-test-test-test1234test",
-                ProfileId = "test1234-test-test-test-test1234test"
-            });
-            await groupRepo.SaveChangesAsync();
-
-            await msgRepo.AddAsync(new Message()
-            {
-                Id = "test1234-test-test-test-test1234test",
-                Text = "some test text",
-                GroupId = "test1234-test-test-test-test1234test",
-                ProfileId = "test1234-test-test-test-test1234test",
-                CreatedOn = DateTime.UtcNow
-            });
-            await msgRepo.SaveChangesAsync();
-
-            await profileFollowerRepo.AddAsync(new ProfileFollower()
-            {
-                ProfileId = "test1234-test-test-test-test1234test",
-                FollowerId = "c996abfe-1850-48dd-bfcd-b61f18ec3358"
-            });
-            await profileFollowerRepo.SaveChangesAsync();
         }
     }
 }

@@ -76,7 +76,7 @@
                 LastName = "test",
                 BirthDate = (DateTime.UtcNow).ToString(),
                 Gender = "Gotin",
-                CountryId = "test1234-test-test-test-test1234test",
+                CountryId = "test",
                 Password = "test1234test1234test1234",
                 ConfirmPassword = "test1234test1234test1234"
             };
@@ -96,7 +96,7 @@
                 LastName = "test",
                 BirthDate = "01/01/1899 00:00",
                 Gender = Gender.Male.ToString(),
-                CountryId = "test1234-test-test-test-test1234test",
+                CountryId = "test",
                 Password = "test1234test1234test1234",
                 ConfirmPassword = "test1234test1234test1234"
             };
@@ -116,7 +116,7 @@
                 LastName = "test",
                 BirthDate = DateTime.UtcNow.ToString(),
                 Gender = Gender.Male.ToString(),
-                CountryId = "test1234-test-test-test-test1234test",
+                CountryId = "test",
                 Password = "test1234test1234test1234",
                 ConfirmPassword = "test1234test1234test1234"
             };
@@ -147,7 +147,7 @@
                 Id = "c996abfe-1850-48dd-bfcd-b61f18ec3358",
                 FirstName = "test",
                 LastName = "test",
-                CountryId = "test1234-test-test-test-test1234test",
+                CountryId = "test",
                 BirthDate = DateTime.UtcNow,
                 User = new ApplicationUser()
                 {
@@ -169,7 +169,7 @@
                 Id = "c996abfe-1850-48dd-bfcd-b61f18ec3358",
                 FirstName = "test",
                 LastName = "test",
-                CountryId = "test1234-test-test-test-test1234test",
+                CountryId = "test",
                 BirthDate = DateTime.UtcNow,
                 User = new ApplicationUser()
                 {
@@ -254,7 +254,7 @@
                 Country = countryRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
                 FollowingCount = 0,
                 FollowersCount = 0,
-                ImagePath = "test1234-test-test-test-test1234test.test"
+                ImagePath = "test.test"
             };
 
             Assert.AreEqual(expected.ImagePath, actual.ImagePath);
@@ -271,7 +271,7 @@
 
             await profileRepo.AddAsync(new Profile()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 FirstName = "test",
                 LastName = "test",
                 CountryId = countryRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
@@ -279,7 +279,7 @@
                 Gender = Gender.Male,
                 User = new ApplicationUser()
                 {
-                    Id = "test1234-test-test-test-test1234test"
+                    Id = "test"
                 },
                 ImageId = imageRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
             });
@@ -287,11 +287,11 @@
             await profileRepo.SaveChangesAsync();
 
             var current = profileRepo.All().FirstOrDefault().Id;
-            var asking = profileRepo.All().Where(x => x.Id == "test1234-test-test-test-test1234test").FirstOrDefault().Id;
+            var asking = profileRepo.All().Where(x => x.Id == "test").FirstOrDefault().Id;
 
             await profileService.FollowProfileAsync(current, asking);
 
-            var expected = "test1234-test-test-test-test1234test";
+            var expected = "test";
             var actual = followerRepo.All().FirstOrDefault().FollowerId;
 
             Assert.AreEqual(expected, actual);
@@ -308,7 +308,7 @@
 
             await profileRepo.AddAsync(new Profile()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 FirstName = "test",
                 LastName = "test",
                 CountryId = countryRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
@@ -316,7 +316,7 @@
                 Gender = Gender.Male,
                 User = new ApplicationUser()
                 {
-                    Id = "test1234-test-test-test-test1234test"
+                    Id = "test"
                 },
                 ImageId = imageRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
             });
@@ -324,12 +324,12 @@
             await profileRepo.SaveChangesAsync();
 
             var current = profileRepo.All().FirstOrDefault().Id;
-            var asking = profileRepo.All().Where(x => x.Id == "test1234-test-test-test-test1234test").FirstOrDefault().Id;
+            var asking = profileRepo.All().Where(x => x.Id == "test").FirstOrDefault().Id;
 
             await profileService.FollowProfileAsync(current, asking);
             await profileService.FollowProfileAsync(current, asking);
 
-            var expected = "test1234-test-test-test-test1234test";
+            var expected = "test";
             var actual = followerRepo.All().FirstOrDefault();
 
             Assert.AreNotEqual(expected, actual);
@@ -370,8 +370,8 @@
 
         private static async Task SeedDb(IRepository<Profile> profileRepo, IRepository<Country> countryRepo, IRepository<ProfileFollower> followerRepo, IRepository<Image> imageRepo)
         {
-            await countryRepo.AddAsync(new Country() { Id = "test1234-test-test-test-test1234test", Name = "test" });
-            await imageRepo.AddAsync(new Image() { Id = "test1234-test-test-test-test1234test", Extension = "test" });
+            await countryRepo.AddAsync(new Country() { Id = "test", Name = "test" });
+            await imageRepo.AddAsync(new Image() { Id = "test", Extension = "test" });
             await countryRepo.SaveChangesAsync();
 
             await profileRepo.AddAsync(new Profile()

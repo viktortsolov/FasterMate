@@ -43,7 +43,7 @@
             var groupMemberRepo = serviceProvider.GetService<IRepository<GroupMember>>();
             var groupService = serviceProvider.GetService<IGroupService>();
 
-            await groupService.AddMemberAsync("test1234-test-test-test-test1234test", "test1234-test-test-test-test1234test");
+            await groupService.AddMemberAsync("test", "test");
 
             Assert.AreEqual(1, groupMemberRepo.All().Count());
         }
@@ -54,8 +54,8 @@
             var groupMemberRepo = serviceProvider.GetService<IRepository<GroupMember>>();
             var groupService = serviceProvider.GetService<IGroupService>();
 
-            await groupService.AddMemberAsync("test1234-test-test-test-test1234test", "test1234-test-test-test-test1234test");
-            await groupService.AddMemberAsync("test1234-test-test-test-test1234test", "test1234-test-test-test-test1234test");
+            await groupService.AddMemberAsync("test", "test");
+            await groupService.AddMemberAsync("test", "test");
 
             Assert.AreNotEqual(2, groupMemberRepo.All().Count());
 
@@ -93,7 +93,7 @@
             var groupMemberRepo = serviceProvider.GetService<IRepository<GroupMember>>();
             var groupService = serviceProvider.GetService<IGroupService>();
 
-            await groupService.DeleteGroupAsync("test1234-test-test-test-test1234test");
+            await groupService.DeleteGroupAsync("test");
 
             Assert.AreEqual(0, groupMemberRepo.All().Count());
         }
@@ -104,9 +104,9 @@
             var groupMemberRepo = serviceProvider.GetService<IRepository<GroupMember>>();
             var groupService = serviceProvider.GetService<IGroupService>();
 
-            await groupService.AddMemberAsync("test1234-test-test-test-test1234test", "test1234-test-test-test-test1234test");
+            await groupService.AddMemberAsync("test", "test");
 
-            await groupService.DeleteGroupAsync("test1234-test-test-test-test1234test");
+            await groupService.DeleteGroupAsync("test");
 
             Assert.AreEqual(0, groupMemberRepo.All().Count());
         }
@@ -117,7 +117,7 @@
             var msgRepo = serviceProvider.GetService<IRepository<Message>>();
             var groupService = serviceProvider.GetService<IGroupService>();
 
-            await groupService.DeleteGroupAsync("test1234-test-test-test-test1234test");
+            await groupService.DeleteGroupAsync("test");
 
             Assert.AreEqual(0, msgRepo.All().Count());
         }
@@ -130,12 +130,12 @@
 
         //    var expected = new GroupViewModel()
         //    {
-        //        Id = "test1234-test-test-test-test1234test",
+        //        Id = "test",
         //        Name = "Test Group Name",
         //        Messages = null
         //    };
 
-        //    var actual = groupService.GetGroupById("test1234-test-test-test-test1234test");
+        //    var actual = groupService.GetGroupById("test");
 
         //    Assert.AreEqual(expected.Id, actual.Id);
         //}
@@ -146,11 +146,11 @@
             var groupService = serviceProvider.GetService<IGroupService>();
             var expected = new EditGroupViewModel()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 Name = "Test Group Name"
             };
 
-            var actual = groupService.GetGroupForEdit("test1234-test-test-test-test1234test");
+            var actual = groupService.GetGroupForEdit("test");
 
             Assert.AreEqual(expected.Name, actual.Name);
             Assert.AreEqual(expected.Id, actual.Id);
@@ -164,7 +164,7 @@
 
             var expected = new GroupMemberInfoViewModel()
             {
-                ProfileId = "test1234-test-test-test-test1234test",
+                ProfileId = "test",
                 Name = "test test",
                 Username = "test",
                 ImagePath = "test.png",
@@ -185,12 +185,12 @@
                     Image = file
                 };
 
-                await groupService.CreateAsync("test1234-test-test-test-test1234test", input, $"{Directory.GetCurrentDirectory()}");
+                await groupService.CreateAsync("test", input, $"{Directory.GetCurrentDirectory()}");
             }
 
             var groupId = groupRepo.All().Skip(1).FirstOrDefault().Id;
 
-            var actual = groupService.GetMembers(groupId, "test1234-test-test-test-test1234test");
+            var actual = groupService.GetMembers(groupId, "test");
 
             Assert.AreEqual(expected.IsOwner, actual.FirstOrDefault().IsOwner);
         }
@@ -201,7 +201,7 @@
             var groupService = serviceProvider.GetService<IGroupService>();
 
             var expected = true;
-            var actual = groupService.IsOwnerOfTheGroup("test1234-test-test-test-test1234test", "c996abfe-1850-48dd-bfcd-b61f18ec3358");
+            var actual = groupService.IsOwnerOfTheGroup("test", "c996abfe-1850-48dd-bfcd-b61f18ec3358");
 
             Assert.AreNotEqual(expected, actual);
         }
@@ -212,7 +212,7 @@
             var groupService = serviceProvider.GetService<IGroupService>();
 
             var expected = true;
-            var actual = groupService.IsMemberOfTheGroup("test1234-test-test-test-test1234test", "c996abfe-1850-48dd-bfcd-b61f18ec3358");
+            var actual = groupService.IsMemberOfTheGroup("test", "c996abfe-1850-48dd-bfcd-b61f18ec3358");
 
             Assert.AreNotEqual(expected, actual);
         }
@@ -223,8 +223,8 @@
             var groupService = serviceProvider.GetService<IGroupService>();
             var groupMemberRepo = serviceProvider.GetService<IRepository<GroupMember>>();
 
-            await groupService.AddMemberAsync("c996abfe-1850-48dd-bfcd-b61f18ec3358", "test1234-test-test-test-test1234test");
-            await groupService.RemoveAsync("test1234-test-test-test-test1234test", "c996abfe-1850-48dd-bfcd-b61f18ec3358");
+            await groupService.AddMemberAsync("c996abfe-1850-48dd-bfcd-b61f18ec3358", "test");
+            await groupService.RemoveAsync("test", "c996abfe-1850-48dd-bfcd-b61f18ec3358");
 
             Assert.AreEqual(0, groupMemberRepo.All().Count());
         }
@@ -237,7 +237,7 @@
 
             var input = new EditGroupViewModel()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 Name = "test name etc."
             };
 
@@ -262,7 +262,7 @@
 
                 var input = new EditGroupViewModel()
                 {
-                    Id = "test1234-test-test-test-test1234test",
+                    Id = "test",
                     Name = "test name etc.",
                     Image = file
                 };
@@ -280,14 +280,14 @@
 
             var expected = new ProfileGroupsViewModel()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 Name = "Test Group Name",
                 ImagePath = "test1234-test-test-test-test1234test.test",
                 GroupMembersCount = 1
             };
-            await groupService.AddMemberAsync("test1234-test-test-test-test1234test", "test1234-test-test-test-test1234test");
+            await groupService.AddMemberAsync("test", "test");
 
-            var actual = groupService.GetProfileGroups("test1234-test-test-test-test1234test");
+            var actual = groupService.GetProfileGroups("test");
 
             Assert.AreEqual(expected.Id, actual.FirstOrDefault().Id);
         }
@@ -298,7 +298,7 @@
             var groupService = serviceProvider.GetService<IGroupService>();
 
             var expected = 1;
-            var actual = groupService.GetFollowersOfProfile("test1234-test-test-test-test1234test", "test1234-test-test-test-test1234test");
+            var actual = groupService.GetFollowersOfProfile("test", "test");
 
             Assert.AreEqual(expected, actual.Count());
 
@@ -319,10 +319,10 @@
             var profileFollowerRepo = serviceProvider.GetService<IRepository<ProfileFollower>>();
             var msgRepo = serviceProvider.GetService<IRepository<Message>>();
 
-            await countryRepo.AddAsync(new Country() { Id = "test1234-test-test-test-test1234test", Name = "test" });
+            await countryRepo.AddAsync(new Country() { Id = "test", Name = "test" });
             await countryRepo.SaveChangesAsync();
 
-            await imgRepo.AddAsync(new Image() { Id = "test1234-test-test-test-test1234test", Extension = "test" });
+            await imgRepo.AddAsync(new Image() { Id = "test", Extension = "test" });
             await imgRepo.SaveChangesAsync();
 
             await profileRepo.AddAsync(new Profile()
@@ -342,7 +342,7 @@
 
             await profileRepo.AddAsync(new Profile()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 FirstName = "test",
                 LastName = "test",
                 CountryId = countryRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
@@ -350,7 +350,7 @@
                 Gender = Gender.Male,
                 User = new ApplicationUser()
                 {
-                    Id = "test1234-test-test-test-test1234test"
+                    Id = "test"
                 },
                 ImageId = imgRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
             });
@@ -358,26 +358,26 @@
 
             await groupRepo.AddAsync(new Group()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 Name = "Test Group Name",
-                ImageId = "test1234-test-test-test-test1234test",
-                ProfileId = "test1234-test-test-test-test1234test"
+                ImageId = "test",
+                ProfileId = "test"
             });
             await groupRepo.SaveChangesAsync();
 
             await msgRepo.AddAsync(new Message()
             {
-                Id = "test1234-test-test-test-test1234test",
+                Id = "test",
                 Text = "some test text",
-                GroupId = "test1234-test-test-test-test1234test",
-                ProfileId = "test1234-test-test-test-test1234test",
+                GroupId = "test",
+                ProfileId = "test",
                 CreatedOn = DateTime.UtcNow
             });
             await msgRepo.SaveChangesAsync();
 
             await profileFollowerRepo.AddAsync(new ProfileFollower()
             {
-                ProfileId = "test1234-test-test-test-test1234test",
+                ProfileId = "test",
                 FollowerId = "c996abfe-1850-48dd-bfcd-b61f18ec3358"
             });
             await profileFollowerRepo.SaveChangesAsync();
