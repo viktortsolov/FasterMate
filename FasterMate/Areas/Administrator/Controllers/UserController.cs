@@ -37,14 +37,14 @@
 
         public async Task<IActionResult> ManageUsers()
         {
-            var users = await userService.GetUsers();
+            var users = await userService.GetUsersAsync();
 
             return View(users);
         }
 
         public async Task<IActionResult> Edit(string id)
         {
-            var model = await userService.GetUserForEdit(id);
+            var model = await userService.GetUserForEditAsync(id);
 
             return View(model);
         }
@@ -57,7 +57,7 @@
                 return View(model);
             }
 
-            if (await userService.UpdateUser(model))
+            if (await userService.UpdateUserAsync(model))
             {
                 ViewData[MessageConstant.SuccessMessage] = "Saved changes.";
             }
@@ -71,7 +71,7 @@
 
         public async Task<IActionResult> Roles(string id)
         {
-            var user = await userService.GetUserById(id);
+            var user = await userService.GetUserByIdAsync(id);
             var model = new UserRolesViewModel()
             {
                 UserId = user.Id,
@@ -93,7 +93,7 @@
         [HttpPost]
         public async Task<IActionResult> Roles(UserRolesViewModel model)
         {
-            var user = await userService.GetOnlyUserById(model.UserId);
+            var user = await userService.GetOnlyUserByIdAsync(model.UserId);
             var userRoles = await userManager.GetRolesAsync(user);
 
             //TODO: Exract In Method

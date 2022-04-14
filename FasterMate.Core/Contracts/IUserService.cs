@@ -5,14 +5,14 @@
 
     public interface IUserService
     {
-        Task<IEnumerable<UserListViewModel>> GetUsers();
+        Task<IEnumerable<UserListViewModel>> GetUsersAsync();
 
-        Task<UserEditViewModel> GetUserForEdit(string id);
+        Task<UserEditViewModel> GetUserForEditAsync(string id);
 
-        Task<bool> UpdateUser(UserEditViewModel model);
+        Task<bool> UpdateUserAsync(UserEditViewModel model);
 
-        Task<ApplicationUser> GetUserById(string id);
+        Task<ApplicationUser> GetUserByIdAsync(string id);
 
-        Task<ApplicationUser> GetOnlyUserById(string id);
+        Task<ApplicationUser> GetOnlyUserByIdAsync(string id);
     }
 }

@@ -23,18 +23,18 @@
             profileRepo = _profileRepo;
         }
 
-        public async Task<ApplicationUser> GetOnlyUserById(string id)
+        public async Task<ApplicationUser> GetOnlyUserByIdAsync(string id)
             => await repo
                 .AllAsNoTracking()
                 .FirstOrDefaultAsync(x => x.Id == id);
 
-        public async Task<ApplicationUser> GetUserById(string id)
+        public async Task<ApplicationUser> GetUserByIdAsync(string id)
             => await repo
                 .AllAsNoTracking()
                 .Include(x => x.Profile)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
-        public async Task<UserEditViewModel> GetUserForEdit(string id)
+        public async Task<UserEditViewModel> GetUserForEditAsync(string id)
         {
             var user = await repo
                 .AllAsNoTracking()
@@ -49,7 +49,7 @@
             };
         }
 
-        public async Task<IEnumerable<UserListViewModel>> GetUsers()
+        public async Task<IEnumerable<UserListViewModel>> GetUsersAsync()
         {
             return await repo
                     .AllAsNoTracking()
@@ -64,12 +64,12 @@
                     .ToListAsync();
         }
 
-        public async Task<bool> UpdateUser(UserEditViewModel model)
+        public async Task<bool> UpdateUserAsync(UserEditViewModel model)
         {
             bool result = false;
 
             var user = await profileRepo
-                .AllAsNoTracking()
+                .All()
                 .FirstOrDefaultAsync(x => x.User.Id == model.Id);
 
             if (user != null)

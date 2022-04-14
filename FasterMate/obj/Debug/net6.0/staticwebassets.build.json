@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TVRmlsaFsoFGCtZGd5w7xFLRhs4L7cA1Vb40MJQHI2I=",
+  "Hash": "JdH7M86496OHV4c5NQxO+7lWBjoLWLK91JE35cRZ7B0=",
   "Source": "FasterMate",
   "BasePath": "_content/FasterMate",
   "Mode": "Default",
@@ -1598,6 +1598,23 @@
       "OriginalItemSpec": "wwwroot\\img\\common\\admin-panel.png"
     },
     {
+      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\common\\bg.jpg",
+      "SourceId": "FasterMate",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
+      "BasePath": "_content/FasterMate",
+      "RelativePath": "img/common/bg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\common\\bg.jpg"
+    },
+    {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\common\\default-female.png",
       "SourceId": "FasterMate",
       "SourceType": "Discovered",
@@ -1630,23 +1647,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\common\\default-male.png"
-    },
-    {
-      "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\common\\index-background.jpg",
-      "SourceId": "FasterMate",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\",
-      "BasePath": "_content/FasterMate",
-      "RelativePath": "img/common/index-background.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\common\\index-background.jpg"
     },
     {
       "Identity": "E:\\Programming\\FasterMate\\FasterMate\\wwwroot\\img\\common\\logo.png",
