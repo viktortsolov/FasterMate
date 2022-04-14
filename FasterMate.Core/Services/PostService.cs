@@ -14,28 +14,22 @@
     public class PostService : IPostService
     {
         private readonly IImageService imgService;
-        private readonly ICommentService commentService;
 
         private readonly IRepository<Post> postRepo;
         private readonly IRepository<PostLike> postLikesRepo;
         private readonly IRepository<Comment> commentRepo;
-        private readonly IRepository<Profile> profileRepo;
 
         public PostService(
             IImageService _imgService,
-            ICommentService _commentService,
             IRepository<Post> _postRepo,
             IRepository<PostLike> _postLikesRepo,
-            IRepository<Comment> _commentRepo,
-            IRepository<Profile> _profileRepo)
+            IRepository<Comment> _commentRepo)
         {
             imgService = _imgService;
-            commentService = _commentService;
 
             postRepo = _postRepo;
             postLikesRepo = _postLikesRepo;
             commentRepo = _commentRepo;
-            profileRepo = _profileRepo;
         }
 
         public async Task CreateAsync(string id, CreatePostViewModel input, string path)
@@ -133,7 +127,6 @@
                             CreatedOn = x.CreatedOn.ToString("HH:mm, dd/MM/yyyy")
                         })
                         .ToList(),
-                    //commentService.GetAllOfPost(id), IDK why this is not working...
                     Location = x.Location
                 })
                 .FirstOrDefault();
@@ -173,22 +166,12 @@
             {
                 postRepo.Delete(post);
 
-                //TODO: Extract them in service
-                var comments = commentRepo
-                    .All()
-                    .Where(x => x.PostId == id)
-                    .ToList();
-
-                foreach (var comment in comments)
+                foreach (var comment in commentRepo.All().Where(x => x.PostId == id).ToList())
                 {
                     commentRepo.Delete(comment);
                 }
 
-                var postLikes = postLikesRepo
-                    .All()
-                    .Where(x => x.PostId == id);
-
-                foreach (var postLike in postLikes)
+                foreach (var postLike in postLikesRepo.All().Where(x => x.PostId == id))
                 {
                     postLikesRepo.Delete(postLike);
                 }
@@ -225,22 +208,12 @@
             {
                 postRepo.Delete(post);
 
-                //TODO: Extract them in service
-                var comments = commentRepo
-                    .All()
-                    .Where(x => x.PostId == id)
-                    .ToList();
-
-                foreach (var comment in comments)
+                foreach (var comment in commentRepo.All().Where(x => x.PostId == id).ToList())
                 {
                     commentRepo.Delete(comment);
                 }
 
-                var postLikes = postLikesRepo
-                    .All()
-                    .Where(x => x.PostId == id);
-
-                foreach (var postLike in postLikes)
+                foreach (var postLike in postLikesRepo.All().Where(x => x.PostId == id))
                 {
                     postLikesRepo.Delete(postLike);
                 }
