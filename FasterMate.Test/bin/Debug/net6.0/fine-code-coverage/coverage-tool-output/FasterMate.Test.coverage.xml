@@ -1,132 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.1572" branch-rate="0.0143" version="1.9" timestamp="1649878285" lines-covered="648" lines-valid="4121" branches-covered="22" branches-valid="1532">
+<coverage line-rate="0.1809" branch-rate="0.015600000000000001" version="1.9" timestamp="1649916645" lines-covered="756" lines-valid="4179" branches-covered="24" branches-valid="1532">
   <sources>
     <source>E:\Programming\FasterMate\</source>
     <source>C:\</source>
   </sources>
   <packages>
-    <package name="FasterMate.Core" line-rate="0.2552" branch-rate="0.2571" complexity="111">
+    <package name="FasterMate.Core" line-rate="0.2858" branch-rate="0.2857" complexity="110">
       <classes>
-        <class name="FasterMate.Core.Services.CommentService" filename="FasterMate.Core\Services\CommentService.cs" line-rate="0.3529" branch-rate="1" complexity="2">
+        <class name="FasterMate.Core.Services.CommentService" filename="FasterMate.Core\Services\CommentService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="GetAllOfPost" signature="(System.String)" line-rate="0" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(FasterMate.Infrastructure.Common.IRepository`1&lt;FasterMate.Infrastructure.Data.Comment&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="56" hits="0" branch="False" />
-                <line number="57" hits="0" branch="False" />
-                <line number="58" hits="0" branch="False" />
-                <line number="59" hits="0" branch="False" />
-                <line number="60" hits="0" branch="False" />
-                <line number="61" hits="0" branch="False" />
-                <line number="62" hits="0" branch="False" />
-                <line number="63" hits="0" branch="False" />
-                <line number="64" hits="0" branch="False" />
-                <line number="65" hits="0" branch="False" />
-                <line number="66" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="(FasterMate.Infrastructure.Common.IRepository`1&lt;FasterMate.Infrastructure.Data.Comment&gt;,FasterMate.Infrastructure.Common.IRepository`1&lt;FasterMate.Infrastructure.Data.Post&gt;)" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="16" hits="14" branch="False" />
-                <line number="17" hits="14" branch="False" />
-                <line number="18" hits="14" branch="False" />
-                <line number="19" hits="14" branch="False" />
-                <line number="20" hits="14" branch="False" />
-                <line number="21" hits="14" branch="False" />
+                <line number="15" hits="16" branch="False" />
+                <line number="16" hits="16" branch="False" />
+                <line number="17" hits="16" branch="False" />
+                <line number="18" hits="16" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="56" hits="0" branch="False" />
-            <line number="57" hits="0" branch="False" />
-            <line number="58" hits="0" branch="False" />
-            <line number="59" hits="0" branch="False" />
-            <line number="60" hits="0" branch="False" />
-            <line number="61" hits="0" branch="False" />
-            <line number="62" hits="0" branch="False" />
-            <line number="63" hits="0" branch="False" />
-            <line number="64" hits="0" branch="False" />
-            <line number="65" hits="0" branch="False" />
-            <line number="66" hits="0" branch="False" />
-            <line number="16" hits="14" branch="False" />
-            <line number="17" hits="14" branch="False" />
-            <line number="18" hits="14" branch="False" />
-            <line number="19" hits="14" branch="False" />
-            <line number="20" hits="14" branch="False" />
-            <line number="21" hits="14" branch="False" />
+            <line number="15" hits="16" branch="False" />
+            <line number="16" hits="16" branch="False" />
+            <line number="17" hits="16" branch="False" />
+            <line number="18" hits="16" branch="False" />
           </lines>
         </class>
-        <class name="FasterMate.Core.Services.CommentService/&lt;AddAsync&gt;d__3" filename="FasterMate.Core\Services\CommentService.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="FasterMate.Core.Services.CommentService/&lt;AddAsync&gt;d__2" filename="FasterMate.Core\Services\CommentService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="24" hits="0" branch="False" />
-                <line number="25" hits="0" branch="False" />
-                <line number="26" hits="0" branch="False" />
-                <line number="27" hits="0" branch="False" />
-                <line number="28" hits="0" branch="False" />
-                <line number="29" hits="0" branch="False" />
-                <line number="30" hits="0" branch="False" />
-                <line number="32" hits="0" branch="False" />
-                <line number="33" hits="0" branch="False" />
-                <line number="34" hits="0" branch="False" />
+                <line number="21" hits="1" branch="False" />
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
+                <line number="26" hits="1" branch="False" />
+                <line number="27" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="24" hits="0" branch="False" />
-            <line number="25" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
-            <line number="27" hits="0" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="29" hits="0" branch="False" />
-            <line number="30" hits="0" branch="False" />
-            <line number="32" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
-            <line number="34" hits="0" branch="False" />
+            <line number="21" hits="1" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
+            <line number="27" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="FasterMate.Core.Services.CommentService/&lt;DeleteAsync&gt;d__4" filename="FasterMate.Core\Services\CommentService.cs" line-rate="0" branch-rate="0" complexity="2">
+        <class name="FasterMate.Core.Services.CommentService/&lt;DeleteAsync&gt;d__3" filename="FasterMate.Core\Services\CommentService.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="37" hits="0" branch="False" />
-                <line number="38" hits="0" branch="False" />
-                <line number="39" hits="0" branch="False" />
-                <line number="40" hits="0" branch="False" />
-                <line number="41" hits="0" branch="False" />
-                <line number="43" hits="0" branch="False" />
-                <line number="45" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="34" hits="1" branch="False" />
+                <line number="35" hits="1" branch="False" />
+                <line number="36" hits="1" branch="False" />
+                <line number="37" hits="1" branch="False" />
+                <line number="38" hits="1" branch="False" />
+                <line number="40" hits="1" branch="False" />
+                <line number="42" hits="1" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="204" type="jump" coverage="0%" />
+                    <condition number="204" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="46" hits="0" branch="False" />
-                <line number="47" hits="0" branch="False" />
-                <line number="48" hits="0" branch="False" />
-                <line number="49" hits="0" branch="False" />
-                <line number="51" hits="0" branch="False" />
-                <line number="52" hits="0" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="44" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
+                <line number="46" hits="1" branch="False" />
+                <line number="48" hits="1" branch="False" />
+                <line number="49" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="37" hits="0" branch="False" />
-            <line number="38" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
-            <line number="40" hits="0" branch="False" />
-            <line number="41" hits="0" branch="False" />
-            <line number="43" hits="0" branch="False" />
-            <line number="45" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="34" hits="1" branch="False" />
+            <line number="35" hits="1" branch="False" />
+            <line number="36" hits="1" branch="False" />
+            <line number="37" hits="1" branch="False" />
+            <line number="38" hits="1" branch="False" />
+            <line number="40" hits="1" branch="False" />
+            <line number="42" hits="1" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="204" type="jump" coverage="0%" />
+                <condition number="204" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="46" hits="0" branch="False" />
-            <line number="47" hits="0" branch="False" />
-            <line number="48" hits="0" branch="False" />
-            <line number="49" hits="0" branch="False" />
-            <line number="51" hits="0" branch="False" />
-            <line number="52" hits="0" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="44" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
+            <line number="46" hits="1" branch="False" />
+            <line number="48" hits="1" branch="False" />
+            <line number="49" hits="1" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Core.Services.CountryService" filename="FasterMate.Core\Services\CountryService.cs" line-rate="1" branch-rate="1" complexity="2">
@@ -15333,68 +15303,68 @@
         </class>
       </classes>
     </package>
-    <package name="FasterMate.Infrastructure" line-rate="0.364" branch-rate="0.1818" complexity="129">
+    <package name="FasterMate.Infrastructure" line-rate="0.41600000000000004" branch-rate="0.1818" complexity="129">
       <classes>
         <class name="FasterMate.Infrastrucutre.Data.ApplicationDbContext" filename="FasterMate.Infrastructure\Data\ApplicationDbContext.cs" line-rate="1" branch-rate="1" complexity="15">
           <methods>
             <method name="get_Profiles" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="17" hits="30" branch="False" />
+                <line number="17" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_Images" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="30" branch="False" />
+                <line number="19" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_Countries" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="21" hits="30" branch="False" />
+                <line number="21" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_Posts" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="23" hits="30" branch="False" />
+                <line number="23" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_Comments" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="25" hits="30" branch="False" />
+                <line number="25" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_PostLikes" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="27" hits="30" branch="False" />
+                <line number="27" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_ProfileFollowers" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="29" hits="30" branch="False" />
+                <line number="29" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_Offers" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="31" hits="30" branch="False" />
+                <line number="31" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_ProfileOffers" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="33" hits="30" branch="False" />
+                <line number="33" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_Groups" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="35" hits="30" branch="False" />
+                <line number="35" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_GroupMembers" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="37" hits="30" branch="False" />
+                <line number="37" hits="34" branch="False" />
               </lines>
             </method>
             <method name="get_Messages" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="39" hits="30" branch="False" />
+                <line number="39" hits="34" branch="False" />
               </lines>
             </method>
             <method name="OnModelCreating" signature="(Microsoft.EntityFrameworkCore.ModelBuilder)" line-rate="1" branch-rate="1" complexity="2">
@@ -15440,25 +15410,25 @@
             </method>
             <method name=".ctor" signature="(Microsoft.EntityFrameworkCore.DbContextOptions`1&lt;FasterMate.Infrastrucutre.Data.ApplicationDbContext&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="30" branch="False" />
-                <line number="14" hits="30" branch="False" />
-                <line number="15" hits="30" branch="False" />
+                <line number="13" hits="34" branch="False" />
+                <line number="14" hits="34" branch="False" />
+                <line number="15" hits="34" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="17" hits="30" branch="False" />
-            <line number="19" hits="30" branch="False" />
-            <line number="21" hits="30" branch="False" />
-            <line number="23" hits="30" branch="False" />
-            <line number="25" hits="30" branch="False" />
-            <line number="27" hits="30" branch="False" />
-            <line number="29" hits="30" branch="False" />
-            <line number="31" hits="30" branch="False" />
-            <line number="33" hits="30" branch="False" />
-            <line number="35" hits="30" branch="False" />
-            <line number="37" hits="30" branch="False" />
-            <line number="39" hits="30" branch="False" />
+            <line number="17" hits="34" branch="False" />
+            <line number="19" hits="34" branch="False" />
+            <line number="21" hits="34" branch="False" />
+            <line number="23" hits="34" branch="False" />
+            <line number="25" hits="34" branch="False" />
+            <line number="27" hits="34" branch="False" />
+            <line number="29" hits="34" branch="False" />
+            <line number="31" hits="34" branch="False" />
+            <line number="33" hits="34" branch="False" />
+            <line number="35" hits="34" branch="False" />
+            <line number="37" hits="34" branch="False" />
+            <line number="39" hits="34" branch="False" />
             <line number="43" hits="2" branch="False" />
             <line number="44" hits="2" branch="False" />
             <line number="46" hits="2" branch="False" />
@@ -15496,9 +15466,9 @@
             <line number="84" hits="48" branch="False" />
             <line number="85" hits="48" branch="False" />
             <line number="86" hits="2" branch="False" />
-            <line number="13" hits="30" branch="False" />
-            <line number="14" hits="30" branch="False" />
-            <line number="15" hits="30" branch="False" />
+            <line number="13" hits="34" branch="False" />
+            <line number="14" hits="34" branch="False" />
+            <line number="15" hits="34" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Infrastructure.Seeding.ApplicationDbContextSeeder/&lt;SeedAsync&gt;d__0" filename="FasterMate.Infrastructure\Seeding\ApplicationDbContextSeeder.cs" line-rate="0" branch-rate="0" complexity="6">
@@ -15795,37 +15765,37 @@
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="9" hits="18" branch="False" />
-                <line number="10" hits="18" branch="False" />
-                <line number="11" hits="18" branch="False" />
-                <line number="12" hits="18" branch="False" />
+                <line number="9" hits="20" branch="False" />
+                <line number="10" hits="20" branch="False" />
+                <line number="11" hits="20" branch="False" />
+                <line number="12" hits="20" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="16" hits="0" branch="False" />
             <line number="19" hits="0" branch="False" />
-            <line number="9" hits="18" branch="False" />
-            <line number="10" hits="18" branch="False" />
-            <line number="11" hits="18" branch="False" />
-            <line number="12" hits="18" branch="False" />
+            <line number="9" hits="20" branch="False" />
+            <line number="10" hits="20" branch="False" />
+            <line number="11" hits="20" branch="False" />
+            <line number="12" hits="20" branch="False" />
           </lines>
         </class>
-        <class name="FasterMate.Infrastructure.Data.Comment" filename="FasterMate.Infrastructure\Data\Comment.cs" line-rate="0" branch-rate="1" complexity="7">
+        <class name="FasterMate.Infrastructure.Data.Comment" filename="FasterMate.Infrastructure\Data\Comment.cs" line-rate="0.7142000000000001" branch-rate="1" complexity="7">
           <methods>
-            <method name="get_Id" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="10" hits="0" branch="False" />
+                <line number="10" hits="5" branch="False" />
               </lines>
             </method>
-            <method name="get_Text" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Text" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="0" branch="False" />
+                <line number="14" hits="3" branch="False" />
               </lines>
             </method>
-            <method name="get_ProfileId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_ProfileId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="0" branch="False" />
+                <line number="19" hits="4" branch="False" />
               </lines>
             </method>
             <method name="get_Profile" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -15833,9 +15803,9 @@
                 <line number="21" hits="0" branch="False" />
               </lines>
             </method>
-            <method name="get_PostId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_PostId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="26" hits="0" branch="False" />
+                <line number="26" hits="4" branch="False" />
               </lines>
             </method>
             <method name="get_Post" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -15843,38 +15813,38 @@
                 <line number="28" hits="0" branch="False" />
               </lines>
             </method>
-            <method name="get_CreatedOn" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_CreatedOn" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="31" hits="0" branch="False" />
+                <line number="31" hits="5" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="10" hits="0" branch="False" />
-            <line number="14" hits="0" branch="False" />
-            <line number="19" hits="0" branch="False" />
+            <line number="10" hits="5" branch="False" />
+            <line number="14" hits="3" branch="False" />
+            <line number="19" hits="4" branch="False" />
             <line number="21" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
+            <line number="26" hits="4" branch="False" />
             <line number="28" hits="0" branch="False" />
-            <line number="31" hits="0" branch="False" />
+            <line number="31" hits="5" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Infrastructure.Data.Country" filename="FasterMate.Infrastructure\Data\Country.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="9" hits="38" branch="False" />
+                <line number="9" hits="42" branch="False" />
               </lines>
             </method>
             <method name="get_Name" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="18" branch="False" />
+                <line number="13" hits="20" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="9" hits="38" branch="False" />
-            <line number="13" hits="18" branch="False" />
+            <line number="9" hits="42" branch="False" />
+            <line number="13" hits="20" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Infrastructure.Data.Group" filename="FasterMate.Infrastructure\Data\Group.cs" line-rate="0" branch-rate="1" complexity="8">
@@ -15965,12 +15935,12 @@
           <methods>
             <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="9" hits="33" branch="False" />
+                <line number="9" hits="37" branch="False" />
               </lines>
             </method>
             <method name="get_Extension" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="16" branch="False" />
+                <line number="12" hits="18" branch="False" />
               </lines>
             </method>
             <method name="get_Profiles" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -15990,8 +15960,8 @@
             </method>
           </methods>
           <lines>
-            <line number="9" hits="33" branch="False" />
-            <line number="12" hits="16" branch="False" />
+            <line number="9" hits="37" branch="False" />
+            <line number="12" hits="18" branch="False" />
             <line number="14" hits="0" branch="False" />
             <line number="16" hits="0" branch="False" />
             <line number="18" hits="0" branch="False" />
@@ -16105,31 +16075,31 @@
             <line number="35" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="FasterMate.Infrastructure.Data.Post" filename="FasterMate.Infrastructure\Data\Post.cs" line-rate="0" branch-rate="1" complexity="10">
+        <class name="FasterMate.Infrastructure.Data.Post" filename="FasterMate.Infrastructure\Data\Post.cs" line-rate="0.8" branch-rate="1" complexity="10">
           <methods>
-            <method name="get_Id" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="10" hits="0" branch="False" />
+                <line number="10" hits="4" branch="False" />
               </lines>
             </method>
-            <method name="get_Text" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Text" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="0" branch="False" />
+                <line number="14" hits="2" branch="False" />
               </lines>
             </method>
-            <method name="get_Location" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Location" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="18" hits="0" branch="False" />
+                <line number="18" hits="2" branch="False" />
               </lines>
             </method>
-            <method name="get_CreatedOn" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_CreatedOn" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="21" hits="0" branch="False" />
+                <line number="21" hits="4" branch="False" />
               </lines>
             </method>
-            <method name="get_ImageId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_ImageId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="26" hits="0" branch="False" />
+                <line number="26" hits="2" branch="False" />
               </lines>
             </method>
             <method name="get_Image" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -16137,9 +16107,9 @@
                 <line number="28" hits="0" branch="False" />
               </lines>
             </method>
-            <method name="get_ProfileId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_ProfileId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="33" hits="0" branch="False" />
+                <line number="33" hits="2" branch="False" />
               </lines>
             </method>
             <method name="get_Profile" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -16147,28 +16117,28 @@
                 <line number="35" hits="0" branch="False" />
               </lines>
             </method>
-            <method name="get_Comments" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Comments" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="37" hits="0" branch="False" />
+                <line number="37" hits="2" branch="False" />
               </lines>
             </method>
-            <method name="get_PostLikes" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_PostLikes" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="39" hits="0" branch="False" />
+                <line number="39" hits="2" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="10" hits="0" branch="False" />
-            <line number="14" hits="0" branch="False" />
-            <line number="18" hits="0" branch="False" />
-            <line number="21" hits="0" branch="False" />
-            <line number="26" hits="0" branch="False" />
+            <line number="10" hits="4" branch="False" />
+            <line number="14" hits="2" branch="False" />
+            <line number="18" hits="2" branch="False" />
+            <line number="21" hits="4" branch="False" />
+            <line number="26" hits="2" branch="False" />
             <line number="28" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
+            <line number="33" hits="2" branch="False" />
             <line number="35" hits="0" branch="False" />
-            <line number="37" hits="0" branch="False" />
-            <line number="39" hits="0" branch="False" />
+            <line number="37" hits="2" branch="False" />
+            <line number="39" hits="2" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Infrastructure.Data.PostLike" filename="FasterMate.Infrastructure\Data\PostLike.cs" line-rate="0" branch-rate="1" complexity="4">
@@ -16205,27 +16175,27 @@
           <methods>
             <method name="get_Id" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="56" branch="False" />
+                <line number="11" hits="60" branch="False" />
               </lines>
             </method>
             <method name="get_FirstName" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="24" branch="False" />
+                <line number="15" hits="26" branch="False" />
               </lines>
             </method>
             <method name="get_LastName" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="23" branch="False" />
+                <line number="19" hits="25" branch="False" />
               </lines>
             </method>
             <method name="get_Gender" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="22" hits="18" branch="False" />
+                <line number="22" hits="20" branch="False" />
               </lines>
             </method>
             <method name="get_BirthDate" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="26" hits="20" branch="False" />
+                <line number="26" hits="22" branch="False" />
               </lines>
             </method>
             <method name="get_Bio" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -16235,7 +16205,7 @@
             </method>
             <method name="get_ImageId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="32" hits="16" branch="False" />
+                <line number="32" hits="18" branch="False" />
               </lines>
             </method>
             <method name="get_Image" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -16245,7 +16215,7 @@
             </method>
             <method name="get_CountryId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="37" hits="19" branch="False" />
+                <line number="37" hits="21" branch="False" />
               </lines>
             </method>
             <method name="get_Country" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -16255,52 +16225,52 @@
             </method>
             <method name="get_User" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="40" hits="18" branch="False" />
+                <line number="40" hits="20" branch="False" />
               </lines>
             </method>
             <method name="get_Followers" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="42" hits="25" branch="False" />
+                <line number="42" hits="27" branch="False" />
               </lines>
             </method>
             <method name="get_Following" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="44" hits="26" branch="False" />
+                <line number="44" hits="28" branch="False" />
               </lines>
             </method>
             <method name="get_Posts" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="46" hits="24" branch="False" />
+                <line number="46" hits="26" branch="False" />
               </lines>
             </method>
             <method name="get_Offers" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="48" hits="24" branch="False" />
+                <line number="48" hits="26" branch="False" />
               </lines>
             </method>
             <method name="get_Groups" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="50" hits="24" branch="False" />
+                <line number="50" hits="26" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="11" hits="56" branch="False" />
-            <line number="15" hits="24" branch="False" />
-            <line number="19" hits="23" branch="False" />
-            <line number="22" hits="18" branch="False" />
-            <line number="26" hits="20" branch="False" />
+            <line number="11" hits="60" branch="False" />
+            <line number="15" hits="26" branch="False" />
+            <line number="19" hits="25" branch="False" />
+            <line number="22" hits="20" branch="False" />
+            <line number="26" hits="22" branch="False" />
             <line number="29" hits="4" branch="False" />
-            <line number="32" hits="16" branch="False" />
+            <line number="32" hits="18" branch="False" />
             <line number="33" hits="3" branch="False" />
-            <line number="37" hits="19" branch="False" />
+            <line number="37" hits="21" branch="False" />
             <line number="38" hits="1" branch="False" />
-            <line number="40" hits="18" branch="False" />
-            <line number="42" hits="25" branch="False" />
-            <line number="44" hits="26" branch="False" />
-            <line number="46" hits="24" branch="False" />
-            <line number="48" hits="24" branch="False" />
-            <line number="50" hits="24" branch="False" />
+            <line number="40" hits="20" branch="False" />
+            <line number="42" hits="27" branch="False" />
+            <line number="44" hits="28" branch="False" />
+            <line number="46" hits="26" branch="False" />
+            <line number="48" hits="26" branch="False" />
+            <line number="50" hits="26" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Infrastructure.Data.ProfileFollower" filename="FasterMate.Infrastructure\Data\ProfileFollower.cs" line-rate="0.5" branch-rate="1" complexity="4">
@@ -16367,27 +16337,27 @@
           <methods>
             <method name="get_DbSet" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="213" branch="False" />
+                <line number="19" hits="243" branch="False" />
               </lines>
             </method>
             <method name="get_Context" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="21" hits="235" branch="False" />
+                <line number="21" hits="263" branch="False" />
               </lines>
             </method>
             <method name="All" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="24" hits="16" branch="False" />
+                <line number="24" hits="18" branch="False" />
               </lines>
             </method>
             <method name="AllAsNoTracking" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="27" hits="47" branch="False" />
+                <line number="27" hits="53" branch="False" />
               </lines>
             </method>
             <method name="AddAsync" signature="(T)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="30" hits="50" branch="False" />
+                <line number="30" hits="61" branch="False" />
               </lines>
             </method>
             <method name="Update" signature="(T)" line-rate="0.625" branch-rate="0.5" complexity="2">
@@ -16408,12 +16378,12 @@
             </method>
             <method name="Delete" signature="(T)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="44" hits="1" branch="False" />
+                <line number="44" hits="2" branch="False" />
               </lines>
             </method>
             <method name="SaveChangesAsync" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="47" hits="36" branch="False" />
+                <line number="47" hits="44" branch="False" />
               </lines>
             </method>
             <method name="Dispose" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -16444,24 +16414,24 @@
             </method>
             <method name=".ctor" signature="(FasterMate.Infrastrucutre.Data.ApplicationDbContext)" line-rate="1" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="13" hits="99" branch="False" />
-                <line number="14" hits="99" branch="False" />
-                <line number="15" hits="99" branch="True" condition-coverage="50% (1/2)">
+                <line number="13" hits="109" branch="False" />
+                <line number="14" hits="109" branch="False" />
+                <line number="15" hits="109" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="11" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="16" hits="99" branch="False" />
-                <line number="17" hits="99" branch="False" />
+                <line number="16" hits="109" branch="False" />
+                <line number="17" hits="109" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="19" hits="213" branch="False" />
-            <line number="21" hits="235" branch="False" />
-            <line number="24" hits="16" branch="False" />
-            <line number="27" hits="47" branch="False" />
-            <line number="30" hits="50" branch="False" />
+            <line number="19" hits="243" branch="False" />
+            <line number="21" hits="263" branch="False" />
+            <line number="24" hits="18" branch="False" />
+            <line number="27" hits="53" branch="False" />
+            <line number="30" hits="61" branch="False" />
             <line number="33" hits="1" branch="False" />
             <line number="34" hits="1" branch="False" />
             <line number="35" hits="1" branch="True" condition-coverage="50% (1/2)">
@@ -16474,8 +16444,8 @@
             <line number="38" hits="0" branch="False" />
             <line number="40" hits="1" branch="False" />
             <line number="41" hits="1" branch="False" />
-            <line number="44" hits="1" branch="False" />
-            <line number="47" hits="36" branch="False" />
+            <line number="44" hits="2" branch="False" />
+            <line number="47" hits="44" branch="False" />
             <line number="50" hits="0" branch="False" />
             <line number="51" hits="0" branch="False" />
             <line number="52" hits="0" branch="False" />
@@ -16494,20 +16464,20 @@
             </line>
             <line number="60" hits="0" branch="False" />
             <line number="61" hits="0" branch="False" />
-            <line number="13" hits="99" branch="False" />
-            <line number="14" hits="99" branch="False" />
-            <line number="15" hits="99" branch="True" condition-coverage="50% (1/2)">
+            <line number="13" hits="109" branch="False" />
+            <line number="14" hits="109" branch="False" />
+            <line number="15" hits="109" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="11" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="16" hits="99" branch="False" />
-            <line number="17" hits="99" branch="False" />
+            <line number="16" hits="109" branch="False" />
+            <line number="17" hits="109" branch="False" />
           </lines>
         </class>
       </classes>
     </package>
-    <package name="FasterMate.Test" line-rate="0.9968" branch-rate="1" complexity="27">
+    <package name="FasterMate.Test" line-rate="0.9974" branch-rate="1" complexity="32">
       <classes>
         <class name="AutoGeneratedProgram" filename="Users\Viktor\.nuget\packages\microsoft.net.test.sdk\16.11.0\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -16521,107 +16491,301 @@
             <line number="4" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="FasterMate.Test.CountryServiceTest" filename="FasterMate.Test\CountryServiceTest.cs" line-rate="1" branch-rate="1" complexity="3">
+        <class name="FasterMate.Test.CommentServiceTest" filename="FasterMate.Test\CommentServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name="GetAllAsKvpSuccessfully" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="37" hits="1" branch="False" />
-                <line number="38" hits="1" branch="False" />
-                <line number="40" hits="1" branch="False" />
-                <line number="42" hits="1" branch="False" />
-                <line number="43" hits="1" branch="False" />
-                <line number="44" hits="1" branch="False" />
-                <line number="46" hits="1" branch="False" />
-                <line number="48" hits="1" branch="False" />
-                <line number="49" hits="1" branch="False" />
-              </lines>
-            </method>
-            <method name="TearDown" signature="()" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="61" hits="1" branch="False" />
-                <line number="62" hits="1" branch="False" />
-                <line number="63" hits="1" branch="False" />
-              </lines>
-            </method>
             <method name="&lt;Setup&gt;b__2_0" signature="(System.IServiceProvider)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="25" hits="1" branch="False" />
+                <line number="28" hits="2" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="37" hits="1" branch="False" />
-            <line number="38" hits="1" branch="False" />
-            <line number="40" hits="1" branch="False" />
-            <line number="42" hits="1" branch="False" />
-            <line number="43" hits="1" branch="False" />
+            <line number="28" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="FasterMate.Test.CommentServiceTest/&lt;AddAsyncSuccessfully&gt;d__3" filename="FasterMate.Test\CommentServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="44" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
+                <line number="46" hits="1" branch="False" />
+                <line number="48" hits="1" branch="False" />
+                <line number="49" hits="1" branch="False" />
+                <line number="50" hits="1" branch="False" />
+                <line number="51" hits="1" branch="False" />
+                <line number="52" hits="1" branch="False" />
+                <line number="54" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+                <line number="57" hits="1" branch="False" />
+                <line number="59" hits="1" branch="False" />
+                <line number="60" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
             <line number="44" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
             <line number="46" hits="1" branch="False" />
             <line number="48" hits="1" branch="False" />
             <line number="49" hits="1" branch="False" />
-            <line number="61" hits="1" branch="False" />
-            <line number="62" hits="1" branch="False" />
-            <line number="63" hits="1" branch="False" />
-            <line number="25" hits="1" branch="False" />
+            <line number="50" hits="1" branch="False" />
+            <line number="51" hits="1" branch="False" />
+            <line number="52" hits="1" branch="False" />
+            <line number="54" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="57" hits="1" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="60" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="FasterMate.Test.CommentServiceTest/&lt;RemoveAsyncSuccessfully&gt;d__4" filename="FasterMate.Test\CommentServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="64" hits="1" branch="False" />
+                <line number="65" hits="1" branch="False" />
+                <line number="67" hits="1" branch="False" />
+                <line number="68" hits="1" branch="False" />
+                <line number="70" hits="1" branch="False" />
+                <line number="71" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="64" hits="1" branch="False" />
+            <line number="65" hits="1" branch="False" />
+            <line number="67" hits="1" branch="False" />
+            <line number="68" hits="1" branch="False" />
+            <line number="70" hits="1" branch="False" />
+            <line number="71" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="FasterMate.Test.CommentServiceTest/&lt;SeedDb&gt;d__5" filename="FasterMate.Test\CommentServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="74" hits="2" branch="False" />
+                <line number="75" hits="2" branch="False" />
+                <line number="76" hits="2" branch="False" />
+                <line number="77" hits="2" branch="False" />
+                <line number="78" hits="2" branch="False" />
+                <line number="80" hits="2" branch="False" />
+                <line number="81" hits="2" branch="False" />
+                <line number="82" hits="2" branch="False" />
+                <line number="83" hits="2" branch="False" />
+                <line number="84" hits="2" branch="False" />
+                <line number="85" hits="2" branch="False" />
+                <line number="86" hits="2" branch="False" />
+                <line number="87" hits="2" branch="False" />
+                <line number="89" hits="2" branch="False" />
+                <line number="90" hits="2" branch="False" />
+                <line number="91" hits="2" branch="False" />
+                <line number="92" hits="2" branch="False" />
+                <line number="93" hits="2" branch="False" />
+                <line number="94" hits="2" branch="False" />
+                <line number="95" hits="2" branch="False" />
+                <line number="96" hits="2" branch="False" />
+                <line number="97" hits="2" branch="False" />
+                <line number="99" hits="2" branch="False" />
+                <line number="100" hits="2" branch="False" />
+                <line number="101" hits="2" branch="False" />
+                <line number="102" hits="2" branch="False" />
+                <line number="103" hits="2" branch="False" />
+                <line number="104" hits="2" branch="False" />
+                <line number="105" hits="2" branch="False" />
+                <line number="106" hits="2" branch="False" />
+                <line number="107" hits="2" branch="False" />
+                <line number="108" hits="2" branch="False" />
+                <line number="109" hits="2" branch="False" />
+                <line number="110" hits="2" branch="False" />
+                <line number="111" hits="2" branch="False" />
+                <line number="112" hits="2" branch="False" />
+                <line number="114" hits="2" branch="False" />
+                <line number="115" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="74" hits="2" branch="False" />
+            <line number="75" hits="2" branch="False" />
+            <line number="76" hits="2" branch="False" />
+            <line number="77" hits="2" branch="False" />
+            <line number="78" hits="2" branch="False" />
+            <line number="80" hits="2" branch="False" />
+            <line number="81" hits="2" branch="False" />
+            <line number="82" hits="2" branch="False" />
+            <line number="83" hits="2" branch="False" />
+            <line number="84" hits="2" branch="False" />
+            <line number="85" hits="2" branch="False" />
+            <line number="86" hits="2" branch="False" />
+            <line number="87" hits="2" branch="False" />
+            <line number="89" hits="2" branch="False" />
+            <line number="90" hits="2" branch="False" />
+            <line number="91" hits="2" branch="False" />
+            <line number="92" hits="2" branch="False" />
+            <line number="93" hits="2" branch="False" />
+            <line number="94" hits="2" branch="False" />
+            <line number="95" hits="2" branch="False" />
+            <line number="96" hits="2" branch="False" />
+            <line number="97" hits="2" branch="False" />
+            <line number="99" hits="2" branch="False" />
+            <line number="100" hits="2" branch="False" />
+            <line number="101" hits="2" branch="False" />
+            <line number="102" hits="2" branch="False" />
+            <line number="103" hits="2" branch="False" />
+            <line number="104" hits="2" branch="False" />
+            <line number="105" hits="2" branch="False" />
+            <line number="106" hits="2" branch="False" />
+            <line number="107" hits="2" branch="False" />
+            <line number="108" hits="2" branch="False" />
+            <line number="109" hits="2" branch="False" />
+            <line number="110" hits="2" branch="False" />
+            <line number="111" hits="2" branch="False" />
+            <line number="112" hits="2" branch="False" />
+            <line number="114" hits="2" branch="False" />
+            <line number="115" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="FasterMate.Test.CommentServiceTest/&lt;Setup&gt;d__2" filename="FasterMate.Test\CommentServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="23" hits="2" branch="False" />
+                <line number="24" hits="2" branch="False" />
+                <line number="25" hits="2" branch="False" />
+                <line number="27" hits="2" branch="False" />
+                <line number="29" hits="2" branch="False" />
+                <line number="30" hits="2" branch="False" />
+                <line number="31" hits="2" branch="False" />
+                <line number="33" hits="2" branch="False" />
+                <line number="34" hits="2" branch="False" />
+                <line number="35" hits="2" branch="False" />
+                <line number="36" hits="2" branch="False" />
+                <line number="37" hits="2" branch="False" />
+                <line number="39" hits="2" branch="False" />
+                <line number="40" hits="2" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="2" branch="False" />
+            <line number="24" hits="2" branch="False" />
+            <line number="25" hits="2" branch="False" />
+            <line number="27" hits="2" branch="False" />
+            <line number="29" hits="2" branch="False" />
+            <line number="30" hits="2" branch="False" />
+            <line number="31" hits="2" branch="False" />
+            <line number="33" hits="2" branch="False" />
+            <line number="34" hits="2" branch="False" />
+            <line number="35" hits="2" branch="False" />
+            <line number="36" hits="2" branch="False" />
+            <line number="37" hits="2" branch="False" />
+            <line number="39" hits="2" branch="False" />
+            <line number="40" hits="2" branch="False" />
+          </lines>
+        </class>
+        <class name="FasterMate.Test.CountryServiceTest" filename="FasterMate.Test\CountryServiceTest.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="GetAllAsKvpSuccessfully" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="38" hits="1" branch="False" />
+                <line number="39" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="44" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
+                <line number="47" hits="1" branch="False" />
+                <line number="49" hits="1" branch="False" />
+                <line number="50" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="TearDown" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="54" hits="1" branch="False" />
+                <line number="55" hits="1" branch="False" />
+                <line number="56" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="&lt;Setup&gt;b__2_0" signature="(System.IServiceProvider)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="38" hits="1" branch="False" />
+            <line number="39" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="44" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
+            <line number="47" hits="1" branch="False" />
+            <line number="49" hits="1" branch="False" />
+            <line number="50" hits="1" branch="False" />
+            <line number="54" hits="1" branch="False" />
+            <line number="55" hits="1" branch="False" />
+            <line number="56" hits="1" branch="False" />
+            <line number="26" hits="1" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.CountryServiceTest/&lt;SeedDb&gt;d__5" filename="FasterMate.Test\CountryServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="66" hits="1" branch="False" />
-                <line number="67" hits="1" branch="False" />
-                <line number="68" hits="1" branch="False" />
-                <line number="69" hits="1" branch="False" />
-                <line number="71" hits="1" branch="False" />
-                <line number="72" hits="1" branch="False" />
+                <line number="59" hits="1" branch="False" />
+                <line number="60" hits="1" branch="False" />
+                <line number="61" hits="1" branch="False" />
+                <line number="62" hits="1" branch="False" />
+                <line number="64" hits="1" branch="False" />
+                <line number="65" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="66" hits="1" branch="False" />
-            <line number="67" hits="1" branch="False" />
-            <line number="68" hits="1" branch="False" />
-            <line number="69" hits="1" branch="False" />
-            <line number="71" hits="1" branch="False" />
-            <line number="72" hits="1" branch="False" />
+            <line number="59" hits="1" branch="False" />
+            <line number="60" hits="1" branch="False" />
+            <line number="61" hits="1" branch="False" />
+            <line number="62" hits="1" branch="False" />
+            <line number="64" hits="1" branch="False" />
+            <line number="65" hits="1" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.CountryServiceTest/&lt;Setup&gt;d__2" filename="FasterMate.Test\CountryServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="20" hits="1" branch="False" />
                 <line number="21" hits="1" branch="False" />
                 <line number="22" hits="1" branch="False" />
-                <line number="24" hits="1" branch="False" />
-                <line number="26" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="25" hits="1" branch="False" />
                 <line number="27" hits="1" branch="False" />
                 <line number="28" hits="1" branch="False" />
-                <line number="30" hits="1" branch="False" />
-                <line number="32" hits="1" branch="False" />
+                <line number="29" hits="1" branch="False" />
+                <line number="31" hits="1" branch="False" />
                 <line number="33" hits="1" branch="False" />
+                <line number="34" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="20" hits="1" branch="False" />
             <line number="21" hits="1" branch="False" />
             <line number="22" hits="1" branch="False" />
-            <line number="24" hits="1" branch="False" />
-            <line number="26" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="25" hits="1" branch="False" />
             <line number="27" hits="1" branch="False" />
             <line number="28" hits="1" branch="False" />
-            <line number="30" hits="1" branch="False" />
-            <line number="32" hits="1" branch="False" />
+            <line number="29" hits="1" branch="False" />
+            <line number="31" hits="1" branch="False" />
             <line number="33" hits="1" branch="False" />
+            <line number="34" hits="1" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.InMemoryDbContext" filename="FasterMate.Test\InMemoryDbContext.cs" line-rate="1" branch-rate="1" complexity="3">
           <methods>
             <method name="CreateContext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="26" hits="15" branch="False" />
+                <line number="26" hits="17" branch="False" />
               </lines>
             </method>
             <method name="Dispose" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -16631,38 +16795,39 @@
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="15" branch="False" />
-                <line number="13" hits="15" branch="False" />
-                <line number="14" hits="15" branch="False" />
-                <line number="15" hits="15" branch="False" />
-                <line number="17" hits="15" branch="False" />
-                <line number="18" hits="15" branch="False" />
-                <line number="19" hits="15" branch="False" />
-                <line number="21" hits="15" branch="False" />
-                <line number="23" hits="15" branch="False" />
-                <line number="24" hits="30" branch="False" />
+                <line number="12" hits="17" branch="False" />
+                <line number="13" hits="17" branch="False" />
+                <line number="14" hits="17" branch="False" />
+                <line number="15" hits="17" branch="False" />
+                <line number="17" hits="17" branch="False" />
+                <line number="18" hits="17" branch="False" />
+                <line number="19" hits="17" branch="False" />
+                <line number="21" hits="17" branch="False" />
+                <line number="23" hits="17" branch="False" />
+                <line number="24" hits="34" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="26" hits="15" branch="False" />
+            <line number="26" hits="17" branch="False" />
             <line number="28" hits="15" branch="False" />
-            <line number="12" hits="15" branch="False" />
-            <line number="13" hits="15" branch="False" />
-            <line number="14" hits="15" branch="False" />
-            <line number="15" hits="15" branch="False" />
-            <line number="17" hits="15" branch="False" />
-            <line number="18" hits="15" branch="False" />
-            <line number="19" hits="15" branch="False" />
-            <line number="21" hits="15" branch="False" />
-            <line number="23" hits="15" branch="False" />
-            <line number="24" hits="30" branch="False" />
+            <line number="12" hits="17" branch="False" />
+            <line number="13" hits="17" branch="False" />
+            <line number="14" hits="17" branch="False" />
+            <line number="15" hits="17" branch="False" />
+            <line number="17" hits="17" branch="False" />
+            <line number="18" hits="17" branch="False" />
+            <line number="19" hits="17" branch="False" />
+            <line number="21" hits="17" branch="False" />
+            <line number="23" hits="17" branch="False" />
+            <line number="24" hits="34" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.ProfileServiceTest" filename="FasterMate.Test\ProfileServiceTest.cs" line-rate="1" branch-rate="1" complexity="12">
           <methods>
             <method name="CreateMustThrowAEWhenCountryIsNotValid" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="49" hits="1" branch="False" />
                 <line number="50" hits="1" branch="False" />
                 <line number="51" hits="1" branch="False" />
                 <line number="52" hits="1" branch="False" />
@@ -16675,14 +16840,14 @@
                 <line number="59" hits="1" branch="False" />
                 <line number="60" hits="1" branch="False" />
                 <line number="61" hits="1" branch="False" />
-                <line number="62" hits="1" branch="False" />
-                <line number="64" hits="1" branch="False" />
-                <line number="66" hits="2" branch="False" />
-                <line number="67" hits="1" branch="False" />
+                <line number="63" hits="1" branch="False" />
+                <line number="65" hits="2" branch="False" />
+                <line number="66" hits="1" branch="False" />
               </lines>
             </method>
             <method name="CreateMustThrowAEWhenGenderIsNotValid" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="70" hits="1" branch="False" />
                 <line number="71" hits="1" branch="False" />
                 <line number="72" hits="1" branch="False" />
                 <line number="73" hits="1" branch="False" />
@@ -16696,13 +16861,13 @@
                 <line number="81" hits="1" branch="False" />
                 <line number="82" hits="1" branch="False" />
                 <line number="83" hits="1" branch="False" />
-                <line number="84" hits="1" branch="False" />
-                <line number="86" hits="2" branch="False" />
-                <line number="87" hits="1" branch="False" />
+                <line number="85" hits="2" branch="False" />
+                <line number="86" hits="1" branch="False" />
               </lines>
             </method>
             <method name="CreateMustThrowAEWhenDateIsNotValid" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="90" hits="1" branch="False" />
                 <line number="91" hits="1" branch="False" />
                 <line number="92" hits="1" branch="False" />
                 <line number="93" hits="1" branch="False" />
@@ -16716,13 +16881,13 @@
                 <line number="101" hits="1" branch="False" />
                 <line number="102" hits="1" branch="False" />
                 <line number="103" hits="1" branch="False" />
-                <line number="104" hits="1" branch="False" />
-                <line number="106" hits="2" branch="False" />
-                <line number="107" hits="1" branch="False" />
+                <line number="105" hits="2" branch="False" />
+                <line number="106" hits="1" branch="False" />
               </lines>
             </method>
             <method name="CreateMustBeSuccessfully" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="110" hits="1" branch="False" />
                 <line number="111" hits="1" branch="False" />
                 <line number="112" hits="1" branch="False" />
                 <line number="113" hits="1" branch="False" />
@@ -16736,25 +16901,25 @@
                 <line number="121" hits="1" branch="False" />
                 <line number="122" hits="1" branch="False" />
                 <line number="123" hits="1" branch="False" />
-                <line number="124" hits="1" branch="False" />
-                <line number="126" hits="2" branch="False" />
-                <line number="127" hits="1" branch="False" />
+                <line number="125" hits="2" branch="False" />
+                <line number="126" hits="1" branch="False" />
               </lines>
             </method>
             <method name="GetUserIdSuccessfully" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="130" hits="1" branch="False" />
                 <line number="131" hits="1" branch="False" />
-                <line number="132" hits="1" branch="False" />
+                <line number="133" hits="1" branch="False" />
                 <line number="134" hits="1" branch="False" />
-                <line number="135" hits="1" branch="False" />
+                <line number="136" hits="1" branch="False" />
                 <line number="137" hits="1" branch="False" />
-                <line number="138" hits="1" branch="False" />
               </lines>
             </method>
             <method name="GetUserByUserIdSuccessfully" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="141" hits="1" branch="False" />
                 <line number="142" hits="1" branch="False" />
-                <line number="143" hits="1" branch="False" />
+                <line number="144" hits="1" branch="False" />
                 <line number="145" hits="1" branch="False" />
                 <line number="146" hits="1" branch="False" />
                 <line number="147" hits="1" branch="False" />
@@ -16767,15 +16932,15 @@
                 <line number="154" hits="1" branch="False" />
                 <line number="155" hits="1" branch="False" />
                 <line number="156" hits="1" branch="False" />
-                <line number="157" hits="1" branch="False" />
+                <line number="158" hits="1" branch="False" />
                 <line number="159" hits="1" branch="False" />
-                <line number="160" hits="1" branch="False" />
               </lines>
             </method>
             <method name="GetUserByProfileIdSuccessfully" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="163" hits="1" branch="False" />
                 <line number="164" hits="1" branch="False" />
-                <line number="165" hits="1" branch="False" />
+                <line number="166" hits="1" branch="False" />
                 <line number="167" hits="1" branch="False" />
                 <line number="168" hits="1" branch="False" />
                 <line number="169" hits="1" branch="False" />
@@ -16788,38 +16953,38 @@
                 <line number="176" hits="1" branch="False" />
                 <line number="177" hits="1" branch="False" />
                 <line number="178" hits="1" branch="False" />
-                <line number="179" hits="1" branch="False" />
+                <line number="180" hits="1" branch="False" />
                 <line number="181" hits="1" branch="False" />
-                <line number="182" hits="1" branch="False" />
               </lines>
             </method>
             <method name="GetEditProfileSuccessfully" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="216" hits="1" branch="False" />
                 <line number="217" hits="1" branch="False" />
                 <line number="218" hits="1" branch="False" />
-                <line number="219" hits="1" branch="False" />
+                <line number="220" hits="1" branch="False" />
                 <line number="221" hits="1" branch="False" />
-                <line number="222" hits="1" branch="False" />
+                <line number="223" hits="1" branch="False" />
                 <line number="224" hits="1" branch="False" />
                 <line number="225" hits="1" branch="False" />
                 <line number="226" hits="1" branch="False" />
                 <line number="227" hits="1" branch="False" />
                 <line number="228" hits="1" branch="False" />
                 <line number="229" hits="1" branch="False" />
-                <line number="230" hits="1" branch="False" />
+                <line number="231" hits="1" branch="False" />
                 <line number="232" hits="1" branch="False" />
-                <line number="233" hits="1" branch="False" />
               </lines>
             </method>
             <method name="GetRenderProfileSuccessfully" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="236" hits="1" branch="False" />
                 <line number="237" hits="1" branch="False" />
                 <line number="238" hits="1" branch="False" />
                 <line number="239" hits="1" branch="False" />
                 <line number="240" hits="1" branch="False" />
-                <line number="241" hits="1" branch="False" />
+                <line number="242" hits="1" branch="False" />
                 <line number="243" hits="1" branch="False" />
-                <line number="244" hits="1" branch="False" />
+                <line number="245" hits="1" branch="False" />
                 <line number="246" hits="1" branch="False" />
                 <line number="247" hits="1" branch="False" />
                 <line number="248" hits="1" branch="False" />
@@ -16833,16 +16998,16 @@
                 <line number="256" hits="1" branch="False" />
                 <line number="257" hits="1" branch="False" />
                 <line number="258" hits="1" branch="False" />
-                <line number="259" hits="1" branch="False" />
+                <line number="260" hits="1" branch="False" />
                 <line number="261" hits="1" branch="False" />
-                <line number="262" hits="1" branch="False" />
               </lines>
             </method>
             <method name="SearchProfilesSuccessfully" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="340" hits="1" branch="False" />
                 <line number="341" hits="1" branch="False" />
                 <line number="342" hits="1" branch="False" />
-                <line number="343" hits="1" branch="False" />
+                <line number="344" hits="1" branch="False" />
                 <line number="345" hits="1" branch="False" />
                 <line number="346" hits="1" branch="False" />
                 <line number="347" hits="1" branch="False" />
@@ -16854,28 +17019,28 @@
                 <line number="353" hits="1" branch="False" />
                 <line number="354" hits="1" branch="False" />
                 <line number="355" hits="1" branch="False" />
-                <line number="356" hits="1" branch="False" />
+                <line number="357" hits="1" branch="False" />
                 <line number="358" hits="1" branch="False" />
-                <line number="359" hits="1" branch="False" />
-                <line number="361" hits="1" branch="False" />
+                <line number="360" hits="1" branch="False" />
+                <line number="362" hits="1" branch="False" />
                 <line number="363" hits="1" branch="False" />
-                <line number="364" hits="1" branch="False" />
               </lines>
             </method>
             <method name="TearDown" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="367" hits="14" branch="False" />
                 <line number="368" hits="14" branch="False" />
                 <line number="369" hits="14" branch="False" />
-                <line number="370" hits="14" branch="False" />
               </lines>
             </method>
             <method name="&lt;Setup&gt;b__2_0" signature="(System.IServiceProvider)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="32" hits="14" branch="False" />
+                <line number="31" hits="14" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="49" hits="1" branch="False" />
             <line number="50" hits="1" branch="False" />
             <line number="51" hits="1" branch="False" />
             <line number="52" hits="1" branch="False" />
@@ -16888,10 +17053,10 @@
             <line number="59" hits="1" branch="False" />
             <line number="60" hits="1" branch="False" />
             <line number="61" hits="1" branch="False" />
-            <line number="62" hits="1" branch="False" />
-            <line number="64" hits="1" branch="False" />
-            <line number="66" hits="2" branch="False" />
-            <line number="67" hits="1" branch="False" />
+            <line number="63" hits="1" branch="False" />
+            <line number="65" hits="2" branch="False" />
+            <line number="66" hits="1" branch="False" />
+            <line number="70" hits="1" branch="False" />
             <line number="71" hits="1" branch="False" />
             <line number="72" hits="1" branch="False" />
             <line number="73" hits="1" branch="False" />
@@ -16905,9 +17070,9 @@
             <line number="81" hits="1" branch="False" />
             <line number="82" hits="1" branch="False" />
             <line number="83" hits="1" branch="False" />
-            <line number="84" hits="1" branch="False" />
-            <line number="86" hits="2" branch="False" />
-            <line number="87" hits="1" branch="False" />
+            <line number="85" hits="2" branch="False" />
+            <line number="86" hits="1" branch="False" />
+            <line number="90" hits="1" branch="False" />
             <line number="91" hits="1" branch="False" />
             <line number="92" hits="1" branch="False" />
             <line number="93" hits="1" branch="False" />
@@ -16921,9 +17086,9 @@
             <line number="101" hits="1" branch="False" />
             <line number="102" hits="1" branch="False" />
             <line number="103" hits="1" branch="False" />
-            <line number="104" hits="1" branch="False" />
-            <line number="106" hits="2" branch="False" />
-            <line number="107" hits="1" branch="False" />
+            <line number="105" hits="2" branch="False" />
+            <line number="106" hits="1" branch="False" />
+            <line number="110" hits="1" branch="False" />
             <line number="111" hits="1" branch="False" />
             <line number="112" hits="1" branch="False" />
             <line number="113" hits="1" branch="False" />
@@ -16937,17 +17102,17 @@
             <line number="121" hits="1" branch="False" />
             <line number="122" hits="1" branch="False" />
             <line number="123" hits="1" branch="False" />
-            <line number="124" hits="1" branch="False" />
-            <line number="126" hits="2" branch="False" />
-            <line number="127" hits="1" branch="False" />
+            <line number="125" hits="2" branch="False" />
+            <line number="126" hits="1" branch="False" />
+            <line number="130" hits="1" branch="False" />
             <line number="131" hits="1" branch="False" />
-            <line number="132" hits="1" branch="False" />
+            <line number="133" hits="1" branch="False" />
             <line number="134" hits="1" branch="False" />
-            <line number="135" hits="1" branch="False" />
+            <line number="136" hits="1" branch="False" />
             <line number="137" hits="1" branch="False" />
-            <line number="138" hits="1" branch="False" />
+            <line number="141" hits="1" branch="False" />
             <line number="142" hits="1" branch="False" />
-            <line number="143" hits="1" branch="False" />
+            <line number="144" hits="1" branch="False" />
             <line number="145" hits="1" branch="False" />
             <line number="146" hits="1" branch="False" />
             <line number="147" hits="1" branch="False" />
@@ -16960,11 +17125,11 @@
             <line number="154" hits="1" branch="False" />
             <line number="155" hits="1" branch="False" />
             <line number="156" hits="1" branch="False" />
-            <line number="157" hits="1" branch="False" />
+            <line number="158" hits="1" branch="False" />
             <line number="159" hits="1" branch="False" />
-            <line number="160" hits="1" branch="False" />
+            <line number="163" hits="1" branch="False" />
             <line number="164" hits="1" branch="False" />
-            <line number="165" hits="1" branch="False" />
+            <line number="166" hits="1" branch="False" />
             <line number="167" hits="1" branch="False" />
             <line number="168" hits="1" branch="False" />
             <line number="169" hits="1" branch="False" />
@@ -16977,30 +17142,30 @@
             <line number="176" hits="1" branch="False" />
             <line number="177" hits="1" branch="False" />
             <line number="178" hits="1" branch="False" />
-            <line number="179" hits="1" branch="False" />
+            <line number="180" hits="1" branch="False" />
             <line number="181" hits="1" branch="False" />
-            <line number="182" hits="1" branch="False" />
+            <line number="216" hits="1" branch="False" />
             <line number="217" hits="1" branch="False" />
             <line number="218" hits="1" branch="False" />
-            <line number="219" hits="1" branch="False" />
+            <line number="220" hits="1" branch="False" />
             <line number="221" hits="1" branch="False" />
-            <line number="222" hits="1" branch="False" />
+            <line number="223" hits="1" branch="False" />
             <line number="224" hits="1" branch="False" />
             <line number="225" hits="1" branch="False" />
             <line number="226" hits="1" branch="False" />
             <line number="227" hits="1" branch="False" />
             <line number="228" hits="1" branch="False" />
             <line number="229" hits="1" branch="False" />
-            <line number="230" hits="1" branch="False" />
+            <line number="231" hits="1" branch="False" />
             <line number="232" hits="1" branch="False" />
-            <line number="233" hits="1" branch="False" />
+            <line number="236" hits="1" branch="False" />
             <line number="237" hits="1" branch="False" />
             <line number="238" hits="1" branch="False" />
             <line number="239" hits="1" branch="False" />
             <line number="240" hits="1" branch="False" />
-            <line number="241" hits="1" branch="False" />
+            <line number="242" hits="1" branch="False" />
             <line number="243" hits="1" branch="False" />
-            <line number="244" hits="1" branch="False" />
+            <line number="245" hits="1" branch="False" />
             <line number="246" hits="1" branch="False" />
             <line number="247" hits="1" branch="False" />
             <line number="248" hits="1" branch="False" />
@@ -17014,12 +17179,12 @@
             <line number="256" hits="1" branch="False" />
             <line number="257" hits="1" branch="False" />
             <line number="258" hits="1" branch="False" />
-            <line number="259" hits="1" branch="False" />
+            <line number="260" hits="1" branch="False" />
             <line number="261" hits="1" branch="False" />
-            <line number="262" hits="1" branch="False" />
+            <line number="340" hits="1" branch="False" />
             <line number="341" hits="1" branch="False" />
             <line number="342" hits="1" branch="False" />
-            <line number="343" hits="1" branch="False" />
+            <line number="344" hits="1" branch="False" />
             <line number="345" hits="1" branch="False" />
             <line number="346" hits="1" branch="False" />
             <line number="347" hits="1" branch="False" />
@@ -17031,28 +17196,28 @@
             <line number="353" hits="1" branch="False" />
             <line number="354" hits="1" branch="False" />
             <line number="355" hits="1" branch="False" />
-            <line number="356" hits="1" branch="False" />
+            <line number="357" hits="1" branch="False" />
             <line number="358" hits="1" branch="False" />
-            <line number="359" hits="1" branch="False" />
-            <line number="361" hits="1" branch="False" />
+            <line number="360" hits="1" branch="False" />
+            <line number="362" hits="1" branch="False" />
             <line number="363" hits="1" branch="False" />
-            <line number="364" hits="1" branch="False" />
+            <line number="367" hits="14" branch="False" />
             <line number="368" hits="14" branch="False" />
             <line number="369" hits="14" branch="False" />
-            <line number="370" hits="14" branch="False" />
-            <line number="32" hits="14" branch="False" />
+            <line number="31" hits="14" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.ProfileServiceTest/&lt;FollowUserSuccessfully&gt;d__14" filename="FasterMate.Test\ProfileServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="265" hits="1" branch="False" />
                 <line number="266" hits="1" branch="False" />
                 <line number="267" hits="1" branch="False" />
                 <line number="268" hits="1" branch="False" />
                 <line number="269" hits="1" branch="False" />
                 <line number="270" hits="1" branch="False" />
-                <line number="271" hits="1" branch="False" />
+                <line number="272" hits="1" branch="False" />
                 <line number="273" hits="1" branch="False" />
                 <line number="274" hits="1" branch="False" />
                 <line number="275" hits="1" branch="False" />
@@ -17066,25 +17231,25 @@
                 <line number="283" hits="1" branch="False" />
                 <line number="284" hits="1" branch="False" />
                 <line number="285" hits="1" branch="False" />
-                <line number="286" hits="1" branch="False" />
-                <line number="288" hits="1" branch="False" />
+                <line number="287" hits="1" branch="False" />
+                <line number="289" hits="1" branch="False" />
                 <line number="290" hits="1" branch="False" />
-                <line number="291" hits="1" branch="False" />
-                <line number="293" hits="1" branch="False" />
+                <line number="292" hits="1" branch="False" />
+                <line number="294" hits="1" branch="False" />
                 <line number="295" hits="1" branch="False" />
-                <line number="296" hits="1" branch="False" />
+                <line number="297" hits="1" branch="False" />
                 <line number="298" hits="1" branch="False" />
-                <line number="299" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="265" hits="1" branch="False" />
             <line number="266" hits="1" branch="False" />
             <line number="267" hits="1" branch="False" />
             <line number="268" hits="1" branch="False" />
             <line number="269" hits="1" branch="False" />
             <line number="270" hits="1" branch="False" />
-            <line number="271" hits="1" branch="False" />
+            <line number="272" hits="1" branch="False" />
             <line number="273" hits="1" branch="False" />
             <line number="274" hits="1" branch="False" />
             <line number="275" hits="1" branch="False" />
@@ -17098,25 +17263,25 @@
             <line number="283" hits="1" branch="False" />
             <line number="284" hits="1" branch="False" />
             <line number="285" hits="1" branch="False" />
-            <line number="286" hits="1" branch="False" />
-            <line number="288" hits="1" branch="False" />
+            <line number="287" hits="1" branch="False" />
+            <line number="289" hits="1" branch="False" />
             <line number="290" hits="1" branch="False" />
-            <line number="291" hits="1" branch="False" />
-            <line number="293" hits="1" branch="False" />
+            <line number="292" hits="1" branch="False" />
+            <line number="294" hits="1" branch="False" />
             <line number="295" hits="1" branch="False" />
-            <line number="296" hits="1" branch="False" />
+            <line number="297" hits="1" branch="False" />
             <line number="298" hits="1" branch="False" />
-            <line number="299" hits="1" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.ProfileServiceTest/&lt;SeedDb&gt;d__18" filename="FasterMate.Test\ProfileServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="372" hits="14" branch="False" />
                 <line number="373" hits="14" branch="False" />
                 <line number="374" hits="14" branch="False" />
                 <line number="375" hits="14" branch="False" />
-                <line number="376" hits="14" branch="False" />
+                <line number="377" hits="14" branch="False" />
                 <line number="378" hits="14" branch="False" />
                 <line number="379" hits="14" branch="False" />
                 <line number="380" hits="14" branch="False" />
@@ -17130,17 +17295,17 @@
                 <line number="388" hits="14" branch="False" />
                 <line number="389" hits="14" branch="False" />
                 <line number="390" hits="14" branch="False" />
-                <line number="391" hits="14" branch="False" />
+                <line number="392" hits="14" branch="False" />
                 <line number="393" hits="14" branch="False" />
-                <line number="394" hits="14" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="372" hits="14" branch="False" />
             <line number="373" hits="14" branch="False" />
             <line number="374" hits="14" branch="False" />
             <line number="375" hits="14" branch="False" />
-            <line number="376" hits="14" branch="False" />
+            <line number="377" hits="14" branch="False" />
             <line number="378" hits="14" branch="False" />
             <line number="379" hits="14" branch="False" />
             <line number="380" hits="14" branch="False" />
@@ -17154,63 +17319,63 @@
             <line number="388" hits="14" branch="False" />
             <line number="389" hits="14" branch="False" />
             <line number="390" hits="14" branch="False" />
-            <line number="391" hits="14" branch="False" />
+            <line number="392" hits="14" branch="False" />
             <line number="393" hits="14" branch="False" />
-            <line number="394" hits="14" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.ProfileServiceTest/&lt;Setup&gt;d__2" filename="FasterMate.Test\ProfileServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="26" hits="14" branch="False" />
                 <line number="27" hits="14" branch="False" />
                 <line number="28" hits="14" branch="False" />
-                <line number="29" hits="14" branch="False" />
-                <line number="31" hits="14" branch="False" />
+                <line number="30" hits="14" branch="False" />
+                <line number="32" hits="14" branch="False" />
                 <line number="33" hits="14" branch="False" />
                 <line number="34" hits="14" branch="False" />
                 <line number="35" hits="14" branch="False" />
                 <line number="36" hits="14" branch="False" />
                 <line number="37" hits="14" branch="False" />
-                <line number="38" hits="14" branch="False" />
+                <line number="39" hits="14" branch="False" />
                 <line number="40" hits="14" branch="False" />
                 <line number="41" hits="14" branch="False" />
                 <line number="42" hits="14" branch="False" />
-                <line number="43" hits="14" branch="False" />
+                <line number="44" hits="14" branch="False" />
                 <line number="45" hits="14" branch="False" />
-                <line number="46" hits="14" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="26" hits="14" branch="False" />
             <line number="27" hits="14" branch="False" />
             <line number="28" hits="14" branch="False" />
-            <line number="29" hits="14" branch="False" />
-            <line number="31" hits="14" branch="False" />
+            <line number="30" hits="14" branch="False" />
+            <line number="32" hits="14" branch="False" />
             <line number="33" hits="14" branch="False" />
             <line number="34" hits="14" branch="False" />
             <line number="35" hits="14" branch="False" />
             <line number="36" hits="14" branch="False" />
             <line number="37" hits="14" branch="False" />
-            <line number="38" hits="14" branch="False" />
+            <line number="39" hits="14" branch="False" />
             <line number="40" hits="14" branch="False" />
             <line number="41" hits="14" branch="False" />
             <line number="42" hits="14" branch="False" />
-            <line number="43" hits="14" branch="False" />
+            <line number="44" hits="14" branch="False" />
             <line number="45" hits="14" branch="False" />
-            <line number="46" hits="14" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.ProfileServiceTest/&lt;UnfollowUserSuccessfully&gt;d__15" filename="FasterMate.Test\ProfileServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="302" hits="1" branch="False" />
                 <line number="303" hits="1" branch="False" />
                 <line number="304" hits="1" branch="False" />
                 <line number="305" hits="1" branch="False" />
                 <line number="306" hits="1" branch="False" />
                 <line number="307" hits="1" branch="False" />
-                <line number="308" hits="1" branch="False" />
+                <line number="309" hits="1" branch="False" />
                 <line number="310" hits="1" branch="False" />
                 <line number="311" hits="1" branch="False" />
                 <line number="312" hits="1" branch="False" />
@@ -17224,26 +17389,26 @@
                 <line number="320" hits="1" branch="False" />
                 <line number="321" hits="1" branch="False" />
                 <line number="322" hits="1" branch="False" />
-                <line number="323" hits="1" branch="False" />
-                <line number="325" hits="1" branch="False" />
+                <line number="324" hits="1" branch="False" />
+                <line number="326" hits="1" branch="False" />
                 <line number="327" hits="1" branch="False" />
-                <line number="328" hits="1" branch="False" />
+                <line number="329" hits="1" branch="False" />
                 <line number="330" hits="1" branch="False" />
-                <line number="331" hits="1" branch="False" />
+                <line number="332" hits="1" branch="False" />
                 <line number="333" hits="1" branch="False" />
-                <line number="334" hits="1" branch="False" />
+                <line number="335" hits="1" branch="False" />
                 <line number="336" hits="1" branch="False" />
-                <line number="337" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="302" hits="1" branch="False" />
             <line number="303" hits="1" branch="False" />
             <line number="304" hits="1" branch="False" />
             <line number="305" hits="1" branch="False" />
             <line number="306" hits="1" branch="False" />
             <line number="307" hits="1" branch="False" />
-            <line number="308" hits="1" branch="False" />
+            <line number="309" hits="1" branch="False" />
             <line number="310" hits="1" branch="False" />
             <line number="311" hits="1" branch="False" />
             <line number="312" hits="1" branch="False" />
@@ -17257,79 +17422,78 @@
             <line number="320" hits="1" branch="False" />
             <line number="321" hits="1" branch="False" />
             <line number="322" hits="1" branch="False" />
-            <line number="323" hits="1" branch="False" />
-            <line number="325" hits="1" branch="False" />
+            <line number="324" hits="1" branch="False" />
+            <line number="326" hits="1" branch="False" />
             <line number="327" hits="1" branch="False" />
-            <line number="328" hits="1" branch="False" />
+            <line number="329" hits="1" branch="False" />
             <line number="330" hits="1" branch="False" />
-            <line number="331" hits="1" branch="False" />
+            <line number="332" hits="1" branch="False" />
             <line number="333" hits="1" branch="False" />
-            <line number="334" hits="1" branch="False" />
+            <line number="335" hits="1" branch="False" />
             <line number="336" hits="1" branch="False" />
-            <line number="337" hits="1" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.ProfileServiceTest/&lt;UpdateAsyncDoesntWork&gt;d__10" filename="FasterMate.Test\ProfileServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="186" hits="1" branch="False" />
                 <line number="187" hits="1" branch="False" />
                 <line number="188" hits="1" branch="False" />
-                <line number="189" hits="1" branch="False" />
+                <line number="190" hits="1" branch="False" />
                 <line number="191" hits="1" branch="False" />
-                <line number="192" hits="1" branch="False" />
+                <line number="193" hits="1" branch="False" />
                 <line number="194" hits="1" branch="False" />
-                <line number="195" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="186" hits="1" branch="False" />
             <line number="187" hits="1" branch="False" />
             <line number="188" hits="1" branch="False" />
-            <line number="189" hits="1" branch="False" />
+            <line number="190" hits="1" branch="False" />
             <line number="191" hits="1" branch="False" />
-            <line number="192" hits="1" branch="False" />
+            <line number="193" hits="1" branch="False" />
             <line number="194" hits="1" branch="False" />
-            <line number="195" hits="1" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.Test.ProfileServiceTest/&lt;UpdateAsyncSuccessfully&gt;d__11" filename="FasterMate.Test\ProfileServiceTest.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="198" hits="1" branch="False" />
                 <line number="199" hits="1" branch="False" />
                 <line number="200" hits="1" branch="False" />
-                <line number="201" hits="1" branch="False" />
+                <line number="202" hits="1" branch="False" />
                 <line number="203" hits="1" branch="False" />
                 <line number="204" hits="1" branch="False" />
                 <line number="205" hits="1" branch="False" />
                 <line number="206" hits="1" branch="False" />
                 <line number="207" hits="1" branch="False" />
-                <line number="208" hits="1" branch="False" />
-                <line number="210" hits="1" branch="False" />
+                <line number="209" hits="1" branch="False" />
+                <line number="211" hits="1" branch="False" />
                 <line number="212" hits="1" branch="False" />
-                <line number="213" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="198" hits="1" branch="False" />
             <line number="199" hits="1" branch="False" />
             <line number="200" hits="1" branch="False" />
-            <line number="201" hits="1" branch="False" />
+            <line number="202" hits="1" branch="False" />
             <line number="203" hits="1" branch="False" />
             <line number="204" hits="1" branch="False" />
             <line number="205" hits="1" branch="False" />
             <line number="206" hits="1" branch="False" />
             <line number="207" hits="1" branch="False" />
-            <line number="208" hits="1" branch="False" />
-            <line number="210" hits="1" branch="False" />
+            <line number="209" hits="1" branch="False" />
+            <line number="211" hits="1" branch="False" />
             <line number="212" hits="1" branch="False" />
-            <line number="213" hits="1" branch="False" />
           </lines>
         </class>
       </classes>
     </package>
-    <package name="FasterMate.ViewModels" line-rate="0.1718" branch-rate="0" complexity="179">
+    <package name="FasterMate.ViewModels" line-rate="0.1832" branch-rate="0" complexity="178">
       <classes>
         <class name="FasterMate.ViewModels.ErrorViewModel" filename="FasterMate.ViewModels\ErrorViewModel.cs" line-rate="0" branch-rate="1" complexity="2">
           <methods>
@@ -18559,28 +18723,22 @@
             <line number="7" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="FasterMate.ViewModels.Comment.AddCommentViewModel" filename="FasterMate.ViewModels\Comment\AddCommentViewModel.cs" line-rate="0" branch-rate="1" complexity="3">
+        <class name="FasterMate.ViewModels.Comment.AddCommentViewModel" filename="FasterMate.ViewModels\Comment\AddCommentViewModel.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
-            <method name="get_PostId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_PostId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="7" hits="0" branch="False" />
+                <line number="7" hits="2" branch="False" />
               </lines>
             </method>
-            <method name="get_Comment" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_Comment" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method name="get_ReturnId" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="13" hits="0" branch="False" />
+                <line number="11" hits="2" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="7" hits="0" branch="False" />
-            <line number="11" hits="0" branch="False" />
-            <line number="13" hits="0" branch="False" />
+            <line number="7" hits="2" branch="False" />
+            <line number="11" hits="2" branch="False" />
           </lines>
         </class>
         <class name="FasterMate.ViewModels.Comment.RenderCommentViewModel" filename="FasterMate.ViewModels\Comment\RenderCommentViewModel.cs" line-rate="0" branch-rate="1" complexity="6">

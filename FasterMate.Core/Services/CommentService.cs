@@ -11,13 +11,10 @@
     public class CommentService : ICommentService
     {
         private readonly IRepository<Comment> commentRepo;
-        private readonly IRepository<Post> postRepo;
 
-        public CommentService(IRepository<Comment> _commentRepo,
-            IRepository<Post> _postRepo)
+        public CommentService(IRepository<Comment> _commentRepo)
         {
             commentRepo = _commentRepo;
-            postRepo = _postRepo;
         }
 
         public async Task AddAsync(string profileId, AddCommentViewModel input)
@@ -50,19 +47,5 @@
 
             return postId;
         }
-        
-        //TODO: Try to fix it
-        public IEnumerable<RenderCommentViewModel> GetAllOfPost(string id)
-            => commentRepo
-                        .All()
-                        .Where(x => x.PostId == id)
-                        .Select(x => new RenderCommentViewModel()
-                        {
-                            CommentId = x.Id,
-                            PostId = x.PostId,
-                            ProfileId = x.ProfileId,
-                            Text = x.Text,
-                            CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy")
-                        }).ToList();
     }
 }

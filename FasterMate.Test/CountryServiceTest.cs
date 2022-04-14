@@ -1,15 +1,16 @@
-﻿using FasterMate.Core.Contracts;
-using FasterMate.Core.Services;
-using FasterMate.Infrastructure.Common;
-using FasterMate.Infrastructure.Data;
-using Microsoft.Extensions.DependencyInjection;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
-namespace FasterMate.Test
+﻿namespace FasterMate.Test
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
+    using FasterMate.Core.Contracts;
+    using FasterMate.Core.Services;
+    using FasterMate.Infrastructure.Common;
+    using FasterMate.Infrastructure.Data;
+    
+    using NUnit.Framework;
+    using Microsoft.Extensions.DependencyInjection;
+
     public class CountryServiceTest
     {
         private ServiceProvider serviceProvider;

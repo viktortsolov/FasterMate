@@ -1,5 +1,10 @@
 ﻿namespace FasterMate.Test
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using FasterMate.Core.Contracts;
     using FasterMate.Core.Services;
     using FasterMate.Infrastructure.Common;
@@ -7,15 +12,9 @@
     using FasterMate.Infrastructure.Data.Enums;
     using FasterMate.ViewModels.Home;
     using FasterMate.ViewModels.Profile;
-    using Microsoft.AspNetCore.Http;
-    using Microsoft.EntityFrameworkCore;
+
     using Microsoft.Extensions.DependencyInjection;
-    using Moq;
     using NUnit.Framework;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
 
     public class ProfileServiceTest
     {
