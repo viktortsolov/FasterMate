@@ -1,7 +1,6 @@
 ﻿namespace FasterMate.Test
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
@@ -12,9 +11,7 @@
     using FasterMate.Infrastructure.Data;
     using FasterMate.Infrastructure.Data.Enums;
     using FasterMate.ViewModels.Group;
-    using FasterMate.ViewModels.Home;
-    using FasterMate.ViewModels.Message;
-    using FasterMate.ViewModels.Profile;
+
     using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.DependencyInjection;
     using NUnit.Framework;
@@ -125,30 +122,23 @@
             Assert.AreEqual(0, msgRepo.All().Count());
         }
 
-        //[Test]
-        //public void GetByIdSuccessfully()
-        //{
-        //    var groupService = serviceProvider.GetService<IGroupService>();
+        //TODO: Work on this test
+        [Test]
+        public void GetByIdSuccessfully()
+        {
+            var groupService = serviceProvider.GetService<IGroupService>();
 
-        //    var expected = new GroupViewModel()
-        //    {
-        //        Id = "test1234-test-test-test-test1234test",
-        //        Name = "Test Group Name",
-        //        Messages = new List<MessageViewModel>()
-        //        {
-        //            new MessageViewModel()
-        //            {
-        //                Id = "test1234-test-test-test-test1234test",
-        //                Text = "some test text",
-        //                ProfileId = "test1234-test-test-test-test1234test"
-        //            }
-        //        }
-        //    };
+            var expected = new GroupViewModel()
+            {
+                Id = "test1234-test-test-test-test1234test",
+                Name = "Test Group Name",
+                Messages = null
+            };
 
-        //    var actual = groupService.GetGroupById("test1234-test-test-test-test1234test");
+            var actual = groupService.GetGroupById("test1234-test-test-test-test1234test");
 
-        //    Assert.AreEqual(expected.Id, actual.Id);
-        //}
+            Assert.AreEqual(expected.Id, actual.Id);
+        }
 
         [Test]
         public void GetGroupForEditSuccessfully()
@@ -239,7 +229,80 @@
             Assert.AreEqual(0, groupMemberRepo.All().Count());
         }
 
+        [Test]
+        public async Task UpdateWithoutPhotoSuccessfully()
+        {
+            var groupService = serviceProvider.GetService<IGroupService>();
+            var groupRepo = serviceProvider.GetService<IRepository<Group>>();
 
+            var input = new EditGroupViewModel()
+            {
+                Id = "test1234-test-test-test-test1234test",
+                Name = "test name etc."
+            };
+
+            await groupService.UpdateAsync(input, "");
+
+            Assert.AreEqual("test name etc.", groupRepo.All().FirstOrDefault().Name);
+        }
+
+        [Test]
+        public async Task UpdateWithPhotoSuccessfully()
+        {
+            var groupService = serviceProvider.GetService<IGroupService>();
+            var groupRepo = serviceProvider.GetService<IRepository<Group>>();
+
+            using (var stream = File.OpenRead("test.png"))
+            {
+                var file = new FormFile(stream, 0, stream.Length, null, Path.GetFileName(stream.Name))
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "image/png"
+                };
+
+                var input = new EditGroupViewModel()
+                {
+                    Id = "test1234-test-test-test-test1234test",
+                    Name = "test name etc.",
+                    Image = file
+                };
+
+                await groupService.UpdateAsync(input, $"{Directory.GetCurrentDirectory()}");
+            }
+
+            Assert.AreEqual("test name etc.", groupRepo.All().FirstOrDefault().Name);
+        }
+
+        [Test]
+        public async Task GetProfileGroupsSuccessfully()
+        {
+            var groupService = serviceProvider.GetService<IGroupService>();
+
+            var expected = new ProfileGroupsViewModel()
+            {
+                Id = "test1234-test-test-test-test1234test",
+                Name = "Test Group Name",
+                ImagePath = "test1234-test-test-test-test1234test.test",
+                GroupMembersCount = 1
+            };
+            await groupService.AddMemberAsync("test1234-test-test-test-test1234test", "test1234-test-test-test-test1234test");
+
+            var actual = groupService.GetProfileGroups("test1234-test-test-test-test1234test");
+
+            Assert.AreEqual(expected.Id, actual.FirstOrDefault().Id);
+        }
+
+        [Test]
+        public void GetFollowersSuccessfully()
+        {
+            var groupService = serviceProvider.GetService<IGroupService>();
+
+            var expected = 1;
+            var actual = groupService.GetFollowersOfProfile("test1234-test-test-test-test1234test", "test1234-test-test-test-test1234test");
+
+            Assert.AreEqual(expected, actual.Count());
+
+        }
 
         [TearDown]
         public void TearDown()
@@ -253,6 +316,7 @@
             var imgRepo = serviceProvider.GetService<IRepository<Image>>();
             var profileRepo = serviceProvider.GetService<IRepository<Profile>>();
             var groupRepo = serviceProvider.GetService<IRepository<Group>>();
+            var profileFollowerRepo = serviceProvider.GetService<IRepository<ProfileFollower>>();
             var msgRepo = serviceProvider.GetService<IRepository<Message>>();
 
             await countryRepo.AddAsync(new Country() { Id = "test1234-test-test-test-test1234test", Name = "test" });
@@ -310,6 +374,13 @@
                 CreatedOn = DateTime.UtcNow
             });
             await msgRepo.SaveChangesAsync();
+
+            await profileFollowerRepo.AddAsync(new ProfileFollower()
+            {
+                ProfileId = "test1234-test-test-test-test1234test",
+                FollowerId = "c996abfe-1850-48dd-bfcd-b61f18ec3358"
+            });
+            await profileFollowerRepo.SaveChangesAsync();
         }
     }
 }
