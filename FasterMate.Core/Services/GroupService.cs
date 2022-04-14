@@ -13,7 +13,6 @@
         private readonly IRepository<GroupMember> groupMemberRepo;
         private readonly IRepository<Group> groupRepo;
         private readonly IRepository<Message> messageRepo;
-        private readonly IRepository<Profile> profileRepo;
         private readonly IRepository<ProfileFollower> profileFollowerRepo;
 
         private readonly IImageService imgService;
@@ -22,14 +21,12 @@
             IRepository<GroupMember> _groupMemberRepo,
             IRepository<Group> _groupRepo,
             IRepository<Message> _messageRepo,
-            IRepository<Profile> _profileRepo,
             IRepository<ProfileFollower> _profileFollowerRepo,
             IImageService _imgService)
         {
             groupMemberRepo = _groupMemberRepo;
             groupRepo = _groupRepo;
             messageRepo = _messageRepo;
-            profileRepo = _profileRepo;
             profileFollowerRepo = _profileFollowerRepo;
 
             imgService = _imgService;
@@ -62,7 +59,7 @@
                 ProfileId = profileId
             };
 
-            if (input.Image?.Length > 0)
+            if (input.Image.Length > 0)
             {
                 group.ImageId = await imgService.CreateAsync(input.Image, path);
             }
@@ -134,7 +131,7 @@
                     Messages = messageRepo
                         .AllAsNoTracking()
                         .Include(x => x.Profile)
-                        .OrderByDescending(x => x.CreateOn)
+                        .OrderByDescending(x => x.CreatedOn)
                         .Where(x => x.GroupId == groupId)
                         .Select(x => new MessageViewModel()
                         {
@@ -142,7 +139,7 @@
                             Text = x.Text,
                             ProfileId = x.ProfileId,
                             ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
-                            CreatedOn = x.CreateOn.ToString("dd/MM/yyyy HH:mm")
+                            CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy HH:mm")
                         })
                         .ToList()
                 })
@@ -238,7 +235,5 @@
                 await groupRepo.SaveChangesAsync();
             }
         }
-
-
     }
 }

@@ -70,6 +70,12 @@
             Assert.AreEqual(actual, expected);
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            dbContext.Dispose();
+        }
+
         private static async Task SeedDb(IRepository<Comment> commentRepo, IRepository<Post> postRepo, IRepository<Image> imgRepo, IRepository<Profile> profileRepo, IRepository<Country> countryRepo)
         {
             await countryRepo.AddAsync(new Country() { Id = "test1234-test-test-test-test1234test", Name = "test" });

@@ -211,7 +211,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                         .HasMaxLength(36)
                         .HasColumnType("nvarchar(36)");
 
-                    b.Property<DateTime>("CreateOn")
+                    b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("GroupId")
@@ -578,7 +578,7 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("FasterMate.Infrastructure.Data.Profile", "Profile")
-                        .WithMany()
+                        .WithMany("Groups")
                         .HasForeignKey("ProfileId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -807,6 +807,8 @@ namespace FasterMate.Infrastrucutre.Data.Migrations
                     b.Navigation("Followers");
 
                     b.Navigation("Following");
+
+                    b.Navigation("Groups");
 
                     b.Navigation("Offers");
 

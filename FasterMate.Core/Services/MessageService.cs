@@ -43,7 +43,7 @@
                     Text = x.Text,
                     ProfileId = x.ProfileId,
                     ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
-                    CreatedOn = x.CreateOn.ToString("dd/MM/yyyy HH:mm")
+                    CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy HH:mm")
                 })
                 .FirstOrDefault();
     }

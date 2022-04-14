@@ -77,6 +77,12 @@
             Assert.AreEqual(expected.ProfileId, actual.ProfileId);
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            dbContext.Dispose();
+        }
+
         private static async Task SeedDb(IRepository<Profile> profileRepo, IRepository<Country> countryRepo, IRepository<Image> imgRepo, IRepository<Group> groupRepo, IRepository<Message> msgRepo)
         {
             await countryRepo.AddAsync(new Country() { Id = "test1234-test-test-test-test1234test", Name = "test" });
@@ -101,7 +107,6 @@
             });
             await profileRepo.SaveChangesAsync();
 
-
             await groupRepo.AddAsync(new Group()
             {
                 Id = "test1234-test-test-test-test1234test",
@@ -117,7 +122,7 @@
                 Text = "some test text",
                 GroupId = "test1234-test-test-test-test1234test",
                 ProfileId = "6747d8c2-dfc9-40d3-864c-4cb28bff6038",
-                CreateOn = DateTime.UtcNow
+                CreatedOn = DateTime.UtcNow
             });
             await msgRepo.SaveChangesAsync();
         }

@@ -6,7 +6,6 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    //TODO: Picture
     var user = await UserManager.GetUserAsync(this.User);
     var profileId = user.ProfileId;
 

@@ -15,8 +15,6 @@
 
     public class ImageServiceTest
     {
-        private readonly string imgLocation = $"{Directory.GetCurrentDirectory()}";
-
         private ServiceProvider serviceProvider;
         private InMemoryDbContext dbContext;
 
@@ -36,7 +34,7 @@
         [Test]
         public async Task AddImageWorksSuccessfully()
         {
-            string imgLocaion = $"{Directory.GetCurrentDirectory()}";
+            string imgLocation = $"{Directory.GetCurrentDirectory()}";
 
             var image = new Image()
             {
@@ -58,10 +56,16 @@
                     ContentType = "image/png"
                 };
 
-                await imgService.CreateAsync(file, imgLocaion);
+                await imgService.CreateAsync(file, imgLocation);
             }
 
             Assert.AreEqual(2, imgRepo.All().Count());
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            dbContext.Dispose();
         }
     }
 }
