@@ -24,9 +24,9 @@
         }
 
         public async Task<ApplicationUser> GetOnlyUserById(string id)
-        => await repo
-            .AllAsNoTracking()
-            .FirstOrDefaultAsync(x => x.Id == id);
+            => await repo
+                .AllAsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
 
         public async Task<ApplicationUser> GetUserById(string id)
             => await repo

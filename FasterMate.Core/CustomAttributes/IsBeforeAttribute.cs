@@ -9,7 +9,7 @@
         public IsBeforeAttribute(string _propertyToCompare, string errorMessage = "")
         {
             propertyToCompare = _propertyToCompare;
-            this.ErrorMessage = errorMessage;
+            ErrorMessage = errorMessage;
         }
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
