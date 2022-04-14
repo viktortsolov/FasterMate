@@ -6,14 +6,20 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
+    string profileId;
+    Profile profile;
+    string imgPath;
+
     var user = await UserManager.GetUserAsync(this.User);
-    var profileId = user.ProfileId;
+    if (user != null)
+    {
+        profileId = user.ProfileId;
 
-    var profile = profileService.GetById(profileId);
+        profile = profileService.GetById(profileId);
 
-    var imgPath = profile.Image != null ? $"{profile.Image.Id}.{profile.Image.Extension}" : string.Empty;
+        imgPath = profile.Image != null ? $"{profile.Image.Id}.{profile.Image.Extension}" : string.Empty;
 
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
             @if (!string.IsNullOrEmpty(imgPath))
             {
@@ -28,4 +34,5 @@
             <a asp-area="" asp-controller="Profile" asp-action="UserProfile" asp-route-id="@profileId" class="d-block">@User.Identity.Name</a>
         </div>
     </div>
+    }
 }

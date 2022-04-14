@@ -3,12 +3,12 @@
     ViewData["Title"] = "Group Members";
 }
 
-<h2 class="text-center display-5 mt-2">Members of the group</h2>
+<h2 class="text-center display-4 mt-2">Members of the group</h2>
 
-<a class="btn btn-primary btn-block my-3" asp-route-id="@Model.Id" asp-action="AddMember" asp-controller="Group">Add members!</a>
+<a class="btn btn-primary btn-lg btn-block mt-1" asp-route-id="@Model.Id" asp-action="AddMember" asp-controller="Group">Add members!</a>
 @if (@Model.Members.Count() == 0)
 {
-    <h2 class="text-center display-5 mt-2">This group does not exist!!!</h2>
+    <h2 class="text-center display-4 mt-2">This group does not exist!!!</h2>
 }
 else
 {
