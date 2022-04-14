@@ -380,3 +380,4 @@ E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\FasterMate.pdb
 E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\FasterMate.Core.pdb
 E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\FasterMate.Infrastructure.pdb
 E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\FasterMate.ViewModels.pdb
+E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\test.png
