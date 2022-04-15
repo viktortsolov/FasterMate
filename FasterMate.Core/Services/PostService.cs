@@ -41,7 +41,7 @@
                 Location = input.Location
             };
 
-            if (input.Image?.Length > 0)
+            if (input.Image.Length > 0)
             {
                 post.ImageId = await imgService.CreateAsync(input.Image, path);
             }
@@ -94,6 +94,22 @@
 
         public RenderSeePostViewModel RenderSinglePost(string id, string profileId)
         {
+            var comments = commentRepo
+                    .All()
+                    .Include(x => x.Profile)
+                    .Where(x => x.PostId == id)
+                    .OrderByDescending(x => x.CreatedOn)
+                    .Select(x => new RenderCommentViewModel()
+                    {
+                        CommentId = x.Id,
+                        PostId = x.PostId,
+                        ProfileId = x.ProfileId,
+                        ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
+                        Text = x.Text,
+                        CreatedOn = x.CreatedOn.ToString("HH:mm, dd/MM/yyyy")
+                    })
+                    .ToList();
+
             var post = postRepo
                 .AllAsNoTracking()
                 .Include(x => x.Image)
@@ -112,21 +128,7 @@
                     CreatedOn = x.CreatedOn.ToString("HH:mm, dd/MM/yyyy"),
                     LikesCount = postLikesRepo.All().Where(x => x.PostId == id).Count(),
                     CommentsCount = commentRepo.All().Where(x => x.PostId == id).Count(),
-                    Comments = commentRepo
-                        .All()
-                        .Include(x => x.Profile)
-                        .Where(x => x.PostId == id)
-                        .OrderByDescending(x => x.CreatedOn)
-                        .Select(x => new RenderCommentViewModel()
-                        {
-                            CommentId = x.Id,
-                            PostId = x.PostId,
-                            ProfileId = x.ProfileId,
-                            ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
-                            Text = x.Text,
-                            CreatedOn = x.CreatedOn.ToString("HH:mm, dd/MM/yyyy")
-                        })
-                        .ToList(),
+                    Comments = comments,
                     Location = x.Location
                 })
                 .FirstOrDefault();
@@ -164,9 +166,7 @@
 
             if (post != null)
             {
-                postRepo.Delete(post);
-
-                foreach (var comment in commentRepo.All().Where(x => x.PostId == id).ToList())
+                foreach (var comment in commentRepo.All().Where(x => x.PostId == id))
                 {
                     commentRepo.Delete(comment);
                 }
@@ -176,26 +176,27 @@
                     postLikesRepo.Delete(postLike);
                 }
 
+                postRepo.Delete(post);
                 await postRepo.SaveChangesAsync();
             }
         }
 
         public async Task<IEnumerable<PostListViewModel>> PostListAdministratorAsync()
             => await postRepo
-            .AllAsNoTracking()
-            .Include(x => x.Profile)
-            .Include(x => x.PostLikes)
-            .Include(x => x.Comments)
-            .Select(x => new PostListViewModel()
-            {
-                Id = x.Id,
-                ProfileId = x.ProfileId,
-                CreatedOn = x.CreatedOn.ToString("hh:mm, dd/MM/yyyy"),
-                Name = $"{x.Profile.FirstName} {x.Profile.LastName}",
-                LikesCount = x.PostLikes.Count,
-                CommentsCount = x.Comments.Count
-            })
-            .ToListAsync();
+                .AllAsNoTracking()
+                .Include(x => x.Profile)
+                .Include(x => x.PostLikes)
+                .Include(x => x.Comments)
+                .Select(x => new PostListViewModel()
+                {
+                    Id = x.Id,
+                    ProfileId = x.ProfileId,
+                    CreatedOn = x.CreatedOn.ToString("hh:mm, dd/MM/yyyy"),
+                    Name = $"{x.Profile.FirstName} {x.Profile.LastName}",
+                    LikesCount = x.PostLikes.Count,
+                    CommentsCount = x.Comments.Count
+                })
+                .ToListAsync();
 
         public async Task DeletePostAdministratorAsync(string id)
         {
@@ -206,9 +207,7 @@
 
             if (post != null)
             {
-                postRepo.Delete(post);
-
-                foreach (var comment in commentRepo.All().Where(x => x.PostId == id).ToList())
+                foreach (var comment in commentRepo.All().Where(x => x.PostId == id))
                 {
                     commentRepo.Delete(comment);
                 }
@@ -218,6 +217,7 @@
                     postLikesRepo.Delete(postLike);
                 }
 
+                postRepo.Delete(post);
                 await postRepo.SaveChangesAsync();
             }
         }

@@ -122,23 +122,22 @@
             Assert.AreEqual(0, msgRepo.All().Count());
         }
 
-        //TODO: Work on this test
-        //[Test]
-        //public void GetByIdSuccessfully()
-        //{
-        //    var groupService = serviceProvider.GetService<IGroupService>();
+        [Test]
+        public void GetByIdSuccessfully()
+        {
+            var groupService = serviceProvider.GetService<IGroupService>();
 
-        //    var expected = new GroupViewModel()
-        //    {
-        //        Id = "test",
-        //        Name = "Test Group Name",
-        //        Messages = null
-        //    };
+            var expected = new GroupViewModel()
+            {
+                Id = "test",
+                Name = "Test Group Name",
+                Messages = null
+            };
 
-        //    var actual = groupService.GetGroupById("test");
+            var actual = groupService.GetGroupById("test");
 
-        //    Assert.AreEqual(expected.Id, actual.Id);
-        //}
+            Assert.AreEqual(expected.Id, actual.Id);
+        }
 
         [Test]
         public void GetGroupForEditSuccessfully()

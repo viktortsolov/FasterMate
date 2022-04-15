@@ -121,29 +121,36 @@
                     .ToList();
 
         public GroupViewModel GetGroupById(string groupId)
-            => groupRepo
-                .AllAsNoTracking()
-                .Where(x => x.Id == groupId)
-                .Select(x => new GroupViewModel()
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Messages = messageRepo
-                        .AllAsNoTracking()
-                        .Include(x => x.Profile)
-                        .OrderByDescending(x => x.CreatedOn)
-                        .Where(x => x.GroupId == groupId)
-                        .Select(x => new MessageViewModel()
-                        {
-                            Id = x.Id,
-                            Text = x.Text,
-                            ProfileId = x.ProfileId,
-                            ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
-                            CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy HH:mm")
-                        })
-                        .ToList()
-                })
-                .FirstOrDefault();
+        {
+            var group = groupRepo
+                    .AllAsNoTracking()
+                    .Where(x => x.Id == groupId)
+                    .Select(x => new GroupViewModel()
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    })
+                    .FirstOrDefault();
+
+            var messages = messageRepo
+                    .AllAsNoTracking()
+                    .Include(x => x.Profile)
+                    .OrderByDescending(x => x.CreatedOn)
+                    .Where(x => x.GroupId == group.Id)
+                    .Select(x => new MessageViewModel()
+                    {
+                        Id = x.Id,
+                        Text = x.Text,
+                        ProfileId = x.ProfileId,
+                        ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
+                        CreatedOn = x.CreatedOn.ToString("dd/MM/yyyy HH:mm")
+                    })
+                    .ToList();
+
+            group.Messages = messages;
+
+            return group;
+        }
 
         public EditGroupViewModel GetGroupForEdit(string groupId)
             => groupRepo
@@ -177,8 +184,7 @@
             => groupRepo
                 .AllAsNoTracking()
                 .Include(x => x.Image)
-                .Where(x => x.GroupMembers
-                    .Any(y => y.ProfileId == profileId))
+                .Where(x => x.GroupMembers.Any(y => y.ProfileId == profileId))
                 .Select(x => new ProfileGroupsViewModel()
                 {
                     Id = x.Id,
