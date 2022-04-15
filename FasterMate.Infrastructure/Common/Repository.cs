@@ -1,5 +1,6 @@
 ﻿namespace FasterMate.Infrastructure.Common
 {
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@
 
     using Microsoft.EntityFrameworkCore;
 
+    [ExcludeFromCodeCoverage]
     public class Repository<T> : IRepository<T>
         where T : class
     {

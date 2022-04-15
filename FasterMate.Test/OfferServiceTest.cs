@@ -225,7 +225,7 @@
                 ImageId = imgRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
             });
 
-            await profileRepo.AddAsync(new Profile()
+            var profile = new Profile()
             {
                 Id = "test",
                 FirstName = "test",
@@ -240,7 +240,8 @@
                     UserName = "test"
                 },
                 ImageId = imgRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
-            });
+            };
+            await profileRepo.AddAsync(profile);
             await profileRepo.SaveChangesAsync();
 
             await offerRepo.AddAsync(new Offer()
@@ -251,6 +252,7 @@
                 ArrivalTime = DateTime.Now.AddDays(1),
                 DepartureTime = DateTime.UtcNow.AddDays(1),
                 PriceOfTicket = 12,
+                Owner = profile,
                 ProfileId = "test"
             });
             await offerRepo.SaveChangesAsync();

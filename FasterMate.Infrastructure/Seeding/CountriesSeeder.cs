@@ -2,7 +2,9 @@
 {
     using FasterMate.Infrastructure.Data;
     using FasterMate.Infrastrucutre.Data;
+    using System.Diagnostics.CodeAnalysis;
 
+    [ExcludeFromCodeCoverage]
     public class CountriesSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)

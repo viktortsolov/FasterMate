@@ -260,7 +260,7 @@
         }
 
         [Test]
-        public void GetRenderProfileSuccessfully()
+        public async Task GetRenderProfileSuccessfully()
         {
             var profileService = serviceProvider.GetService<IProfileService>();
             var profileRepo = serviceProvider.GetService<IRepository<Profile>>();
@@ -268,14 +268,15 @@
             var followerRepo = serviceProvider.GetService<IRepository<ProfileFollower>>();
 
             var profile = profileRepo.All().FirstOrDefault();
-            var actual = profileService.RenderProfile(profile.Id);
+            await profileService.FollowProfileAsync(profile.Id, "test");
+            var actual = profileService.RenderProfile("test", profile.Id);
 
             var expected = new RenderProfileViewModel()
             {
                 Id = "c996abfe-1850-48dd-bfcd-b61f18ec3358",
                 FirstName = "test",
                 LastName = "test",
-                IsFollowing = followerRepo.All().Any(x => x.ProfileId == "c996abfe-1850-48dd-bfcd-b61f18ec3358"),
+                IsFollowing = followerRepo.All().Any(x => x.ProfileId == "test"),
                 Gender = Gender.Male.ToString(),
                 Birthdate = DateTime.UtcNow,
                 Bio = "",
@@ -297,23 +298,6 @@
             var imageRepo = serviceProvider.GetService<IRepository<Image>>();
             var followerRepo = serviceProvider.GetService<IRepository<ProfileFollower>>();
 
-            await profileRepo.AddAsync(new Profile()
-            {
-                Id = "test",
-                FirstName = "test",
-                LastName = "test",
-                CountryId = countryRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
-                BirthDate = DateTime.UtcNow,
-                Gender = Gender.Male,
-                User = new ApplicationUser()
-                {
-                    Id = "test"
-                },
-                ImageId = imageRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
-            });
-
-            await profileRepo.SaveChangesAsync();
-
             var current = profileRepo.All().FirstOrDefault().Id;
             var asking = profileRepo.All().Where(x => x.Id == "test").FirstOrDefault().Id;
 
@@ -333,23 +317,6 @@
             var countryRepo = serviceProvider.GetService<IRepository<Country>>();
             var imageRepo = serviceProvider.GetService<IRepository<Image>>();
             var followerRepo = serviceProvider.GetService<IRepository<ProfileFollower>>();
-
-            await profileRepo.AddAsync(new Profile()
-            {
-                Id = "test",
-                FirstName = "test",
-                LastName = "test",
-                CountryId = countryRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
-                BirthDate = DateTime.UtcNow,
-                Gender = Gender.Male,
-                User = new ApplicationUser()
-                {
-                    Id = "test"
-                },
-                ImageId = imageRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
-            });
-
-            await profileRepo.SaveChangesAsync();
 
             var current = profileRepo.All().FirstOrDefault().Id;
             var asking = profileRepo.All().Where(x => x.Id == "test").FirstOrDefault().Id;
@@ -413,6 +380,21 @@
                 User = new ApplicationUser()
                 {
                     Id = "310b8a7e-734d-44d6-b3f3-efa6e8f6259d"
+                },
+                ImageId = imageRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
+            });
+
+            await profileRepo.AddAsync(new Profile()
+            {
+                Id = "test",
+                FirstName = "test",
+                LastName = "test",
+                CountryId = countryRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
+                BirthDate = DateTime.UtcNow,
+                Gender = Gender.Male,
+                User = new ApplicationUser()
+                {
+                    Id = "test"
                 },
                 ImageId = imageRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
             });

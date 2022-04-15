@@ -25,15 +25,15 @@
 
         public IActionResult UserProfile(string id)
         {
-            var viewModel = profileService.RenderProfile(id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var profileId = profileService.GetId(userId);
+
+            var viewModel = profileService.RenderProfile(id, profileId);
 
             if (viewModel == null)
             {
                 return NotFound();
             }
-
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var profileId = profileService.GetId(userId);
 
             viewModel.IsOwner = profileId == id;
 

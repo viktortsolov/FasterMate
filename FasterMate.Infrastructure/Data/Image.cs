@@ -11,10 +11,10 @@
         [Required]
         public string Extension { get; set; }
 
-        public virtual ICollection<Profile> Profiles { get; set; }
+        public virtual ICollection<Profile> Profiles { get; set; } = new HashSet<Profile>();
 
-        public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<Post> Posts { get; set; } = new HashSet<Post>();
 
-        public virtual ICollection<Group> Groups { get; set; }
+        public virtual ICollection<Group> Groups { get; set; } = new HashSet<Group>();
     }
 }

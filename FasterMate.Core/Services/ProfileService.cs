@@ -103,7 +103,7 @@
             return editProfileViewModel;
         }
 
-        public RenderProfileViewModel RenderProfile(string id)
+        public RenderProfileViewModel RenderProfile(string id, string profileId)
         {
             var profile = profileRepo
                 .AllAsNoTracking()
@@ -114,10 +114,12 @@
                 .Where(x => x.Id == id)
                 .FirstOrDefault();
 
+            var isFollowing = followersRepo.All().Any(x => x.ProfileId == id && x.FollowerId == profileId);
+
             var profileViewModel = new RenderProfileViewModel()
             {
                 Id = profile.Id,
-                IsFollowing = profile.Following.Any(x => x.ProfileId == id),
+                IsFollowing = isFollowing,
                 FirstName = profile.FirstName,
                 LastName = profile.LastName,
                 Gender = profile.Gender.ToString(),
@@ -173,9 +175,13 @@
 
                 if (followingRelation == null)
                 {
+                    var profile = profileRepo.All().Where(x => x.Id == currentProfileId).FirstOrDefault();
+                    var follower = profileRepo.All().Where(x => x.Id == askingProfileId).FirstOrDefault();
                     await followersRepo.AddAsync(new ProfileFollower
                     {
+                        Profile = profile,
                         ProfileId = currentProfileId,
+                        Follower = follower,
                         FollowerId = askingProfileId,
                     });
                 }

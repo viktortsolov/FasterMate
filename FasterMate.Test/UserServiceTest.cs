@@ -56,6 +56,7 @@
             var actual = await userService.GetUserByIdAsync("test");
 
             Assert.AreEqual(expected, actual.Profile.FirstName);
+            Assert.AreEqual(expected, actual.ProfileId);
         }
 
         [Test]

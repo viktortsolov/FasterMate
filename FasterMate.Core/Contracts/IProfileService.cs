@@ -15,7 +15,7 @@
 
         EditProfileViewModel GetEditViewModel(Profile profile);
 
-        RenderProfileViewModel RenderProfile(string id);
+        RenderProfileViewModel RenderProfile(string id, string profileId);
 
         Task UpdateAsync(string id, EditProfileViewModel input, string path);
 

@@ -13,11 +13,14 @@
     {
         private readonly IRepository<Offer> offerRepo;
         private readonly IRepository<ProfileOffer> profileOfferRepo;
+        private readonly IRepository<Profile> profileRepo;
 
         public OfferService(
             IRepository<Offer> _offerRepo,
+            IRepository<Profile> _profileRepo,
             IRepository<ProfileOffer> _profileOfferRepo)
         {
+            profileRepo = _profileRepo;
             offerRepo = _offerRepo;
             profileOfferRepo = _profileOfferRepo;
         }
@@ -47,13 +50,16 @@
 
         public async Task CreateProfileOfferAsync(string id, string profileId)
         {
+            var profile = profileRepo.All().Where(x => x.Id == profileId).FirstOrDefault();
+            var offer = offerRepo.All().Where(x => x.Id == id).FirstOrDefault();
             var profileOffer = new ProfileOffer()
             {
+                Profile = profile,
+                ProfileId = profileId,
                 OfferId = id,
-                ProfileId = profileId
+                Offer = offer
             };
 
-            var offer = offerRepo.All().FirstOrDefault(x => x.Id == id);
             offer.IsBooked = true;
             offerRepo.Update(offer);
 

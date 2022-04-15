@@ -4,7 +4,9 @@
 
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
+    using System.Diagnostics.CodeAnalysis;
 
+    [ExcludeFromCodeCoverage]
     public class RolesSeeder : ISeeder
     {
         private readonly static string Administrator = "Administrator";

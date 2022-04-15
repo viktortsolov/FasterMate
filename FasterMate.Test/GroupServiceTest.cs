@@ -202,7 +202,7 @@
             var expected = true;
             var actual = groupService.IsOwnerOfTheGroup("test", "c996abfe-1850-48dd-bfcd-b61f18ec3358");
 
-            Assert.AreNotEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -321,10 +321,11 @@
             await countryRepo.AddAsync(new Country() { Id = "test", Name = "test" });
             await countryRepo.SaveChangesAsync();
 
-            await imgRepo.AddAsync(new Image() { Id = "test", Extension = "test" });
+            var image = new Image() { Id = "test", Extension = "test" };
+            await imgRepo.AddAsync(image);
             await imgRepo.SaveChangesAsync();
 
-            await profileRepo.AddAsync(new Profile()
+            var profile = new Profile()
             {
                 Id = "c996abfe-1850-48dd-bfcd-b61f18ec3358",
                 FirstName = "test",
@@ -336,8 +337,9 @@
                 {
                     Id = "310b8a7e-734d-44d6-b3f3-efa6e8f6259d"
                 },
-                ImageId = imgRepo.AllAsNoTracking().Select(x => x.Id).FirstOrDefault(),
-            });
+                Image = image,
+            };
+            await profileRepo.AddAsync(profile);
 
             await profileRepo.AddAsync(new Profile()
             {
@@ -355,21 +357,25 @@
             });
             await profileRepo.SaveChangesAsync();
 
-            await groupRepo.AddAsync(new Group()
+            var group = new Group()
             {
                 Id = "test",
                 Name = "Test Group Name",
-                ImageId = "test",
-                ProfileId = "test"
-            });
+                ProfileId = "c996abfe-1850-48dd-bfcd-b61f18ec3358",
+                Image = image,
+                Profile = profile
+            };
+            await groupRepo.AddAsync(group);
             await groupRepo.SaveChangesAsync();
 
             await msgRepo.AddAsync(new Message()
             {
                 Id = "test",
                 Text = "some test text",
+                Group = group,
                 GroupId = "test",
-                ProfileId = "test",
+                Profile = profile,
+                ProfileId = "c996abfe-1850-48dd-bfcd-b61f18ec3358",
                 CreatedOn = DateTime.UtcNow
             });
             await msgRepo.SaveChangesAsync();

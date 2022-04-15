@@ -13,6 +13,7 @@
         private readonly IRepository<GroupMember> groupMemberRepo;
         private readonly IRepository<Group> groupRepo;
         private readonly IRepository<Message> messageRepo;
+        private readonly IRepository<Profile> profileRepo;
         private readonly IRepository<ProfileFollower> profileFollowerRepo;
 
         private readonly IImageService imgService;
@@ -21,6 +22,7 @@
             IRepository<GroupMember> _groupMemberRepo,
             IRepository<Group> _groupRepo,
             IRepository<Message> _messageRepo,
+            IRepository<Profile> _profileRepo,
             IRepository<ProfileFollower> _profileFollowerRepo,
             IImageService _imgService)
         {
@@ -28,6 +30,7 @@
             groupRepo = _groupRepo;
             messageRepo = _messageRepo;
             profileFollowerRepo = _profileFollowerRepo;
+            profileRepo = _profileRepo;
 
             imgService = _imgService;
         }
@@ -40,9 +43,13 @@
 
             if (!isMember)
             {
+                var group = groupRepo.All().Where(x => x.Id == groupId).FirstOrDefault();
+                var profile = profileRepo.All().Where(x => x.Id == profileId).FirstOrDefault();
                 var groupMember = new GroupMember()
                 {
+                    Group = group,
                     GroupId = groupId,
+                    Profile = profile,
                     ProfileId = profileId
                 };
 
