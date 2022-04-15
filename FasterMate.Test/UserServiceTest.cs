@@ -10,6 +10,7 @@
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
     using FasterMate.Infrastructure.Data.Enums;
+    using FasterMate.ViewModels.Common;
     using FasterMate.ViewModels.User;
 
     using Microsoft.Extensions.DependencyInjection;
@@ -121,6 +122,25 @@
             var result = await userService.UpdateUserAsync(input);
 
             Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void GetApiDataSuccessfully()
+        {
+            var userService = serviceProvider.GetService<IUserService>();
+
+            var expected = new ApiViewModel()
+            {
+                FirstName = "test",
+                LastName = "test",
+                Gender = "Male",
+                Email = "email@gmail.com",
+                Username = "test1"
+            };
+
+            var actual = userService.GetAPIData();
+
+            Assert.AreEqual(expected.Username, actual.FirstOrDefault().Username);
         }
 
         [TearDown]

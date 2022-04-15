@@ -1,5 +1,4 @@
 using FasterMate.Core.Constants;
-using FasterMate.Extensions;
 using FasterMate.Hubs;
 using FasterMate.Infrastructure.Data;
 using FasterMate.Infrastructure.Seeding;

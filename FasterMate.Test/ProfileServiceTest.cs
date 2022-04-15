@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@
     using FasterMate.Infrastructure.Data.Enums;
     using FasterMate.ViewModels.Home;
     using FasterMate.ViewModels.Profile;
-
+    using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.DependencyInjection;
     using NUnit.Framework;
 
@@ -195,6 +196,33 @@
 
         [Test]
         public async Task UpdateAsyncSuccessfully()
+        {
+            var profileService = serviceProvider.GetService<IProfileService>();
+            var profileRepo = serviceProvider.GetService<IRepository<Profile>>();
+
+            using (var stream = File.OpenRead("test.png"))
+            {
+                var file = new FormFile(stream, 0, stream.Length, null, Path.GetFileName(stream.Name))
+                {
+                    Headers = new HeaderDictionary(),
+                    ContentType = "image/png"
+                };
+
+                var input = new EditProfileViewModel()
+                {
+                    FirstName = "Different Name",
+                    LastName = "Last Name is different too",
+                    Image = file
+                };
+
+                await profileService.UpdateAsync("310b8a7e-734d-44d6-b3f3-efa6e8f6259d", input, $"{Directory.GetCurrentDirectory()}");
+            }
+
+            Assert.AreEqual("Different Name", profileRepo.AllAsNoTracking().FirstOrDefault().FirstName);
+        }
+
+        [Test]
+        public async Task UpdateWithImageAsyncSuccessfully()
         {
             var profileService = serviceProvider.GetService<IProfileService>();
             var profileRepo = serviceProvider.GetService<IRepository<Profile>>();

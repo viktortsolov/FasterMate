@@ -1,4 +1,4 @@
-﻿namespace FasterMate.Extensions
+﻿namespace Microsoft.Extensions.DependencyInjection
 {
     using FasterMate.Core.Contracts;
     using FasterMate.Core.Services;

@@ -6,6 +6,7 @@
     using FasterMate.Core.Contracts;
     using FasterMate.Infrastructure.Common;
     using FasterMate.Infrastructure.Data;
+    using FasterMate.ViewModels.Common;
     using FasterMate.ViewModels.User;
 
     using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,20 @@
             repo = _repo;
             profileRepo = _profileRepo;
         }
+
+        public List<ApiViewModel> GetAPIData()
+            => repo
+                .AllAsNoTracking()
+                .Include(x => x.Profile)
+                .Select(x => new ApiViewModel()
+                {
+                    Username = x.UserName,
+                    FirstName = x.Profile.FirstName,
+                    LastName = x.Profile.LastName,
+                    Email = x.Email,
+                    Gender = (x.Profile.Gender).ToString()
+                })
+                .ToList();
 
         public async Task<ApplicationUser> GetOnlyUserByIdAsync(string id)
             => await repo
