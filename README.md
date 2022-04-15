@@ -21,4 +21,4 @@ The web application has the following controllers:
 ![FasterMate-DB](https://user-images.githubusercontent.com/75324909/162582399-c69bd803-39eb-4b91-a21c-4e1f001fc985.png)
 
 # 🧪 Unit Tests
-*TODO*
+![tests](https://user-images.githubusercontent.com/75324909/163595527-1650c6c9-d008-49dd-b699-34a70606c90c.png)
