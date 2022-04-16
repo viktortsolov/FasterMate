@@ -15,22 +15,16 @@
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<ApplicationUser> userManager;
 
-        private readonly IRepository<ApplicationUser> appUserRepo;
-
         private readonly IUserService userService;
-
 
         public UserController(
             RoleManager<IdentityRole> _roleManager,
             UserManager<ApplicationUser> _userManager,
-            IUserService _userService,
-            IRepository<ApplicationUser> _appUserRepo
+            IUserService _userService
             )
         {
             roleManager = _roleManager;
             userManager = _userManager;
-
-            appUserRepo = _appUserRepo;
 
             userService = _userService;
         }
@@ -95,9 +89,6 @@
         {
             var user = await userService.GetOnlyUserByIdAsync(model.UserId);
             var userRoles = await userManager.GetRolesAsync(user);
-
-            //TODO: Exract In Method
-            appUserRepo.Update(user);
 
             await userManager.RemoveFromRolesAsync(user, userRoles);
             await userManager.AddToRolesAsync(user, model.RoleNames);

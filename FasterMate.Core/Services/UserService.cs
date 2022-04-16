@@ -40,12 +40,12 @@
 
         public async Task<ApplicationUser> GetOnlyUserByIdAsync(string id)
             => await repo
-                .AllAsNoTracking()
+                .All()
                 .FirstOrDefaultAsync(x => x.Id == id);
 
         public async Task<ApplicationUser> GetUserByIdAsync(string id)
             => await repo
-                .AllAsNoTracking()
+                .All()
                 .Include(x => x.Profile)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
