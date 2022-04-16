@@ -85,7 +85,10 @@
                             @if (@Model.Posts.Count() == 0)
                             {
                                 <h3 class="text-center display-5">No posts, yet...</h3>
-                                <a type="button" class="btn btn-block btn-outline-primary btn-lg" asp-controller="Post" asp-action="CreatePost">Create one?</a>
+                                @if (Model.IsOwner)
+                                {
+                                    <a type="button" class="btn btn-block btn-outline-primary btn-lg" asp-controller="Post" asp-action="CreatePost">Create one?</a>
+                                }
                             }
                             else
                             {

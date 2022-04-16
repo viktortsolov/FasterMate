@@ -51,11 +51,13 @@ using (var serviceScope = app.Services.CreateScope())
 
 if (app.Environment.IsDevelopment())
 {
+    app.UseStatusCodePagesWithRedirects("/ErrorPage/{0}");
     app.UseDeveloperExceptionPage();
     app.UseMigrationsEndPoint();
 }
 else
 {
+    app.UseStatusCodePagesWithRedirects("/ErrorPage/{0}");
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
