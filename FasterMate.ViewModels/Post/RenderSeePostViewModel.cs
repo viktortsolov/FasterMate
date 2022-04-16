@@ -28,6 +28,8 @@
 
         public int CommentsCount { get; set; }
 
+        public string Gender { get; set; }
+
         public IEnumerable<RenderCommentViewModel> Comments { get; set; } = new HashSet<RenderCommentViewModel>();
 
         public AddCommentViewModel Comment { get; set; }

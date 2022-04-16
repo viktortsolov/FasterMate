@@ -97,6 +97,7 @@
             var comments = commentRepo
                     .All()
                     .Include(x => x.Profile)
+                    .ThenInclude(x => x.Image)
                     .Where(x => x.PostId == id)
                     .OrderByDescending(x => x.CreatedOn)
                     .Select(x => new RenderCommentViewModel()
@@ -104,6 +105,8 @@
                         CommentId = x.Id,
                         PostId = x.PostId,
                         ProfileId = x.ProfileId,
+                        Gender = x.Profile.Gender.ToString(),
+                        ImagePath = x.Profile.Image != null ? $"{x.Profile.Image.Id}.{x.Profile.Image.Extension}" : null,
                         ProfileName = $"{x.Profile.FirstName} {x.Profile.LastName}",
                         Text = x.Text,
                         CreatedOn = x.CreatedOn.ToString("HH:mm, dd/MM/yyyy")
@@ -122,6 +125,7 @@
                     ProfileImgPath = x.Profile.Image != null ? $"{x.Profile.Image.Id}.{x.Profile.Image.Extension}" : null,
                     ProfileId = x.ProfileId,
                     IsOwner = x.ProfileId == profileId,
+                    Gender = x.Profile.Gender.ToString(),
                     IsLikedByVisitor = postLikesRepo.All().Any(x => x.PostId == id && x.ProfileId == profileId),
                     Text = x.Text,
                     ImagePath = $"{x.ImageId}.{x.Image.Extension}",
@@ -153,6 +157,7 @@
                 CommentsCount = commentRepo.All().Where(x => x.PostId == r.Id).Count(),
                 ProfileId = r.ProfileId,
                 ProfileName = $"{r.Profile.FirstName} {r.Profile.LastName}",
+                Gender = r.Profile.Gender.ToString(),
                 ProfileImgPath = r.Profile.Image != null ? $"{r.Profile.Image.Id}.{r.Profile.Image.Extension}" : null
             })
             .ToList();

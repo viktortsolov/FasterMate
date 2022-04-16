@@ -21,5 +21,7 @@
         public string ProfileName { get; set; }
 
         public string ProfileImgPath { get; set; }
+
+        public string Gender { get; set; }
     }
 }

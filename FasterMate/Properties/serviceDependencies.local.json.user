@@ -3,7 +3,26 @@
     "mssql1": {
       "restored": true,
       "restoreTime": "2022-02-02T16:34:11.6948533Z"
+    },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2022-04-16T16:37:15.9149394Z"
+    },
+    "signalr1": {
+      "restored": true,
+      "restoreTime": "2022-04-16T16:37:16.7170322Z"
     }
   },
-  "parameters": {}
+  "parameters": {
+    "signalr1.resourceGroupName": {
+      "Name": "signalr1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "FasterMateResourceGroup"
+    },
+    "signalr1.subscriptionId": {
+      "Name": "signalr1.subscriptionId",
+      "Type": "subscription",
+      "Value": "486aa7c1-8f02-47f9-ad72-cdd7dcb59823"
+    }
+  }
 }

@@ -4,11 +4,11 @@ i:{00000000-0000-0000-0000-000000000000}:FasterMate.sln
 i:{00000000-0000-0000-0000-000000000000}:FasterMate.Core
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate.core\fastermate.core.csproj
 ++Dependencies
-i:{c9c6bc31-140e-4c6e-9605-fdcbfca6b424}:>1356
-i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:>1355
-i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>4111
-i:{019884ab-4648-44d7-ae53-2965a25b9531}:>1354
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5021
+i:{c9c6bc31-140e-4c6e-9605-fdcbfca6b424}:>1362
+i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:>1364
+i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>4117
+i:{019884ab-4648-44d7-ae53-2965a25b9531}:>1363
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5037
 ++Constants
 i:{c9c6bc31-140e-4c6e-9605-fdcbfca6b424}:e:\programming\fastermate\fastermate.core\constants\
 ++Contracts
@@ -114,8 +114,8 @@ i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:e:\programming\fastermate\fastermate.te
 i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.infrastructure\microsoft.netcore.app
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\microsoft.netcore.app
 ++Microsoft.AspNetCore.Http.Features (5.0.15)
-i:{c9c6bc31-140e-4c6e-9605-fdcbfca6b424}:>5061
-i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:>5058
+i:{c9c6bc31-140e-4c6e-9605-fdcbfca6b424}:>5089
+i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:>5113
 ++FasterMate.Infrastructure
 i:{c9c6bc31-140e-4c6e-9605-fdcbfca6b424}:e:\programming\fastermate\fastermate.infrastructure\bin\debug\net6.0\fastermate.infrastructure.dll
 i:{00000000-0000-0000-0000-000000000000}:FasterMate.Infrastructure
@@ -128,27 +128,23 @@ i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.vi
 ++Common
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\common\
 i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.infrastructure\common\
-++ApiViewModel.cs
-i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\common\apiviewmodel.cs
-++LoginPartialViewModel.cs
-i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\common\loginpartialviewmodel.cs
 ++Group
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\group\
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\
 ++Home
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\home\
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\home\
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\home\
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\home\
 ++Message
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\message\
 ++Offer
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\offer\
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\offer\
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\offer\
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\offer\
 ++Post
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\post\
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\post\
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\post\
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\post\
 ++Profile
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\profile\
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\profile\
@@ -163,6 +159,10 @@ i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.vi
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\comment\addcommentviewmodel.cs
 ++RenderCommentViewModel.cs
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\comment\rendercommentviewmodel.cs
+++ApiViewModel.cs
+i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\common\apiviewmodel.cs
+++LoginPartialViewModel.cs
+i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\common\loginpartialviewmodel.cs
 ++CreateGroupViewModel.cs
 i:{ecd6ef6b-c54d-4b49-8c5a-ff811ed9e6d6}:e:\programming\fastermate\fastermate.viewmodels\group\creategroupviewmodel.cs
 ++EditGroupViewModel.cs
@@ -263,17 +263,17 @@ i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\users\viktor\.nuget\packages\microso
 i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:c:\users\viktor\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\users\viktor\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
 ++coverlet.collector (3.1.0)
-i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5095
+i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5098
 ++Microsoft.EntityFrameworkCore.Sqlite (6.0.3)
 i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5092
 ++Microsoft.NET.Test.Sdk (16.11.0)
-i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5090
+i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5087
 ++Moq (4.17.2)
-i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5094
+i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5096
 ++NUnit (3.13.2)
-i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5091
+i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5090
 ++NUnit3TestAdapter (4.0.0)
-i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5093
+i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:>5094
 ++FasterMate
 i:{b1ff7162-8c3a-4de8-a10f-ba0f7e37bc50}:e:\programming\fastermate\fastermate\bin\debug\net6.0\fastermate.dll
 i:{00000000-0000-0000-0000-000000000000}:FasterMate
@@ -318,7 +318,6 @@ i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.in
 ++ProfileOffer.cs
 i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.infrastructure\data\profileoffer.cs
 ++AdminSeeder.cs
-i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.infrastructure\seeding\adminseeder.cs
 ++ApplicationDbContextSeeder.cs
 i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.infrastructure\seeding\applicationdbcontextseeder.cs
 ++CountriesSeeder.cs
@@ -328,11 +327,11 @@ i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.in
 ++RolesSeeder.cs
 i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.infrastructure\seeding\rolesseeder.cs
 ++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.2)
-i:{019884ab-4648-44d7-ae53-2965a25b9531}:>5082
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5036
+i:{019884ab-4648-44d7-ae53-2965a25b9531}:>5095
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5081
 ++Microsoft.EntityFrameworkCore.SqlServer (6.0.2)
-i:{019884ab-4648-44d7-ae53-2965a25b9531}:>5080
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5034
+i:{019884ab-4648-44d7-ae53-2965a25b9531}:>5093
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5078
 ++Gender.cs
 i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.infrastructure\data\enums\gender.cs
 ++00000000000000_CreateIdentitySchema.cs
@@ -382,9 +381,29 @@ i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.in
 ++20220414071724_FinalMigrationMessageNameColumn.Designer.cs
 i:{019884ab-4648-44d7-ae53-2965a25b9531}:e:\programming\fastermate\fastermate.infrastructure\data\migrations\20220414071724_finalmigrationmessagenamecolumn.designer.cs
 ++Connected Services 
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5022
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5038
+++Secrets.json (Local)
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5132
+++SignalR
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5130
+++SQL Server Express LocalDB (Local) (ConnectionStrings:DefaultConnection)
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5129
+++Microsoft.AspNetCore.Analyzers
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
 ++Properties
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\properties\
+++launchSettings.json
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\properties\launchsettings.json
+++serviceDependencies.json
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\properties\servicedependencies.json
 ++wwwroot
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\
 ++Areas
@@ -411,18 +430,10 @@ i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\ar
 ++Views
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\
-++_ViewImports.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\_viewimports.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\_viewimports.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\_viewimports.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\_viewimports.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\manage\_viewimports.cshtml
-++_ViewStart.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\_viewstart.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\_viewstart.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\_viewstart.cshtml
 ++Identity
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\
+++ErrorPageController.cs
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\controllers\errorpagecontroller.cs
 ++GroupController.cs
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\controllers\groupcontroller.cs
 ++ProfileController.cs
@@ -435,6 +446,28 @@ i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\ex
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\hubs\
 ++ModelBinders
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\modelbinders\
+++ErrorPage
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\errorpage\
+++ErrorPage.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\errorpage\errorpage.cshtml
+++Edit.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\profile\edit.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\edit.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\user\edit.cshtml
+++UserProfile.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\profile\userprofile.cshtml
+++Shared
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\
+++_ViewImports.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\_viewimports.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\_viewimports.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\_viewimports.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\_viewimports.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\manage\_viewimports.cshtml
+++_ViewStart.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\_viewstart.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\_viewstart.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\_viewstart.cshtml
 ++.editorconfig
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\.editorconfig
 ++appsettings.json
@@ -443,12 +476,24 @@ i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\ap
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\libman.json
 ++Program.cs
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\program.cs
-++SQL Server Express LocalDB (Local) (ConnectionStrings:DefaultConnection)
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5113
-++launchSettings.json
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\properties\launchsettings.json
-++serviceDependencies.json
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\properties\servicedependencies.json
+++Secrets.json (Local) dependency is detected
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5133
+++Your application is making use of SignalR. For environments that need to scale we strongly recommend adding a dependency on Azure SignalR Service.
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5131
+++Microsoft.AspNetCore.App
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\microsoft.aspnetcore.app
+++HtmlSanitizer (7.1.488)
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5088
+++Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore (6.0.0)
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5079
+++Microsoft.AspNetCore.Identity.UI (6.0.2)
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5086
+++Microsoft.EntityFrameworkCore.Tools (6.0.2)
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5083
+++Microsoft.VisualStudio.Web.CodeGeneration.Design (6.0.2)
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5085
+++serviceDependencies.local.json
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\properties\servicedependencies.local.json
 ++css
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\css\
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\plugins\fontawesome-free\css\
@@ -465,22 +510,6 @@ i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\ww
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\plugins\
 ++favicon.ico
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\favicon.ico
-++Index.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\home\index.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\home\index.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\manage\index.cshtml
-++ManageOffers.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\offer\manageoffers.cshtml
-++ManagePosts.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\post\manageposts.cshtml
-++Edit.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\user\edit.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\edit.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\profile\edit.cshtml
-++ManageUsers.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\user\manageusers.cshtml
-++Roles.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\user\roles.cshtml
 ++Pages
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\
 ++ServiceCollectionExtension.cs
@@ -499,34 +528,53 @@ i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\mo
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\modelbinders\doublemodelbinder.cs
 ++DoubleModelBinderProvider.cs
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\modelbinders\doublemodelbinderprovider.cs
-++Shared
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\
+++AddMember.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\addmember.cshtml
+++Create.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\create.cshtml
+++LetsChat.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\letschat.cshtml
+++Members.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\members.cshtml
+++MyGroups.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\mygroups.cshtml
+++Index.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\home\index.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\home\index.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\manage\index.cshtml
+++Search.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\home\search.cshtml
+++AddAnOffer.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\offer\addanoffer.cshtml
+++BookAFlight.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\offer\bookaflight.cshtml
+++MyFlights.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\offer\myflights.cshtml
+++CreatePost.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\post\createpost.cshtml
+++SeePost.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\post\seepost.cshtml
+++_CookieConsentPartial.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_cookieconsentpartial.cshtml
+++_Layout.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_layout.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\manage\_layout.cshtml
+++_LayoutOld.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_layoutold.cshtml
+++_LoginPartial.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_loginpartial.cshtml
+++_MainMenu.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_mainmenu.cshtml
+++_UserMessages.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_usermessages.cshtml
+++_ValidationScriptsPartial.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_validationscriptspartial.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\_validationscriptspartial.cshtml
+++Error.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\error.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\error.cshtml
 ++appsettings.Development.json
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\appsettings.development.json
-++Microsoft.AspNetCore.Analyzers
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
-++Microsoft.AspNetCore.Components.Analyzers
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
-++Microsoft.AspNetCore.Mvc.Analyzers
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
-++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
-++Microsoft.NET.Sdk.Razor.SourceGenerators
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
-++Microsoft.AspNetCore.App
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\microsoft.aspnetcore.app
-++HtmlSanitizer (7.1.488)
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5040
-++Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore (6.0.0)
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5035
-++Microsoft.AspNetCore.Identity.UI (6.0.2)
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5039
-++Microsoft.EntityFrameworkCore.Tools (6.0.2)
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5037
-++Microsoft.VisualStudio.Web.CodeGeneration.Design (6.0.2)
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:>5038
-++serviceDependencies.local.json
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\properties\servicedependencies.local.json
 ++alt
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\css\alt\
 ++adminlte.css
@@ -569,51 +617,18 @@ i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\ww
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\plugins\icheck-bootstrap\
 ++toastr
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\plugins\toastr\
+++ManageOffers.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\offer\manageoffers.cshtml
+++ManagePosts.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\post\manageposts.cshtml
+++ManageUsers.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\user\manageusers.cshtml
+++Roles.cshtml
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\administrator\views\user\roles.cshtml
 ++Account
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\
-++_ValidationScriptsPartial.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\_validationscriptspartial.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_validationscriptspartial.cshtml
-++Error.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\error.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\error.cshtml
-++AddMember.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\addmember.cshtml
-++Create.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\create.cshtml
-++LetsChat.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\letschat.cshtml
-++Members.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\members.cshtml
-++MyGroups.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\group\mygroups.cshtml
-++Search.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\home\search.cshtml
-++AddAnOffer.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\offer\addanoffer.cshtml
-++BookAFlight.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\offer\bookaflight.cshtml
-++MyFlights.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\offer\myflights.cshtml
-++CreatePost.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\post\createpost.cshtml
-++SeePost.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\post\seepost.cshtml
-++UserProfile.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\profile\userprofile.cshtml
-++_CookieConsentPartial.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_cookieconsentpartial.cshtml
-++_Layout.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_layout.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\manage\_layout.cshtml
-++_LayoutOld.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_layoutold.cshtml
-++_LoginPartial.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_loginpartial.cshtml
-++_MainMenu.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_mainmenu.cshtml
-++_UserMessages.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_usermessages.cshtml
+++_LayoutOld.cshtml.css
+i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_layoutold.cshtml.css
 ++adminlte.components.css
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\css\alt\adminlte.components.css
 ++adminlte.core.css
@@ -735,8 +750,6 @@ i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\ar
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\account\resetpasswordconfirmation.cshtml
 ++Error.cshtml.cs
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\areas\identity\pages\error.cshtml.cs
-++_LayoutOld.cshtml.css
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\shared\_layoutold.cshtml.css
 ++adminlte.components.css.map
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\css\alt\adminlte.components.css.map
 ++adminlte.components.min.css
@@ -1375,9 +1388,3 @@ i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\ww
 ++signalr.min.js.map
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\lib\microsoft\signalr\dist\browser\signalr.min.js.map
 i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\wwwroot\lib\microsoft\signalr\dist\webworker\signalr.min.js.map
-++ErrorPageController.cs
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\controllers\errorpagecontroller.cs
-++ErrorPage
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\errorpage\
-++ErrorPage.cshtml
-i:{df081c2d-2717-4e1c-8d5b-1b4ad0b18d75}:e:\programming\fastermate\fastermate\views\errorpage\errorpage.cshtml

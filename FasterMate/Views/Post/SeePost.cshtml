@@ -14,7 +14,14 @@
                     }
                     else
                     {
-                        <img class="img-circle" src="~/img/common/default-male.png" alt="User Image">
+                        @if (Model.Gender == "Male")
+                        {
+                            <img class="img-circle" src="~/img/common/default-male.png" alt="User Image">
+                        }
+                        else
+                        {
+                            <img class="img-circle" src="~/img/common/default-female.png" alt="User Image">
+                        }
                     }
                     <span class="username"><a asp-action="UserProfile" asp-controller="Profile" asp-route-id="@Model.ProfileId">@Model.ProfileName</a></span>
                     <span class="description">@Model.CreatedOn in <b>@Model.Location</b></span>
@@ -67,8 +74,22 @@
                     @foreach (var comment in Model.Comments)
                     {
                         <div class="card-comment">
+                            @if (comment.ImagePath != null)
+                            {
+                                <img class="img-circle img-sm" src="~/img/common/@comment.ImagePath" alt="User Image">
+                            }
+                            else
+                            {
+                                @if (comment.Gender == "Male")
+                                {
+                                    <img class="img-circle img-sm" src="~/img/common/default-male.png" alt="User Image">
+                                }
+                                else
+                                {
+                                    <img class="img-circle img-sm" src="~/img/common/default-female.png" alt="User Image">
+                                }
+                            }
 
-                            <img class="img-circle img-sm" src="~/img/common/default-male.png" alt="User Image">
                             <div class="comment-text">
                                 <span class="username">
                                     @comment.ProfileName

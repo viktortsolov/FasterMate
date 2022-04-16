@@ -15,9 +15,9 @@
             <p class="col-md-10" style="font-size: 22px;">FasterMate is a web application, which provides social media functionality. Here you can meet with new people, have a chat and the main purpose of the application - express your impressions from the trips you have had in the past. You can buy plane tickets from other people and add photos to your profile.</p>
         </div>
 
-            <div class="col-md-12">
-                <img class="rounded mx-auto d-block img-fluid" src="~/img/common/bg.jpg" width="100%" height="10%">
-            </div>
+        <div class="col-md-12">
+            <img class="rounded mx-auto d-block img-fluid" src="~/img/common/bg.jpg" width="100%" height="10%">
+        </div>
     </div>
 }
 else
@@ -42,7 +42,14 @@ else
                                             <div class="user-block">
                                                 @if (post.ProfileImgPath == null)
                                                 {
-                                                    <img class="img-circle img-bordered-sm" src="~/img/common/default-male.png" alt="User profile picture">
+                                                    @if (@post.Gender == "Male")
+                                                    {
+                                                        <img class="img-circle img-bordered-sm" src="~/img/common/default-male.png" alt="User profile picture">
+                                                    }
+                                                    else
+                                                    {
+                                                        <img class="img-circle img-bordered-sm" src="~/img/common/default-female.png" alt="User profile picture">
+                                                    }
                                                 }
                                                 else
                                                 {

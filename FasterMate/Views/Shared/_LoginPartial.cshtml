@@ -23,12 +23,19 @@
         <div class="image">
             @if (!string.IsNullOrEmpty(imgPath))
             {
-                <img src="~/img/users/@imgPath" class="img-circle elevation-2" alt="User Image">
-            }
-            else
-            {
-                <img src="~/img/common/default-male.png" class="img-circle elevation-2" alt="User Image">
-            }
+                    <img src="~/img/users/@imgPath" class="img-circle elevation-2" alt="User Image">
+                }
+                else
+                {
+                    @if(profile.Gender == FasterMate.Infrastructure.Data.Enums.Gender.Male)
+                    {
+                        <img src="~/img/common/default-male.png" class="img-circle elevation-2" alt="User Image">
+                    }
+                    else
+                    {
+                        <img src="~/img/common/default-female.png" class="img-circle elevation-2" alt="User Image">
+                    }
+                }
         </div>
         <div class="info">
             <a asp-area="" asp-controller="Profile" asp-action="UserProfile" asp-route-id="@profileId" class="d-block">@User.Identity.Name</a>
