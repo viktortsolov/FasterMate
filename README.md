@@ -1,6 +1,9 @@
 # :thought_balloon: Introduction
 **FasterMate** is a web application, which provides social media functionality. Here you can meet with new people, have a chat and the main purpose of the application - express your impressions from the trips you have had in the past. You can buy plane tickets from other people and add photos to your profile.
 
+# :link: Link
+https://fastermate.azurewebsites.net/
+
 # 📃 Description
 The web application has the following controllers:
 
