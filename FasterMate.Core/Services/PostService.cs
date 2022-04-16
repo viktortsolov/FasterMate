@@ -97,7 +97,7 @@
             var comments = commentRepo
                     .All()
                     .Include(x => x.Profile)
-                    .ThenInclude(x => x.Image)
+                    .Include(x => x.Profile.Image)
                     .Where(x => x.PostId == id)
                     .OrderByDescending(x => x.CreatedOn)
                     .Select(x => new RenderCommentViewModel()

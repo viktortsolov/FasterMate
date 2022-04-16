@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXGjm8ecNeUuGm52XuuL5kgAAAAACAAAAAAAQZgAAAAEAACAAAAAZoyj9qVH9x13HUgWHRHQkDbKckkSUji4fpDtitTESNwAAAAAOgAAAAAIAACAAAAA7mce478ri53W19GnR6sxBfhqBo8MC67QBQbgiMyRVdIAAAABPL7ss7ir3C3JAXWB6NgAq20IIKNuFBkELsZFTje7uF7cLFefmYkij41068plIoXXgdm09q7hLcb7pZeihDz3fNxzapSjGkf37z1x0ZeficCOuXO8agEwjOFOWam++vMlIgFy02BDHjH0nCtAUlEMMc+iHWpzLwQlWc5j27MWqB0AAAAB3iukpy5eNl9P0eQiL8TgM+6AHkqgRLXxLPbfHEsNv7JkfbXiAWhAkhDS3Yd6iUM/BBs2zdrtgHgBMNdg+BvAa</EncryptedPassword>
+    <History>True|2022-04-16T18:03:36.6566837Z;True|2022-04-16T20:52:21.5195692+03:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Azure:SignalR:ConnectionString">
+      <Value>Data Source=tcp:fastermatedbfinalserver.database.windows.net,1433%3bInitial Catalog=FasterMate_db%3bUser Id=viktortsolov%40fastermatedbfinalserver%3bPassword=VikiTuza1234</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:fastermatedbfinalserver.database.windows.net,1433%3bInitial Catalog=FasterMate_db%3bUser Id=viktortsolov%40fastermatedbfinalserver%3bPassword=VikiTuza1234</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="FasterMate.Infrastrucutre.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:fastermatedbfinalserver.database.windows.net,1433%3bInitial Catalog=FasterMate_db%3bUser Id=viktortsolov%40fastermatedbfinalserver%3bPassword=VikiTuza1234</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
