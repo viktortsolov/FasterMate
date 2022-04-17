@@ -28,11 +28,11 @@ The web application has the following controllers:
  - HTMLSanitizer
  - SignalR
 
-#:warning: Starting the application in local environment
-When you open the web application on your computer with Visual Stuido, go to **Package Manager Console** and type **dotnet watch run** to start it.
- 
 # 🗃️ Database
 ![FasterMate-DB](https://user-images.githubusercontent.com/75324909/163596161-9a4447ab-b407-4294-88a0-882650be69fd.png)
 
 # 🧪 Unit Tests
 ![tests](https://user-images.githubusercontent.com/75324909/163595527-1650c6c9-d008-49dd-b699-34a70606c90c.png)
+
+# :warning: Local environment
+When you open the web application on your machine, go to **Package Manager Console** and type **dotnet watch run** to start it.
