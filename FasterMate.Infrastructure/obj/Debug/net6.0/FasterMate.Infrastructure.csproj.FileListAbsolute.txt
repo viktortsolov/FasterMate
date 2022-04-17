@@ -1,0 +1,12 @@
+E:\Programming\FasterMate\FasterMate.Infrastructure\bin\Debug\net6.0\FasterMate.Infrastructure.deps.json
+E:\Programming\FasterMate\FasterMate.Infrastructure\bin\Debug\net6.0\FasterMate.Infrastructure.dll
+E:\Programming\FasterMate\FasterMate.Infrastructure\bin\Debug\net6.0\ref\FasterMate.Infrastructure.dll
+E:\Programming\FasterMate\FasterMate.Infrastructure\bin\Debug\net6.0\FasterMate.Infrastructure.pdb
+E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.AssemblyInfoInputs.cache
+E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.AssemblyInfo.cs
+E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.dll
+E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\ref\FasterMate.Infrastructure.dll
+E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.pdb
+E:\Programming\FasterMate\FasterMate.Infrastructure\obj\Debug\net6.0\FasterMate.Infrastructure.csproj.AssemblyReference.cache

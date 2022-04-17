@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "zOpL7RxbuWLLh6gYEsEQSXJAnTVBi9jAOTJ5H219eWmpV+5Vx1qcj2O+elBHm2OIEr0A46hk4ECr1tzjQHEd8g==",
+  "success": true,
+  "projectFilePath": "E:\\Programming\\FasterMate\\FasterMate.ViewModels\\FasterMate.ViewModels.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Viktor\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.15\\microsoft.aspnetcore.http.features.5.0.15.nupkg.sha512",
+    "C:\\Users\\Viktor\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Viktor\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
