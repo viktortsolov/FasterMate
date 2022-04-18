@@ -5,7 +5,6 @@ E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.exe
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.deps.json
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.runtimeconfig.json
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.dll
-E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\ref\FasterMate.dll
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\FasterMate.pdb
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Humanizer.dll
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -280,3 +279,8 @@ E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\libman.json
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\AngleSharp.dll
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\AngleSharp.Css.dll
 E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\HtmlSanitizer.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.Azure.SignalR.Common.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.Azure.SignalR.dll
+E:\Programming\FasterMate\FasterMate\bin\Debug\net6.0\Microsoft.Azure.SignalR.Protocols.dll
+E:\Programming\FasterMate\FasterMate\obj\Debug\net6.0\refint\FasterMate.dll

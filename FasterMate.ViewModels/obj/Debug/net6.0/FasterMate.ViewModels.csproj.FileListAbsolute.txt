@@ -1,6 +1,5 @@
 E:\Programming\FasterMate\FasterMate.ViewModels\bin\Debug\net6.0\FasterMate.ViewModels.deps.json
 E:\Programming\FasterMate\FasterMate.ViewModels\bin\Debug\net6.0\FasterMate.ViewModels.dll
-E:\Programming\FasterMate\FasterMate.ViewModels\bin\Debug\net6.0\ref\FasterMate.ViewModels.dll
 E:\Programming\FasterMate\FasterMate.ViewModels\bin\Debug\net6.0\FasterMate.ViewModels.pdb
 E:\Programming\FasterMate\FasterMate.ViewModels\obj\Debug\net6.0\FasterMate.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
 E:\Programming\FasterMate\FasterMate.ViewModels\obj\Debug\net6.0\FasterMate.ViewModels.AssemblyInfoInputs.cache
@@ -10,3 +9,4 @@ E:\Programming\FasterMate\FasterMate.ViewModels\obj\Debug\net6.0\FasterMate.View
 E:\Programming\FasterMate\FasterMate.ViewModels\obj\Debug\net6.0\ref\FasterMate.ViewModels.dll
 E:\Programming\FasterMate\FasterMate.ViewModels\obj\Debug\net6.0\FasterMate.ViewModels.pdb
 E:\Programming\FasterMate\FasterMate.ViewModels\obj\Debug\net6.0\FasterMate.ViewModels.csproj.AssemblyReference.cache
+E:\Programming\FasterMate\FasterMate.ViewModels\obj\Debug\net6.0\refint\FasterMate.ViewModels.dll

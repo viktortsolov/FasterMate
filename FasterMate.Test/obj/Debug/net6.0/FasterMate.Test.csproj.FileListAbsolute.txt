@@ -10,7 +10,6 @@ E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\testcentric.engine.me
 E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\FasterMate.Test.deps.json
 E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\FasterMate.Test.runtimeconfig.json
 E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\FasterMate.Test.dll
-E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\ref\FasterMate.Test.dll
 E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\FasterMate.Test.pdb
 E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\Castle.Core.dll
 E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
@@ -764,3 +763,8 @@ C:\Users\Viktor\Desktop\TEST _\FasterMate-fe05585993ccd211d00ab265e4f14126119b1c
 C:\Users\Viktor\Desktop\TEST _\FasterMate-fe05585993ccd211d00ab265e4f14126119b1cba\FasterMate.Test\obj\Debug\net6.0\ref\FasterMate.Test.dll
 C:\Users\Viktor\Desktop\TEST _\FasterMate-fe05585993ccd211d00ab265e4f14126119b1cba\FasterMate.Test\obj\Debug\net6.0\FasterMate.Test.pdb
 C:\Users\Viktor\Desktop\TEST _\FasterMate-fe05585993ccd211d00ab265e4f14126119b1cba\FasterMate.Test\obj\Debug\net6.0\FasterMate.Test.genruntimeconfig.cache
+E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\Microsoft.Azure.SignalR.Common.dll
+E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\Microsoft.Azure.SignalR.dll
+E:\Programming\FasterMate\FasterMate.Test\bin\Debug\net6.0\Microsoft.Azure.SignalR.Protocols.dll
+E:\Programming\FasterMate\FasterMate.Test\obj\Debug\net6.0\refint\FasterMate.Test.dll
